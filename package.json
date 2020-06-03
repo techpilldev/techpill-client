@@ -1,0 +1,20 @@
+{
+  "name": "techpill-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bruce Pouncey",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.5"
+  }
+}
