@@ -1,0 +1,47 @@
+import { createUseStyles } from 'react-jss'
+
+export const useStyles = createUseStyles({
+  root: {
+    backgroundColor: 'white',
+    width: '80vw',
+    height: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    boxSizing: 'border-box',
+    boxShadow: '0 0 8px 5px grey',
+    position: 'absolute',
+    alignSelf: 'flex-end',
+    zIndex: 9,
+    animationName: '$action',
+    animationFillMode: 'forwards',
+    animationDuration: '0.3s',
+
+    //Debug
+    border: '1px solid red'
+  },
+
+  buttonContainer: {
+    margin: '1%',
+    display: 'flex',
+    justifyContent: 'flex-end',
+
+    //Debug
+    border: '1px solid red'
+  },
+
+  navContainer: {
+    margin: '1%',
+    //Debug
+    border: '1px solid red'
+  },
+
+  '@keyframes action': {
+    '0%': {
+      right: '-80vw'
+    },
+
+    '100%': {
+      right: '0vw'
+    },
+  },
+})

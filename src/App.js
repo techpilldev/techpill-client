@@ -7,13 +7,14 @@ import {
   Redirect
 } from "react-router-dom"
 
+import Header from './components/header/header.component.js'
 import Home from './pages/home/home.component.js'
 import About from './pages/about/about.component.js'
 import Blog from './pages/blog/blog.component.js'
 import Contact from './pages/contact/contact.component.js'
 import LatestReleases from './pages/latest-releases/latest-releases.component.js'
 import Podcast from './pages/podcast/podcast.component.js'
-import './index'
+import './index.css'
 
 const App = () => {
   const appContext = useContext(AppContext)
@@ -23,9 +24,10 @@ const App = () => {
   appContext.dispatch = dispatch
 
   return(
-    <AppContext.Provider style={defaultContext} >
+    <AppContext.Provider >
       <Router>
         {/*Header here*/}
+        <Header />
         <Switch>
 
           <Route path="/" exact>

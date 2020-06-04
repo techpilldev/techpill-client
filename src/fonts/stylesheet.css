@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('SPOTNIK.eot');
+    src: url('SPOTNIK.eot?#iefix') format('embedded-opentype'),
+        url('SPOTNIK.woff2') format('woff2'),
+        url('SPOTNIK.woff') format('woff'),
+        url('SPOTNIK.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('SPOTNIK-Bold.eot');
+    src: url('SPOTNIK-Bold.eot?#iefix') format('embedded-opentype'),
+        url('SPOTNIK-Bold.woff2') format('woff2'),
+        url('SPOTNIK-Bold.woff') format('woff'),
+        url('SPOTNIK-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('SPOTNIK-Bold_1.eot');
+    src: url('SPOTNIK-Bold_1.eot?#iefix') format('embedded-opentype'),
+        url('SPOTNIK-Bold_1.woff2') format('woff2'),
+        url('SPOTNIK-Bold_1.woff') format('woff'),
+        url('SPOTNIK-Bold_1.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('SPOTNIK_1.eot');
+    src: url('SPOTNIK_1.eot?#iefix') format('embedded-opentype'),
+        url('SPOTNIK_1.woff2') format('woff2'),
+        url('SPOTNIK_1.woff') format('woff'),
+        url('SPOTNIK_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('SPOTNIK-Bold_2.eot');
+    src: url('SPOTNIK-Bold_2.eot?#iefix') format('embedded-opentype'),
+        url('SPOTNIK-Bold_2.woff2') format('woff2'),
+        url('SPOTNIK-Bold_2.woff') format('woff'),
+        url('SPOTNIK-Bold_2.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('SPOTNIK_2.eot');
+    src: url('SPOTNIK_2.eot?#iefix') format('embedded-opentype'),
+        url('SPOTNIK_2.woff2') format('woff2'),
+        url('SPOTNIK_2.woff') format('woff'),
+        url('SPOTNIK_2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

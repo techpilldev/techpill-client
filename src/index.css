@@ -1,0 +1,114 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+    font-family: 'SPOTNIK';
+    src: url('./fonts/SPOTNIK.eot');
+    src: url('./fonts/SPOTNIK.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SPOTNIK.woff2') format('woff2'),
+        url('./fonts/SPOTNIK.woff') format('woff'),
+        url('./fonts/SPOTNIK.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK_BOLD';
+    src: url('./fonts/SPOTNIK-Bold.eot');
+    src: url('./fonts/SPOTNIK-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SPOTNIK-Bold.woff2') format('woff2'),
+        url('./fonts/SPOTNIK-Bold.woff') format('woff'),
+        url('./fonts/SPOTNIK-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK_BOLD_1';
+    src: url('./fonts/SPOTNIK-Bold_1.eot');
+    src: url('./fonts/SPOTNIK-Bold_1.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SPOTNIK-Bold_1.woff2') format('woff2'),
+        url('./fonts/SPOTNIK-Bold_1.woff') format('woff'),
+        url('./fonts/SPOTNIK-Bold_1.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK_1';
+    src: url('./fonts/SPOTNIK_1.eot');
+    src: url('./fonts/SPOTNIK_1.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SPOTNIK_1.woff2') format('woff2'),
+        url('./fonts/SPOTNIK_1.woff') format('woff'),
+        url('./fonts/SPOTNIK_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK_BOLD_2';
+    src: url('./fonts/SPOTNIK-Bold_2.eot');
+    src: url('./fonts/SPOTNIK-Bold_2.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SPOTNIK-Bold_2.woff2') format('woff2'),
+        url('./fonts/SPOTNIK-Bold_2.woff') format('woff'),
+        url('./fonts/SPOTNIK-Bold_2.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SPOTNIK_2';
+    src: url('./fonts/SPOTNIK_2.eot');
+    src: url('./fonts/SPOTNIK_2.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/SPOTNIK_2.woff2') format('woff2'),
+        url('./fonts/SPOTNIK_2.woff') format('woff'),
+        url('./fonts/SPOTNIK_2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
