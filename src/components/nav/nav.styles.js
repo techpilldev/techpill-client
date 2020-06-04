@@ -34,7 +34,8 @@ export const useStyles = createUseStyles({
   },
 
   socials: {
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
+    margin: '1%'
   },
 
   navLink: {
