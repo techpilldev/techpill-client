@@ -1,15 +1,24 @@
 import { createContext } from 'react'
 
 export const defaultContext = {
-  initialState: {
+  setDebug:() => {
+    return({
+      debug: {
+        border: '1px solid red'
+      }
+    })
 
+  },
+
+  initialState: {
+      debug: false
   },
 
   dispatch: () => { },
   reducer: (state, action) => {
     switch (action.type) {
-      case 'JUMP IN AIR':
-        console.log('I jumped in the air')
+      case 'debug':
+        console.log('test')
     }
   },
 }

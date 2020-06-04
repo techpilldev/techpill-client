@@ -2,9 +2,11 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
   root: {
-    width: 'auto',
+    display: 'flex', 
+    width: '100%',
+    flexDirection: 'column'
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
   nav: {
@@ -21,8 +23,18 @@ export const useStyles = createUseStyles({
     alignItems: 'flex-end',
   },
 
-  lis: {
-    padding: '5% 3% 5%',
+  link: {
+    padding: '5%',
+    marginLeft: '5%'
+  },
+
+  homeLink: {
+    padding: '5%',
+    marginLeft: '5%'
+  },
+
+  socials: {
+    alignSelf: 'flex-end'
   },
 
   navLink: {
@@ -31,14 +43,20 @@ export const useStyles = createUseStyles({
     fontFamily: 'Roboto'
   },
 
-  '@media (min-width: 600px)': {
-    lis: {
+  '@media (min-width: 415px)': {
+    root:{
+      flexDirection: 'row'
+    },
+    link: {
       padding: '1%',
     },
     navLink: {
       color: 'white',
       fontSize: '1em',
       fontFamily: 'Roboto, sans-serif'
+    },
+    homeLink: {
+      display: 'none',
     },
   },
 })

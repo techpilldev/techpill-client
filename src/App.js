@@ -54,7 +54,7 @@ const App = () => {
             <LatestReleases />
           </Route>
 
-          <Route path="/podcast">
+          <Route path="/podcasts">
             <Podcast />
           </Route>
 

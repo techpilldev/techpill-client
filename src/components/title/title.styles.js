@@ -22,7 +22,7 @@ export const useStyles = createUseStyles({
     padding: '1%'
   },
 
-  '@media (min-width: 600px)': {
+  '@media (min-width: 415px)': {
     root:{
       flexDirection: 'row',
     },
