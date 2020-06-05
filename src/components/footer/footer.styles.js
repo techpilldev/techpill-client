@@ -17,11 +17,13 @@ export const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    userSelect: 'none',
+    marginTop: '1%',
   },
 
   innerContainer: {
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
 
   bottomNavContainer: {
@@ -46,6 +48,10 @@ export const useStyles = createUseStyles({
       flexDirection: 'column-reverse'
     },
 
+    titleContainer: {
+      marginTop: '1%',
+    },
+
     bottomNavContainer: {
       marginLeft: '5%',
       //Debug
@@ -57,7 +63,7 @@ export const useStyles = createUseStyles({
     },
 
     copywrite:{
-      padding: '2%',
+      padding: '1%',
       marginRight: '1%',
     }
   },

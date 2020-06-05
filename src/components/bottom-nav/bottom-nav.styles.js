@@ -25,7 +25,7 @@ export const useStyles = createUseStyles({
   },
 
   link: {
-    margin: '8.6%'
+    margin: '10%'
   },
 
   socials: {
@@ -33,7 +33,7 @@ export const useStyles = createUseStyles({
     margin: '1%'
   },
 
-  '@media (min-width: 601px)': {
+  '@media (min-width: 600px)': {
     root: {
       flexDirection: 'row'
     },
@@ -46,7 +46,9 @@ export const useStyles = createUseStyles({
     },
   
     link: {
-      margin: '2%',
+      margin: '0%',
+      marginLeft: '2%',
+      marginRight: '2%',
     },
   },
 })
