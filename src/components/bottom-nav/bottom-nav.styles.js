@@ -4,7 +4,7 @@ export const useStyles = createUseStyles({
   root: {
     display: 'flex',
     width: '100%',
-    flexDirection: 'column'
+    flexDirection: 'column',
 
     //Debug
     // border: '1px solid red'
@@ -20,12 +20,12 @@ export const useStyles = createUseStyles({
 
   navLink: {
     color: 'white',
-    fontSize: '1.2em',
+    fontSize: '1em',
     fontFamily: 'Roboto'
   },
 
   link: {
-    margin: '10%'
+    margin: '11%'
   },
 
   socials: {
@@ -33,7 +33,13 @@ export const useStyles = createUseStyles({
     margin: '1%'
   },
 
-  '@media (min-width: 600px)': {
+  '@media (min-width: 457px)':{
+   link:{
+    margin: '8%'
+   }
+  },
+
+  '@media (min-width: 550px)': {
     root: {
       flexDirection: 'row'
     },
@@ -47,8 +53,8 @@ export const useStyles = createUseStyles({
   
     link: {
       margin: '0%',
-      marginLeft: '2%',
-      marginRight: '2%',
+      marginLeft: '1.9%',
+      marginRight: '1.9%',
     },
   },
 })

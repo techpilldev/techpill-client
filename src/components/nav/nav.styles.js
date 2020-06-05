@@ -35,12 +35,12 @@ export const useStyles = createUseStyles({
 
   socials: {
     alignSelf: 'flex-end',
-    margin: '1%'
+    margin: '0.5%'
   },
 
   navLink: {
     color: 'black',
-    fontSize: '1.5em',
+    fontSize: '1em',
     fontFamily: 'Roboto'
   },
 
