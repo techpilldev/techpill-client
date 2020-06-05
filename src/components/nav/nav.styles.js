@@ -38,12 +38,6 @@ export const useStyles = createUseStyles({
     margin: '0.5%'
   },
 
-  navLink: {
-    color: 'black',
-    fontSize: '1em',
-    fontFamily: 'Roboto'
-  },
-
   '@media (min-width: 472px)': {
     root:{
       flexDirection: 'row'
@@ -51,11 +45,7 @@ export const useStyles = createUseStyles({
     link: {
       padding: '1%',
     },
-    navLink: {
-      color: 'white',
-      fontSize: '1em',
-      fontFamily: 'Roboto, sans-serif'
-    },
+
     homeLink: {
       display: 'none',
     },

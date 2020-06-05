@@ -12,7 +12,7 @@ const Footer = () => {
       <div className={classes.innerContainer} >
         <div className={classes.titleContainer} >
             <Title
-              title="Tech Pill"
+              title="THE TECH PILL"
               color='#2DC4EE'
               titleSize={30}
             />

@@ -6,7 +6,7 @@ import { useStyles } from './home.styles.js'
 
 const Home = () => {
   const classes = useStyles()
-  const titles = ["TECH PILL", "TECHNOLOGICAL EDUCATION"]
+  const titles = ["THE TECH PILL", "TECHNOLOGICAL EDUCATION"]
 
   return(
     <div className={classes.root} >

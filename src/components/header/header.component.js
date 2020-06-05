@@ -11,7 +11,7 @@ const Header = () => {
   const classes = useStyles()
   const [drawer, setDrawer] = useState(false)
   const menuButton = <MenuIcon style={{ fontSize: 55 }}/>
-  const titles = ["TECH PILL", "TECHNOLOGICAL EDUCATION"]
+  const titles = ["THE TECH PILL", "TECHNOLOGICAL EDUCATION"]
 
   const handleDrawer = () => {
     setDrawer(!drawer)

@@ -28,7 +28,7 @@ export const useStyles = createUseStyles({
 
   homeLink: { 
     textDecoration: 'none', 
-    width: '45%',
+    width: '65%',
   },
 
   '@media (min-width: 472px)': {
@@ -36,6 +36,11 @@ export const useStyles = createUseStyles({
       display: 'flex',
       flexDirection: 'column',
       flexWrap: 'wrap',
+    },
+
+    homeLink: {
+      textDecoration: 'none',
+      width: '60%',
     },
 
     buttonContainer: {
@@ -49,6 +54,18 @@ export const useStyles = createUseStyles({
        justifyContent:'center',
        alignItems: 'center',
        padding: '1%'
+    },
+  },
+
+  '@media (min-width: 800px)': {
+    homeLink: {
+     width: '35%'
+    },
+  },
+
+  '@media (min-width: 1240px)': {
+    homeLink: {
+      width: '22%'
     },
   },
 })
