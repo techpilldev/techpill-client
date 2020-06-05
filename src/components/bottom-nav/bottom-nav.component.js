@@ -1,4 +1,6 @@
 import React from 'react'
+
+import SocialLinks from '../social-links/social-links.component.js'
 import { Link } from 'react-router-dom'
 import { useStyles } from './bottom-nav.styles.js'
 
@@ -11,7 +13,7 @@ const BottomNav = () => {
         <li className={classes.link} >
           <Link className={classes.navLink} to="/podcasts">Podcasts</Link>
         </li>
-        <li style={{paddingRight: '3%'}} className={classes.link} >
+        <li className={classes.link} >
           <Link className={classes.navLink} to="/blog">Blog</Link>
         </li>
         <li className={classes.link} >
@@ -23,10 +25,13 @@ const BottomNav = () => {
         <li className={classes.link} >
           <Link className={classes.navLink} to="/latest-releases">Latest Releases</Link>
         </li>
-        <li style={{ paddingRight: '1.5%' }} className={classes.link} >
+        <li className={classes.link} >
           <Link className={classes.navLink} to="/legal">Legal</Link>
         </li>
       </ul>
+      <div className={classes.socials} >
+        <SocialLinks />
+      </div>
     </div>
   )
 }

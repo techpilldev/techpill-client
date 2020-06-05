@@ -5,6 +5,7 @@ export const useStyles = createUseStyles({
     display: 'flex',
     width: '100%',
     flexDirection: 'column'
+
     //Debug
     // border: '1px solid red'
   },
@@ -17,31 +18,35 @@ export const useStyles = createUseStyles({
     justifyContent: 'space-between',
   },
 
-  link: {
-    // padding: '5%',
-    margin: '8.6%'
-  },
-
   navLink: {
     color: 'white',
     fontSize: '1.2em',
     fontFamily: 'Roboto'
   },
 
-  '@media (min-width: 472px)': {
+  link: {
+    margin: '8.6%'
+  },
+
+  socials: {
+    alignSelf: 'flex-end',
+    margin: '1%'
+  },
+
+  '@media (min-width: 601px)': {
     root: {
-      // flexDirection: 'row'
+      flexDirection: 'row'
     },
+
+    nav: {
+      width: '100%',
+      flexWrap: 'nowrap',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  
     link: {
-      // padding: '1%',
-    },
-    navLink: {
-      // color: 'white',
-      // fontSize: '1em',
-      // fontFamily: 'Roboto, sans-serif'
-    },
-    homeLink: {
-      // display: 'none',
+      margin: '2%',
     },
   },
 })

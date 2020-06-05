@@ -9,15 +9,17 @@ const Footer = () => {
 
   return(
     <div className={classes.root} > 
-      <div className={classes.titleContainer} >
-          <Title
-            title="Tech Pill"
-            color='#2DC4EE'
-            titleSize={30}
-          />
-      </div>
-      <div className={classes.bottomNavContainer} >
-        <BottomNav/>
+      <div className={classes.innerContainer} >
+        <div className={classes.titleContainer} >
+            <Title
+              title="Tech Pill"
+              color='#2DC4EE'
+              titleSize={30}
+            />
+        </div>
+        <div className={classes.bottomNavContainer} >
+          <BottomNav/>
+        </div>
       </div>
       <div className={classes.copywrite} >
         © Niels Pederson 2020. All rights reserved

@@ -10,28 +10,55 @@ export const useStyles = createUseStyles({
     backgroundColor: '#1F2223',
     padding: '1%',
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
+  },
+
+  titleContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  innerContainer: {
+    display: 'flex',
+    flexDirection: 'column'
   },
 
   bottomNavContainer: {
-
+    marginLeft: '0%',
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
   copywrite: {
     fontFamily: 'Roboto',
-    padding: '10%',
+    padding: '8%',
     color: 'white',
-    fontSize: '0.7em',
+    fontSize: '0.8em',
     textAlign: 'center',
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
-  '@media (min-width: 472px)': {
-    root: {
-
+  '@media (min-width: 600px)': {
+    innerContainer: {
+      display: 'flex',
+      flexDirection: 'column-reverse'
     },
+
+    bottomNavContainer: {
+      marginLeft: '5%',
+      //Debug
+      // border: '1px solid red'
+    },
+
+    titleContainer: {
+      marginLeft: '1%',
+    },
+
+    copywrite:{
+      padding: '2%',
+      marginRight: '1%',
+    }
   },
 })
