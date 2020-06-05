@@ -12,6 +12,19 @@ export const useStyles = createUseStyles({
     fontFamily: 'Roboto'
   },
 
+  navLinkActive: {
+    padding: 7,
+    color: '#2DC4EE',
+    fontSize: '1.5em',
+    fontFamily: 'Roboto',
+    border: '2px solid #2DC4EE',
+    borderRadius: 25,
+    animationName: '$fade-in',
+    animationFillMode: 'forwards',
+    animationDuration: '0.5s',
+    transitionTimingFunction: 'ease-out'
+  },
+
   '@media (min-width: 472px)': {
     root: {
 
@@ -19,9 +32,31 @@ export const useStyles = createUseStyles({
 
     navLink: {
       color: 'white',
-      fontSize: '1em',
+      fontSize: '1.2em',
       fontFamily: 'Roboto, sans-serif'
     },
 
+    navLinkActive: {
+      padding: 5,
+      color: '#2DC4EE',
+      fontSize: '1.2em',
+      fontFamily: 'Roboto',
+      border: '2px solid #2DC4EE',
+      borderRadius: 20,
+      animationName: '$fade-in',
+      animationFillMode: 'forwards',
+      animationDuration: '0.5s',
+      transitionTimingFunction: 'ease-out'
+    },
+  },
+
+  '@keyframes fade-in': {
+    '0%': {
+      opacity: 0
+    },
+
+    '100%': {
+      opacity: 1
+    }
   },
 })

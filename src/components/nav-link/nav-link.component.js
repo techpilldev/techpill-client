@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import { useStyles } from './nav-link.styles.js'
 
-const NavLink = ( props ) => {
+const NavLinkItem = ( props ) => {
   const { linkUrl, pageName } = props
   const classes = useStyles()
 
-
   return (
     <div className={classes.root} >
-      <Link 
+      <NavLink 
+        activeClassName={classes.navLinkActive}
         className={classes.navLink} 
-        to={linkUrl}>
-        {pageName}
-      </Link>
+        to={linkUrl}
+      > {pageName}
+      </NavLink>
     </div>
   )
 }
 
-export default NavLink
+export default NavLinkItem
