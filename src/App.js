@@ -8,12 +8,14 @@ import {
 } from "react-router-dom"
 
 import Header from './components/header/header.component.js'
+import Footer from './components/footer/footer.component.js'
 import Home from './pages/home/home.component.js'
 import About from './pages/about/about.component.js'
 import Blog from './pages/blog/blog.component.js'
 import Contact from './pages/contact/contact.component.js'
 import LatestReleases from './pages/latest-releases/latest-releases.component.js'
 import Podcast from './pages/podcast/podcast.component.js'
+import Legal from './pages/legal/legal.component.js'
 import './index.css'
 
 const App = () => {
@@ -58,12 +60,16 @@ const App = () => {
             <Podcast />
           </Route>
 
+          <Route path="/legal">
+            <Legal />
+          </Route>
+
           <Route path='/'>
             <div>Page not found</div>
           </Route>
 
         </Switch>
-        {/*Footer here*/}
+        <Footer />
       </Router>
     </AppContext.Provider>
   )

@@ -6,7 +6,7 @@ export const useStyles = createUseStyles({
     border: '1px solid red'
   },
 
-  '@media (min-width: 415px)': {
+  '@media (min-width: 472px)': {
     root: {
 
     },

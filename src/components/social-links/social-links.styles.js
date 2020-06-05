@@ -9,7 +9,7 @@ export const useStyles = createUseStyles({
     color: '#2DC4EE'
   },
 
-  '@media (min-width: 415px)': {
+  '@media (min-width: 472px)': {
     root: {
 
     },

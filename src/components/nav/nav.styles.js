@@ -44,7 +44,7 @@ export const useStyles = createUseStyles({
     fontFamily: 'Roboto'
   },
 
-  '@media (min-width: 415px)': {
+  '@media (min-width: 472px)': {
     root:{
       flexDirection: 'row'
     },

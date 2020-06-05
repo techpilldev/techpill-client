@@ -26,7 +26,12 @@ export const useStyles = createUseStyles({
     display: 'none'
   },
 
-  '@media (min-width: 415px)': {
+  homeLink: { 
+    textDecoration: 'none', 
+    width: '45%' 
+  },
+
+  '@media (min-width: 472px)': {
     root: {
       display: 'flex',
       flexDirection: 'column',

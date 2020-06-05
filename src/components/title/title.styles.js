@@ -12,7 +12,8 @@ export const useStyles = createUseStyles({
   title: {
     fontFamily: 'SPOTNIK_BOLD_2',
     fontSize: '2.5em',
-    padding: '1%'
+    padding: '1%',
+    alignSelf: 'center'
   },
 
   subTitle: {
@@ -22,7 +23,7 @@ export const useStyles = createUseStyles({
     padding: '1%'
   },
 
-  '@media (min-width: 415px)': {
+  '@media (min-width: 472px)': {
     root:{
       flexDirection: 'row',
     },

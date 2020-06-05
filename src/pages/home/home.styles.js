@@ -40,7 +40,7 @@ export const useStyles = createUseStyles({
     border: '1px solid red'
   },
 
-  '@media (min-width: 415)': {
+  '@media (min-width: 472)': {
     titleContainer: {
 
     },

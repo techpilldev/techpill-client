@@ -20,7 +20,7 @@ const Header = () => {
   return(
     <div className={classes.root} >
       <div className={classes.navContainer} >
-        <Link style={{textDecoration: 'none', width: '45%'}} to='/home' >
+        <Link className={classes.homeLink} to='/home' >
             <Title
               color='white'
               title={titles[0]}
