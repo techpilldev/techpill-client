@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CloseIcon from '@material-ui/icons/Close'
-
-import SocialLinks from '../social-links/social-links.component.js'
 import Button from '../button/button.component.js'
 import Nav from '../nav/nav.component.js'
 import {useStyles} from './drawer.styles.js'
@@ -10,18 +8,26 @@ import {useStyles} from './drawer.styles.js'
 const Drawer = (props) => {
   const { handleDrawer } = props
   const classes = useStyles()
+  const [open, setOpen] = useState(true)
   const closeButton = <CloseIcon style={{ fontSize: 55 }} />
 
+  const closeDrawer = () => {
+    setOpen(!open)
+  }
+
   return(
-    <div className={classes.root} >
+    <div 
+      className={open ? classes.rootOpen : classes.rootClose }
+      onAnimationEnd={!open ? () => handleDrawer() : () => console.log('')}
+    >
       <div className={classes.buttonContainer} >
         <Button
           image={closeButton}
-          action={handleDrawer}
+          action={closeDrawer}
         />
       </div>
       <div className={classes.navContainer} >
-        <Nav action={handleDrawer} type="drawer" />
+        <Nav action={closeDrawer} type="drawer" />
       </div>
     </div>
   )

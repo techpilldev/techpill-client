@@ -28,7 +28,7 @@ export const useStyles = createUseStyles({
 
   homeLink: { 
     textDecoration: 'none', 
-    width: '65%',
+    width: '80%',
   },
 
   '@media (min-width: 472px)': {
@@ -40,7 +40,7 @@ export const useStyles = createUseStyles({
 
     homeLink: {
       textDecoration: 'none',
-      width: '60%',
+      width: '80%',
     },
 
     buttonContainer: {
@@ -65,7 +65,7 @@ export const useStyles = createUseStyles({
 
   '@media (min-width: 1240px)': {
     homeLink: {
-      width: '22%'
+      width: '25%'
     },
   },
 })

@@ -4,12 +4,12 @@ import NavLinkItem from '../nav-link/nav-link.component.js'
 import { useStyles } from './nav.styles.js'
 
 const Nav = (props) => {
-  const { type } = props
+  const { type, action } = props
   const classes = useStyles()
   const [pages, setPages] = useState([])
 
   const pagesArr = [
-    ['/home', 'Home'],
+    // ['/home', 'Home'],
     ['/podcasts', 'Podcasts'],
     ['/blog', 'Blog'],
     ['/about', 'About'],
@@ -31,6 +31,7 @@ const Nav = (props) => {
       {pages.map((item, index) => (
         <li 
           key={index} 
+          onClick={action}
           className={item[1] === "Home" ? 
             (classes.homeLink):(classes.link)} 
           >
