@@ -7,6 +7,7 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: '10%'
   },
 
   title: {
@@ -26,6 +27,7 @@ export const useStyles = createUseStyles({
   '@media (min-width: 472px)': {
     root:{
       flexDirection: 'row',
+      marginTop: '0%',
     },
 
     title: {
@@ -36,7 +38,6 @@ export const useStyles = createUseStyles({
     subTitle: {
       fontSize: '1.6em',
     },
-
   },
 
   '@media (min-width: 140px)': {
