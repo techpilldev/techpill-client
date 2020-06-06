@@ -2,55 +2,49 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
   root: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+
     //Debug
     // border: '1px solid red'
   },
 
   navLink: {
+    padding: 5,
+    border: '2px solid transparent',
     color: 'black',
     fontSize: '1.5em',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
   },
 
   navLinkActive: {
-    padding: 7,
+    padding: 5,
     color: '#2DC4EE',
     fontSize: '1.5em',
     fontFamily: 'Roboto',
     border: '2px solid #2DC4EE',
     borderRadius: 25,
-    animationName: '$fade-in',
+    animationName: '$reveal',
     animationFillMode: 'forwards',
     animationDuration: '0.5s',
-    transitionTimingFunction: 'ease-out'
+    transitionTimingFunction: 'ease-out',
   },
 
   '@media (min-width: 472px)': {
-    root: {
-
-    },
-
     navLink: {
       color: 'white',
       fontSize: '1.2em',
-      fontFamily: 'Roboto, sans-serif'
     },
 
     navLinkActive: {
-      padding: 5,
       color: '#2DC4EE',
       fontSize: '1.2em',
-      fontFamily: 'Roboto',
-      border: '2px solid #2DC4EE',
-      borderRadius: 20,
-      animationName: '$fade-in',
-      animationFillMode: 'forwards',
-      animationDuration: '0.5s',
-      transitionTimingFunction: 'ease-out'
     },
   },
 
-  '@keyframes fade-in': {
+  '@keyframes reveal': {
     '0%': {
       opacity: 0
     },

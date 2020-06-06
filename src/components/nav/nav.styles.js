@@ -4,9 +4,7 @@ export const useStyles = createUseStyles({
   root: {
     display: 'flex', 
     width: '100%',
-    flexDirection: 'column'
-    //Debug
-    // border: '1px solid red'
+    flexDirection: 'column',
   },
 
   nav: {
@@ -43,7 +41,7 @@ export const useStyles = createUseStyles({
       flexDirection: 'row'
     },
     link: {
-      padding: '1%',
+      padding: '0%',
     },
 
     homeLink: {
