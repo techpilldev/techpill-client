@@ -44,11 +44,11 @@ export const useStyles = createUseStyles({
   '@media (min-width: 600px)': {
     title: {
       // color: 'white',
-      // fontSize: '2em',
+      fontSize: '3em',
     },
 
     subTitle: {
-      // fontSize: '1.6em',
+      fontSize: '1.3em',
     },
   },
 

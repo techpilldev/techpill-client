@@ -91,10 +91,13 @@ export const useStyles = createUseStyles({
     },
 
     desktopDescription: { 
-      display: 'inline',
-      width: '70%', 
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '40%', 
       fontSize: '0.7em', 
-      lineHeight: '1.2em' 
+      lineHeight: '2em' ,
+      marginTop: '1%'
     },
 
     desktopImageContainer: {
