@@ -10,10 +10,10 @@ export const useStyles = createUseStyles({
   },
 
   headerTitle:{
-    width: '100%',
     fontFamily: 'SPOTNIK_BOLD_2',
     fontSize: '2.5em',
-    color: 'white'
+    color: 'white',
+     alignSelf: 'center',
   },
 
   buttonContainer: {
