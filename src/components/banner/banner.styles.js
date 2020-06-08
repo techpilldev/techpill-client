@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
   root: {
-    boxShadow: '0 10px 10px 0px lightgrey',
+    boxShadow: '0 10px 10px 0px grey',
     //Debug
     // border: '1px solid red'
   },

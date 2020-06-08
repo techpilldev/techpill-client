@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Title from '../../components/title/title.component.js'
-import Banner from '../../components//banner/banner.component.js'
+import Banner from '../../components/banner/banner.component.js'
 import { robotDestop, robotMobile  } from '../../assets/svgs.js'
 import { useStyles } from './home.styles.js'
 

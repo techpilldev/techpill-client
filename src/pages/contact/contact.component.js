@@ -28,7 +28,7 @@ const Contact = () => {
         </div>
       </div>
       <div>
-        ABOUT PAGE
+        Contact Page
       </div>
     </div>
   )
