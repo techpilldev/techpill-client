@@ -10,10 +10,9 @@ export const useStyles = createUseStyles({
   titleContainer: {
     margin: '1%',
     padding: '2%',
-    // color: '#1F2223',
 
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
   mobileImageContainer: {
@@ -22,7 +21,7 @@ export const useStyles = createUseStyles({
     justifyContent: 'center',
 
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
   descriptionContainer: {
@@ -34,7 +33,7 @@ export const useStyles = createUseStyles({
     lineHeight: '1.7em',
 
     //Debug
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
   desktopContainer:{
@@ -93,7 +92,7 @@ export const useStyles = createUseStyles({
 
     desktopDescription: { 
       display: 'inline',
-      width: '80%', 
+      width: '70%', 
       fontSize: '0.7em', 
       lineHeight: '1.2em' 
     },

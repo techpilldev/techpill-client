@@ -13,7 +13,7 @@ const Title = ( props ) => {
       </h1>
       {subTitle !== null && (
         <h6 
-          style={{ fontSize: subTitleSize }} 
+          style={{color: color, fontSize: subTitleSize }} 
           className={classes.subTitle}>
           {subTitle}
         </h6>
