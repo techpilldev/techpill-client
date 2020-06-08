@@ -21,13 +21,11 @@ const Header = () => {
     <div className={classes.root} >
       <div className={classes.navContainer} >
         <Link className={classes.homeLink} to='/home' >
-            <Title
-              color='white'
-              title={titles[0]}
-              style={{ cursor: 'pointer' }}
-            />
+         <div 
+          className={classes.headerTitle} >THE TECH PILL
+        </div>
         </Link>
-        <Nav type="desktop" />       
+        <Nav type="desktop" />
       </div>
       {drawer && (
         <Drawer 

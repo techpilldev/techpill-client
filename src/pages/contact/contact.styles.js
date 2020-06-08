@@ -10,7 +10,7 @@ export const useStyles = createUseStyles({
 
   bannerContainer: {
     background: 'linear-gradient(to right, #2DAAE0 0%, #179FDC 50% ,#117ADB 100%)',
-    height: 'auto'
+    height: '30%'
   },
 
   innerBanner: {
@@ -19,6 +19,7 @@ export const useStyles = createUseStyles({
 
   '@media (min-width: 600px)': {
     bannerContainer: {
+      height: 'auto'
     },
 
     innerBanner: {

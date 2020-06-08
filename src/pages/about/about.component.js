@@ -2,8 +2,6 @@ import React from 'react'
 import Title from '../../components/title/title.component.js'
 import Banner from '../../components//banner/banner.component.js'
 
-import niels from '../../assets/niels.chilling.png'
-
 import { useStyles } from './about.styles.js'
 
 const About = () => {

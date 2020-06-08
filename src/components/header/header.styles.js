@@ -7,9 +7,13 @@ export const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     boxSizing: 'border-box',
+  },
 
-    //Debug
-    // border: '1px solid red'
+  headerTitle:{
+    width: '100%',
+    fontFamily: 'SPOTNIK_BOLD_2',
+    fontSize: '2.5em',
+    color: 'white'
   },
 
   buttonContainer: {
@@ -17,9 +21,6 @@ export const useStyles = createUseStyles({
     display: 'flex', 
     justifyContent: 'flex-end',
     color: '#1F2223',
-
-    //Debug
-    // border: '1px solid red'
   },
 
   navContainer: {
@@ -27,8 +28,9 @@ export const useStyles = createUseStyles({
   },
 
   homeLink: { 
+    display: 'flex',
+    justifyContent:'center',
     textDecoration: 'none', 
-    width: '80%',
   },
 
   '@media (min-width: 472px)': {
@@ -40,7 +42,7 @@ export const useStyles = createUseStyles({
 
     homeLink: {
       textDecoration: 'none',
-      width: '80%',
+      width: 'auto',
     },
 
     buttonContainer: {
@@ -59,7 +61,8 @@ export const useStyles = createUseStyles({
 
   '@media (min-width: 800px)': {
     homeLink: {
-     width: '35%'
+      display: 'flex',
+      justifyContent: 'center',
     },
   },
 

@@ -69,22 +69,20 @@ export const useStyles = createUseStyles({
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      //Debug
-      // border: '1px solid red'
     },
 
     desktopDetailsContainer: {
-      width: '60%',
+      width: '51%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       fontFamily: 'Roboto, sans-serif',
       fontSize: '1.7em',
-      textAlign: 'center',
+      // textAlign: 'censter',
       lineHeight: '2em',
       color: '#858585',
-      padding: '5%',
+      padding: '7% 7% 7% 12%',
 
       //Debug
       // border: '1px solid red'
@@ -92,12 +90,11 @@ export const useStyles = createUseStyles({
 
     desktopDescription: { 
       display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '40%', 
+      // justifyContent: 'flex-start',
+      // width: 'auto', 
       fontSize: '0.7em', 
       lineHeight: '2em' ,
-      marginTop: '1%'
+      marginTop: '1%',
     },
 
     desktopImageContainer: {

@@ -22,7 +22,9 @@ const Banner = (props) => {
       <div className={classes.desktopContainer} >
         <div className={classes.desktopDetailsContainer} >
           {title}
-          <div style={desColor !== null && {color: desColor}} className={classes.desktopDescription} >
+          <div 
+            style={desColor !== null && {color: desColor}} 
+            className={classes.desktopDescription} >
             {description}
           </div>
         </div>

@@ -7,14 +7,12 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '10%'
+    marginTop: '10%',
   },
 
   title: {
     fontFamily: 'SPOTNIK_BOLD_2',
     fontSize: '2.5em',
-    padding: '1%',
-    alignSelf: 'center'
   },
 
   subTitle: {
@@ -22,7 +20,6 @@ export const useStyles = createUseStyles({
     fontSize: '1.2em',
     textAlign: 'center',
     color: '#858585',
-    padding: '1%'
   },
 
   '@media (min-width: 472px)': {
@@ -34,6 +31,8 @@ export const useStyles = createUseStyles({
     title: {
       color: 'white',
       fontSize: '2em',
+      lineHeight: '1em',
+      marginTop: '1%'
     },
 
     subTitle: {
@@ -43,8 +42,25 @@ export const useStyles = createUseStyles({
 
   '@media (min-width: 600px)': {
     title: {
-      // color: 'white',
-      fontSize: '3em',
+      fontSize: '2.5em',
+      width: 250
+    },
+
+    subTitle: {
+      fontSize: '1.3em',
+    },
+  },
+
+
+  '@media (min-width: 800px)': {
+    root: {
+      alignItems: 'flex-start',
+    },
+
+    title: {
+      display: 'flex',
+      alignItems: 'center',
+      width: '100%',
     },
 
     subTitle: {
