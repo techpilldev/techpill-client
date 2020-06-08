@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss'
+import zIndex from '@material-ui/core/styles/zIndex'
 
 export const useStyles = createUseStyles({
   root: {
@@ -14,6 +15,7 @@ export const useStyles = createUseStyles({
   },
 
   titleContainer: {
+    width: '80%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -49,6 +51,7 @@ export const useStyles = createUseStyles({
     },
 
     titleContainer: {
+      width: '20%',
       marginTop: '1%',
     },
 

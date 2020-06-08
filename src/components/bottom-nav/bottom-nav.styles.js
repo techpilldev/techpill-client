@@ -25,7 +25,10 @@ export const useStyles = createUseStyles({
   },
 
   link: {
-    margin: '11%'
+    marginLeft: '11%',
+    marginRight: '11%',
+
+    margin: '6% 11% 6% 11%'
   },
 
   socials: {

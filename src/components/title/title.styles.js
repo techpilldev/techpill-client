@@ -21,12 +21,13 @@ export const useStyles = createUseStyles({
     fontFamily: 'SPOTNIK',
     fontSize: '1.2em',
     textAlign: 'center',
+    color: '#858585',
     padding: '1%'
   },
 
   '@media (min-width: 472px)': {
     root:{
-      flexDirection: 'row',
+      flexDirection: 'column',
       marginTop: '0%',
     },
 
@@ -37,6 +38,17 @@ export const useStyles = createUseStyles({
 
     subTitle: {
       fontSize: '1.6em',
+    },
+  },
+
+  '@media (min-width: 600px)': {
+    title: {
+      // color: 'white',
+      // fontSize: '2em',
+    },
+
+    subTitle: {
+      // fontSize: '1.6em',
     },
   },
 
