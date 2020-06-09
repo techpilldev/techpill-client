@@ -21,9 +21,7 @@ const Header = () => {
     <div className={classes.root} >
       <div className={classes.navContainer} >
         <Link className={classes.homeLink} to='/home' >
-         <div 
-          className={classes.headerTitle} >THE TECH PILL
-        </div>
+          THE TECH PILL
         </Link>
         <Nav type="desktop" />
       </div>

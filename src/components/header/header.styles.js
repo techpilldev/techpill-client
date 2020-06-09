@@ -13,7 +13,7 @@ export const useStyles = createUseStyles({
     fontFamily: 'SPOTNIK_BOLD_2',
     fontSize: '2.5em',
     color: 'white',
-     alignSelf: 'center',
+    alignSelf: 'center',
   },
 
   buttonContainer: {
@@ -31,6 +31,10 @@ export const useStyles = createUseStyles({
     display: 'flex',
     justifyContent:'center',
     textDecoration: 'none', 
+    fontFamily: 'SPOTNIK_BOLD_2',
+    fontSize: '2em',
+    color: 'white',
+    alignSelf: 'center',
   },
 
   '@media (min-width: 472px)': {
