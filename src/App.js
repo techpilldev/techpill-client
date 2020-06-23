@@ -1,4 +1,4 @@
-import React, { useContext, useReducer} from 'react'
+import React, { useContext, useReducer } from 'react'
 import AppContext, { defaultContext } from './constants/context.js'
 import {
   BrowserRouter as Router,
@@ -25,10 +25,9 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
   appContext.dispatch = dispatch
 
-  return(
+  return (
     <AppContext.Provider >
       <Router>
-        {/*Header here*/}
         <Header />
         <Switch>
 
@@ -41,7 +40,7 @@ const App = () => {
           </Route>
 
           <Route path="/about">
-            <About/>
+            <About />
           </Route>
 
           <Route path="/blog">
