@@ -3,12 +3,21 @@ import React from 'react'
 import { useStyles } from './banner.styles.js'
 
 const Banner = (props) => {
-  const { desktopImage, mobileImage, title, description, bgColor , desColor} = props
+  const {
+    desktopImage,
+    mobileImage,
+    title,
+    description,
+    bgColor,
+    desColor,
+    latestReleaseImage
+  } = props
+
   const classes = useStyles()
 
   return (
-    <div 
-      style={bgColor !== null && { background: bgColor}} 
+    <div
+      style={bgColor !== null && { background: bgColor }}
       className={classes.root} >
       <div className={title !== null && classes.titleContainer} >
         {title}
@@ -22,8 +31,8 @@ const Banner = (props) => {
       <div className={classes.desktopContainer} >
         <div className={classes.desktopDetailsContainer} >
           {title}
-          <div 
-            style={desColor !== null && {color: desColor}} 
+          <div
+            style={desColor !== null && { color: desColor }}
             className={classes.desktopDescription} >
             {description}
           </div>
