@@ -7,6 +7,20 @@ export const useStyles = createUseStyles({
     // border: '1px solid red'
   },
 
+  outerContainer: {
+    width: '100%',
+    // alignSelf: 'center'
+    // display: 'none'
+    // border: '1px solid red',
+
+  },
+
+  featuredHeading: {
+    padding: '2% 0% 2% 0%',
+    color: '#495057',
+    display: 'none',
+  },
+
   blogCardContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -19,7 +33,13 @@ export const useStyles = createUseStyles({
   blogImage: {
     width: '100vw',
     height: '30vh',
-    objectFit: 'cover'
+    // objectFit: 'cover',
+    // overflow: 'hidden',
+    zIndex: -1,
+    // borderRadius: 'none',
+    borderRadius: '10px 10px 0px 0px',
+    // position: 'relative',
+    bottom: 10
   },
 
   blogCard: {
@@ -111,6 +131,69 @@ export const useStyles = createUseStyles({
   '@media (min-width: 472)': {
     titleContainer: {
 
+    },
+
+    imageContainer: {
+
+    },
+
+    descriptionContainer: {
+
+    },
+  },
+
+  '@media (min-width: 1240px)': {
+    root: {
+      border: '1px solid red',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+
+    },
+
+    outerContainer: {
+      width: '80%',
+      webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
+      mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+      boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+      // border: '1px solid red',
+
+    },
+
+    featuredHeading: {
+      display: 'inline',
+      fontFamily: 'Roboto',
+      fontSize: '2em',
+
+    },
+
+    blogCardContainer: {
+      width: '100%',
+      // borderRadius: 10,
+
+      // border: '1px solid red'
+    },
+
+    blogCard: {
+      width: '100%',
+
+      height: 'auto',
+      borderRadius: 0,
+      background: 'white',
+      webkitBoxShadow: `none`,
+      mozBoxShadow: `none`,
+      boxShadow: `none`,
+      // color: '#495057',
+      // fontWeight: 'bolder',
+      padding: '0%',
+      // position: 'relative',
+      bottom: 50,
+    },
+
+    blogImage: {
+      width: '100%',
+      height: '40vh',
+      objectFit: 'cover'
     },
 
     imageContainer: {

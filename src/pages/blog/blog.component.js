@@ -34,12 +34,8 @@ const Blog = () => {
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
-    // console.log("rec in blog", recRead
 
-    // const date = new Date(data[0].created_at)
-    // const fmtDate = date.toString().split("G")
-
-    // console.log('fmt DATE >>>>', fmtDate[0])
+    console.log('DATA >>> ',)
   }
 
   useEffect(() => {
@@ -54,40 +50,50 @@ const Blog = () => {
         mobileImage={cables}
         desktopImage={cables2}
       />
-      <div>
+      <div className={classes.featuredHeading} >Featured Article</div>
+      <div className={classes.outerContainer} >
         {reads && (
           data.map((posts, index) =>
-            posts.blog_post.map((item, index) =>
-              <div className={classes.blogCardContainer} key={index} >
-                <img
-                  className={classes.blogImage}
-                  src={`http://api.thetechpill.com${item.cover_image.url}`} />
-                <div className={classes.blogCard} >
-                  <p>{formatDate(posts.created_at)}</p>
-                  <h3 className={classes.blogHeading} >{item.title}</h3>
-                  <hr className={classes.blogHr} />
-                  <div className={classes.blogBody}  >{item.body}</div>
-                  <br></br>
-                  <div className={classes.blogAuthor}  > - {item.author}</div>
-                  <hr className={classes.blogHr} />
-                  <div>
-                    <h3 className={classes.referenceHeading} >References</h3>
-                    <ReactMarkdown
-                      source={item.notes_and_links}
-                    />
-                  </div>
-                  <h3 className={classes.recommendedHeading} >Recommended Reads</h3>
-                  {reads.map((item, index) =>
-                    <div key={index} className={classes.recommendedContainer} >
-                      <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
-                      <div className={classes.recommendedImageContainer}  >
-                        <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
-                        <p style={{ color: 'blue' }} onClick={() => { window.open(item.Recommended_Read.link, '_blank'); }}>On Amazon</p>
-                      </div>
+            posts.blog_post.map((post, index) =>
+              post.featured === true ? (
+                <div className={classes.blogCardContainer} key={index} >
+                  <img
+                    className={classes.blogImage}
+                    src={`http://api.thetechpill.com${post.cover_image.url}`} />
+                  <div className={classes.blogCard} >
+                    <p>{formatDate(posts.created_at)}</p>
+                    <h3 className={classes.blogHeading} >{post.title}</h3>
+                    <hr className={classes.blogHr} />
+                    <div className={classes.blogBody}  >{post.body}</div>
+                    <br></br>
+                    <div className={classes.blogAuthor}  > - {post.author}</div>
+                    <hr className={classes.blogHr} />
+                    <div>
+                      <h3 className={classes.referenceHeading} >References</h3>
+                      <ReactMarkdown
+                        source={post.notes_and_links}
+                      />
                     </div>
-                  )}
+                    <h3 className={classes.recommendedHeading} >Recommended Reads</h3>
+                    {reads.map((item, index) =>
+                      <div key={index} className={classes.recommendedContainer} >
+                        <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
+                        <div className={classes.recommendedImageContainer}  >
+                          <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
+                          <p
+                            style={{ color: 'blue' }}
+                            onClick={() => { window.open(item.Recommended_Read.link, '_blank'); }}
+                          >On Amazon
+                        </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                 </div>
-              </div>
+              ) : (
+                  <div>Insert other posts here</div>
+                )
             ))
         )}
       </div>

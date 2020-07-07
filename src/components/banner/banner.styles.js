@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
   root: {
-    boxShadow: '0 10px 10px 0px grey',
+    boxShadow: '0 10px 10px 0px black',
     //Debug
     // border: '1px solid red'
   },
@@ -53,6 +53,13 @@ export const useStyles = createUseStyles({
   },
 
   '@media (min-width: 800px)': {
+
+    root: {
+      boxShadow: '0 10px 10px 0px grey',
+      //Debug
+      // border: '1px solid red'
+    },
+
     titleContainer: {
       display: 'none'
     },
