@@ -40,16 +40,24 @@ export const useStyles = createUseStyles({
     fontSize: '2em',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginTop: '2%'
+    marginTop: '2%',
+    padding: '7% 0% 7% 0%',
   },
 
   blogHr: {
-    color: '#dcdcdd'
+    color: '#dcdcdd',
+    width: '80%',
+    marginBottom: '7%'
   },
 
   blogBody: {
     fontSize: '1.1em',
     lineHeight: 1.5
+  },
+
+  blogAuthor: {
+    fontSize: '1.2em',
+    marginBottom: '5%'
   },
 
   referenceHeading: {
@@ -61,7 +69,8 @@ export const useStyles = createUseStyles({
   recommendedHeading: {
     fontSize: '1.5em',
     textAlign: 'center',
-    fontWeight: 'bolder'
+    fontWeight: 'bolder',
+    marginTop: '5%',
   },
 
   recommendedContainer: {

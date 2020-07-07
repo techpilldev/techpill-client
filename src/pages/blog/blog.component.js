@@ -68,7 +68,7 @@ const Blog = () => {
                   <hr className={classes.blogHr} />
                   <div className={classes.blogBody}  >{item.body}</div>
                   <br></br>
-                  <div style={{ fontSize: '1.2em' }}  > - {item.author}</div>
+                  <div className={classes.blogAuthor}  > - {item.author}</div>
                   <hr className={classes.blogHr} />
                   <div>
                     <h3 className={classes.referenceHeading} >References</h3>
