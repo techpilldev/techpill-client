@@ -9,6 +9,8 @@ export const useStyles = createUseStyles({
 
   outerContainer: {
     width: '100%',
+    height: 'auto',
+
     // alignSelf: 'center'
     // display: 'none'
     // border: '1px solid red',
@@ -36,8 +38,8 @@ export const useStyles = createUseStyles({
     // objectFit: 'cover',
     // overflow: 'hidden',
     zIndex: -1,
-    // borderRadius: 'none',
-    borderRadius: '10px 10px 0px 0px',
+    borderRadius: 'none',
+    // borderRadius: '10px 10px 0px 0px',
     // position: 'relative',
     bottom: 10
   },
@@ -144,14 +146,15 @@ export const useStyles = createUseStyles({
 
   '@media (min-width: 1240px)': {
     root: {
-      border: '1px solid red',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
 
+      // border: '1px solid red',
     },
 
     outerContainer: {
+      borderRadius: 15,
       width: '80%',
       webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
       mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
@@ -176,6 +179,7 @@ export const useStyles = createUseStyles({
 
     blogCard: {
       width: '100%',
+      borderRadius: 15,
 
       height: 'auto',
       borderRadius: 0,
@@ -193,7 +197,8 @@ export const useStyles = createUseStyles({
     blogImage: {
       width: '100%',
       height: '40vh',
-      objectFit: 'cover'
+      borderRadius: 15,
+
     },
 
     imageContainer: {
