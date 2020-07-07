@@ -21,6 +21,12 @@ const Blog = () => {
 
   const description = `To find a specific article please search here`
 
+  const formatDate = () => {
+    const date = new Date(data[0].created_at)
+    const fmtDate = date.toString().split("G")
+    return fmtDate[0]
+  }
+
   const getData = async () => {
     let result = await fetch(`http://api.thetechpill.com/blog-posts`)
     let data = await result.json()
@@ -28,7 +34,12 @@ const Blog = () => {
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
-    console.log("rec in blog", recReads)
+    // console.log("rec in blog", recRead
+
+    // const date = new Date(data[0].created_at)
+    // const fmtDate = date.toString().split("G")
+
+    // console.log('fmt DATE >>>>', fmtDate[0])
   }
 
   useEffect(() => {
@@ -47,29 +58,30 @@ const Blog = () => {
         {reads && (
           data.map((posts, index) =>
             posts.blog_post.map((item, index) =>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: 'Roboto' }} key={index} >
+              <div className={classes.blogCardContainer} key={index} >
                 <img
-                  style={{ width: '100vw', height: '25vh', objectFit: 'cover' }}
+                  className={classes.blogImage}
                   src={`http://api.thetechpill.com${item.cover_image.url}`} />
-                <div style={{ width: '90%', height: 'auto', border: '1px solid red', borderRadius: 15, background: 'white' }} >
-                  <p>{posts.created_at}</p>
-                  <h3 style={{ fontSize: '2em', textAlign: 'center', fontWeight: 'bold' }} >{item.title}</h3>
-                  <hr style={{ color: 'lightgrey' }} />
-                  <div >{item.body}</div>
-                  <div >{item.author}</div>
-                  <hr style={{ color: 'lightgrey' }} />
+                <div className={classes.blogCard} >
+                  <p>{formatDate(posts.created_at)}</p>
+                  <h3 className={classes.blogHeading} >{item.title}</h3>
+                  <hr className={classes.blogHr} />
+                  <div className={classes.blogBody}  >{item.body}</div>
+                  <br></br>
+                  <div style={{ fontSize: '1.2em' }}  > - {item.author}</div>
+                  <hr className={classes.blogHr} />
                   <div>
-                    <h3 style={{ fontSize: '1.5em', textAlign: 'center', fontWeight: 'bolder' }} >References</h3>
+                    <h3 className={classes.referenceHeading} >References</h3>
                     <ReactMarkdown
                       source={item.notes_and_links}
                     />
                   </div>
-                  <h3 style={{ fontSize: '1.5em', textAlign: 'center', fontWeight: 'bolder' }} >Recommended Reads</h3>
+                  <h3 className={classes.recommendedHeading} >Recommended Reads</h3>
                   {reads.map((item, index) =>
-                    <div key={index} style={{ width: '90%', height: 'auto', border: '1px solid red', display: 'flex', flexDirection: 'column', padding: '3%' }} >
-                      <p style={{ fontWeight: 'bolder', paddingBottom: '2%' }} >{item.Recommended_Read.title}</p>
-                      <img style={{ width: '25%', height: 'auto', cursor: 'pointer', paddingTop: '2%', paddingBottom: '2%' }} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
-                      <div >
+                    <div key={index} className={classes.recommendedContainer} >
+                      <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
+                      <div style={{ display: 'flex', flexDirection: 'column', alignSelf: 'center', marginLeft: '3%' }}  >
+                        <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
                         <ReactMarkdown
                           style={{ padding: '1%' }}
                           source={item.Recommended_Read.link}
