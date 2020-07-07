@@ -18,14 +18,13 @@ export const useStyles = createUseStyles({
 
   blogImage: {
     width: '100vw',
-    height: '25vh',
+    height: '30vh',
     objectFit: 'cover'
   },
 
   blogCard: {
     width: '90%',
     height: 'auto',
-    border: '1px solid red',
     borderRadius: 10,
     background: 'white',
     webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
@@ -33,7 +32,11 @@ export const useStyles = createUseStyles({
     boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
     color: '#495057',
     fontWeight: 'bolder',
-    padding: '2%'
+    padding: '2%',
+    position: 'relative',
+    bottom: 50,
+
+    // border: '1px solid red',
   },
 
   blogHeading: {
@@ -76,11 +79,12 @@ export const useStyles = createUseStyles({
   recommendedContainer: {
     width: '90%',
     height: 'auto',
-    border: '1px solid red',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    padding: '3%'
+    padding: '3%',
+
+    // border: '1px solid red',
   },
 
   recommendedTitle: {
@@ -90,10 +94,18 @@ export const useStyles = createUseStyles({
 
   recommendedImage: {
     width: 'auto',
-    height: '20%',
+    height: 130,
     cursor: 'pointer',
     paddingTop: '2%',
     paddingBottom: '2%'
+  },
+
+  recommendedImageContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignSelf: 'center',
+    marginLeft: '3%',
+    cursor: 'pointer'
   },
 
   '@media (min-width: 472)': {

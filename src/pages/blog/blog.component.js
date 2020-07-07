@@ -80,12 +80,9 @@ const Blog = () => {
                   {reads.map((item, index) =>
                     <div key={index} className={classes.recommendedContainer} >
                       <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
-                      <div style={{ display: 'flex', flexDirection: 'column', alignSelf: 'center', marginLeft: '3%' }}  >
+                      <div className={classes.recommendedImageContainer}  >
                         <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
-                        <ReactMarkdown
-                          style={{ padding: '1%' }}
-                          source={item.Recommended_Read.link}
-                        />
+                        <p style={{ color: 'blue' }} onClick={() => { window.open(item.Recommended_Read.link, '_blank'); }}>On Amazon</p>
                       </div>
                     </div>
                   )}

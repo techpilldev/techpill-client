@@ -16,9 +16,9 @@ export const useStyles = createUseStyles({
   },
 
   mobileImageContainer: {
-    margin: '1%',
-    display: 'flex',
-    justifyContent: 'center',
+    // margin: '1%',
+    display: 'none',
+    // justifyContent: 'center',
 
     //Debug
     // border: '1px solid red'
@@ -36,7 +36,7 @@ export const useStyles = createUseStyles({
     // border: '1px solid red'
   },
 
-  desktopContainer:{
+  desktopContainer: {
     display: 'none'
   },
 
@@ -48,24 +48,24 @@ export const useStyles = createUseStyles({
     display: 'none',
   },
 
-  desktopDescription:{
+  desktopDescription: {
     display: 'none'
   },
 
   '@media (min-width: 800px)': {
-    titleContainer:{
+    titleContainer: {
       display: 'none'
     },
 
-    mobileImageContainer:{
+    mobileImageContainer: {
       display: 'none'
     },
 
-    descriptionContainer:{
+    descriptionContainer: {
       display: 'none'
     },
 
-    desktopContainer:{
+    desktopContainer: {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
@@ -88,12 +88,12 @@ export const useStyles = createUseStyles({
       // border: '1px solid red'
     },
 
-    desktopDescription: { 
+    desktopDescription: {
       display: 'flex',
       // justifyContent: 'flex-start',
       // width: 'auto', 
-      fontSize: '0.7em', 
-      lineHeight: '2em' ,
+      fontSize: '0.7em',
+      lineHeight: '2em',
       marginTop: '1%',
     },
 
