@@ -11,7 +11,7 @@ export const useStyles = createUseStyles({
   link: {
     color: 'blue',
     cursor: 'pointer',
-    margin: '1% 5% 1% 5%',
+    margin: '1% 5% 1% 0%',
     // border: '1px solid red',
     // width: 0
   },
@@ -21,7 +21,18 @@ export const useStyles = createUseStyles({
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'center',
+    margin: '2% 0% 4% 0%',
+
     // border: '1px solid red',
+  },
+
+  tagsHeading: {
+    fontSize: '1.5em',
+    fontWeight: 'bolder',
+    alignSelf: 'center',
+    margin: '2% 0% 4% 0%',
+
+    // border: '1px solid red'
   },
 
   mainContainer: {
@@ -72,6 +83,8 @@ export const useStyles = createUseStyles({
   blogCard: {
     width: '90%',
     height: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
     borderRadius: 10,
     background: 'white',
     webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
@@ -120,10 +133,17 @@ export const useStyles = createUseStyles({
     textAlign: 'center',
     fontWeight: 'bolder',
     marginBottom: '4%',
+    margin: '2% 0% 2% 0%',
+
   },
 
   mardownContainer: {
     padding: '0%'
+  },
+
+  recOuterContainer: {
+    display: 'flex',
+    flexDirection: 'column',
   },
 
   recommendedHeading: {
@@ -178,12 +198,14 @@ export const useStyles = createUseStyles({
     },
   },
 
+  //------------------------------------------- DESKTOP -------------------------------------------------
+
   '@media (min-width: 1240px)': {
     root: {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      border: '1px solid red',
+      // border: '1px solid red',
     },
 
     outerContainer: {
@@ -193,7 +215,7 @@ export const useStyles = createUseStyles({
       webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
       mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
       boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
-      border: '1px solid red',
+      // border: '1px solid red',
 
     },
 
@@ -201,15 +223,24 @@ export const useStyles = createUseStyles({
       display: 'inline',
       fontFamily: 'Roboto',
       fontSize: '2em',
-      border: '1px solid red',
+      // border: '1px solid red',
     },
 
     blogHr: {
       color: '#e5e5e5',
       width: '85%',
       marginBottom: '3%',
-      border: '1px solid red',
+      // border: '1px solid red',
 
+    },
+
+    tagsHeading: {
+      alignSelf: 'flex-start',
+      fontSize: '1.7em',
+      fontWeight: 'bolder',
+      margin: '0% 0% 0% 7%',
+
+      // border: '1px solid red'
     },
 
     blogHeading: {
@@ -218,19 +249,19 @@ export const useStyles = createUseStyles({
       fontWeight: 'bold',
       marginTop: '2%',
       padding: '3% 0% 3% 0%',
-      border: '1px solid red',
+      // border: '1px solid red',
 
     },
 
     blogCardContainer: {
       width: '100%',
-      border: '1px solid red'
+      // border: '1px solid red'
     },
 
     blogCardContainer: {
       alignSelf: 'center',
       marginBottom: '0%',
-      border: '1px solid red',
+      // border: '1px solid red',
     },
 
     blogCard: {
@@ -244,7 +275,7 @@ export const useStyles = createUseStyles({
       boxShadow: `none`,
       padding: '0%',
       bottom: 50,
-      border: '1px solid red',
+      // border: '1px solid red',
 
     },
 
@@ -253,25 +284,70 @@ export const useStyles = createUseStyles({
       height: '40vh',
       borderRadius: 15,
 
-      border: '1px solid red',
+      // border: '1px solid red',
     },
 
     mardownContainer: {
-      padding: '0% 6% 0% 6%',
-      border: '1px solid red',
+      padding: '2% 7% 0% 7%',
 
+    },
+
+    referenceHeading: {
+      fontSize: '1.7em',
+      alignSelf: 'flex-start',
+      fontWeight: 'bolder',
+      margin: '3% 0% 0% 7%',
+
+      // border: '1px solid red',
     },
 
     blogBody: {
       padding: '0% 6% 0% 6%',
-      border: '1px solid red',
+      // border: '1px solid red',
 
     },
 
     blogAuthor: {
-      padding: '0% 6% 0% 6%',
-      border: '1px solid red',
+      padding: '3% 0% 0% 6%',
+      // border: '1px solid red',
 
+    },
+
+    linksContainer: {
+      justifyContent: 'flex-start',
+      margin: '2% 0% 0% 7%',
+
+      // border: '1px solid red',
+    },
+
+    recommendedContainer: {
+      flexDirection: 'row',
+      padding: '0%',
+
+
+      // border: '1px solid red',
+    },
+
+    recOuterContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      marginLeft: '7%',
+      // border: '1px solid red',
+    },
+
+    recommendedHeading: {
+      fontSize: '1.7em',
+      alignSelf: 'flex-start',
+      fontWeight: 'bolder',
+      margin: '3% 0% 0% 7%',
+    },
+
+    recommendedImage: {
+      // width: 'auto',
+      // height: 130,
+      // cursor: 'pointer',
+      // paddingTop: '2%',
+      // paddingBottom: '2%'
     },
   },
 })

@@ -67,17 +67,11 @@ const Blog = () => {
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
                     <hr className={classes.blogHr} />
-                    <div className={classes.blogBody}  >{post.body}</div>
+                    <div className={classes.blogBody}  > <ReactMarkdown source={post.body} /></div>
                     <br></br>
                     <div className={classes.blogAuthor}  > - {post.author}</div>
                     <hr className={classes.blogHr} />
-                    <div className={classes.mardownContainer} >
-                      <h3 className={classes.referenceHeading} >References</h3>
-                      <ReactMarkdown
-                        source={post.notes_and_links}
-                      />
-                    </div>
-                    <h3 className={classes.referenceHeading} >Tags</h3>
+                    <h3 className={classes.tagsHeading} >Tags</h3>
                     <div className={classes.linksContainer} >
                       {post.tags.map((item, index) => <p
                         key={index}
@@ -86,20 +80,31 @@ const Blog = () => {
                       >{item.name}
                       </p>)}
                     </div>
+                    <h3 className={classes.referenceHeading} >References</h3>
+                    <div className={classes.mardownContainer} >
+                      <ReactMarkdown
+                        escapeHtml={false}
+                        source={post.notes_and_links}
+                      />
+                    </div>
                     <h3 className={classes.recommendedHeading} >Recommended Reads</h3>
-                    {reads.map((item, index) =>
-                      <div key={index} className={classes.recommendedContainer} >
-                        <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
-                        <div className={classes.recommendedImageContainer}  >
-                          <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
-                          <p
-                            className={classes.link}
-                            onClick={() => { window.open(item.Recommended_Read.link, '_blank'); }}
-                          >On Amazon
+                    <div className={classes.recOuterContainer} >
+                      {reads.map((item, index) =>
+                        <div key={index} className={classes.recommendedContainer} >
+                          <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
+                          <div className={classes.recommendedImageContainer}  >
+                            <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
+                            <p
+                              className={classes.link}
+                              onClick={() => {
+                                window.open(item.Recommended_Read.link, '_blank')
+                              }}
+                            >On Amazon
                         </p>
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
               ) : (
