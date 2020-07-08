@@ -3,8 +3,16 @@ import { createUseStyles } from 'react-jss'
 export const useStyles = createUseStyles({
   root: {
     boxSizing: 'border-box',
+
     //debug
     // border: '1px solid red'
+  },
+
+  mainContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
   outerContainer: {
@@ -20,6 +28,7 @@ export const useStyles = createUseStyles({
   featuredHeading: {
     padding: '2% 0% 2% 0%',
     color: '#495057',
+    marginTop: '5%',
     display: 'none',
   },
 
@@ -61,6 +70,11 @@ export const useStyles = createUseStyles({
     // border: '1px solid red',
   },
 
+  blogDate: {
+    fontStyle: 'italic',
+    padding: '2% 0% 0% 2%'
+  },
+
   blogHeading: {
     fontSize: '2em',
     textAlign: 'center',
@@ -77,7 +91,8 @@ export const useStyles = createUseStyles({
 
   blogBody: {
     fontSize: '1.1em',
-    lineHeight: 1.5
+    lineHeight: 1.5,
+    // padding: '1%',
   },
 
   blogAuthor: {
@@ -89,6 +104,10 @@ export const useStyles = createUseStyles({
     fontSize: '1.5em',
     textAlign: 'center',
     fontWeight: 'bolder'
+  },
+
+  mardownContainer: {
+    padding: '0%'
   },
 
   recommendedHeading: {
@@ -155,10 +174,12 @@ export const useStyles = createUseStyles({
 
     outerContainer: {
       borderRadius: 15,
-      width: '80%',
+      width: '70%',
+      height: 'auto',
       webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
       mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
       boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+      // marginLeft: '12%',
       // border: '1px solid red',
 
     },
@@ -172,9 +193,18 @@ export const useStyles = createUseStyles({
 
     blogCardContainer: {
       width: '100%',
+
       // borderRadius: 10,
 
       // border: '1px solid red'
+    },
+
+    blogCardContainer: {
+      alignSelf: 'center',
+      marginBottom: '0%',
+
+      // border: '1px solid red',
+
     },
 
     blogCard: {
@@ -190,7 +220,7 @@ export const useStyles = createUseStyles({
       // color: '#495057',
       // fontWeight: 'bolder',
       padding: '0%',
-      // position: 'relative',
+      // position: 'relative',padding:
       bottom: 50,
     },
 
@@ -201,12 +231,16 @@ export const useStyles = createUseStyles({
 
     },
 
-    imageContainer: {
-
+    mardownContainer: {
+      padding: '1%'
     },
 
-    descriptionContainer: {
+    blogBody: {
+      padding: '1%'
+    },
 
+    blogAuthor: {
+      padding: '1%'
     },
   },
 })
