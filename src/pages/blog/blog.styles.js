@@ -8,6 +8,22 @@ export const useStyles = createUseStyles({
     // border: '1px solid red'
   },
 
+  link: {
+    color: 'blue',
+    cursor: 'pointer',
+    margin: '1% 5% 1% 5%',
+    // border: '1px solid red',
+    // width: 0
+  },
+
+  linksContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    // border: '1px solid red',
+  },
+
   mainContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -15,12 +31,15 @@ export const useStyles = createUseStyles({
     alignItems: 'center'
   },
 
+  headingContainer: {
+    width: '85%',
+    display: 'flex',
+    flexDirection: 'row'
+  },
+
   outerContainer: {
     width: '100%',
     height: 'auto',
-
-    // alignSelf: 'center'
-    // display: 'none'
     // border: '1px solid red',
 
   },
@@ -44,12 +63,9 @@ export const useStyles = createUseStyles({
   blogImage: {
     width: '100vw',
     height: '30vh',
-    // objectFit: 'cover',
-    // overflow: 'hidden',
+    objectFit: 'cover',
     zIndex: -1,
     borderRadius: 'none',
-    // borderRadius: '10px 10px 0px 0px',
-    // position: 'relative',
     bottom: 10
   },
 
@@ -84,7 +100,7 @@ export const useStyles = createUseStyles({
   },
 
   blogHr: {
-    color: '#dcdcdd',
+    color: '#e5e5e5',
     width: '80%',
     marginBottom: '7%'
   },
@@ -92,7 +108,6 @@ export const useStyles = createUseStyles({
   blogBody: {
     fontSize: '1.1em',
     lineHeight: 1.5,
-    // padding: '1%',
   },
 
   blogAuthor: {
@@ -103,7 +118,8 @@ export const useStyles = createUseStyles({
   referenceHeading: {
     fontSize: '1.5em',
     textAlign: 'center',
-    fontWeight: 'bolder'
+    fontWeight: 'bolder',
+    marginBottom: '4%',
   },
 
   mardownContainer: {
@@ -124,7 +140,6 @@ export const useStyles = createUseStyles({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     padding: '3%',
-
     // border: '1px solid red',
   },
 
@@ -168,19 +183,17 @@ export const useStyles = createUseStyles({
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-
-      // border: '1px solid red',
+      border: '1px solid red',
     },
 
     outerContainer: {
       borderRadius: 15,
-      width: '70%',
+      width: '85%',
       height: 'auto',
       webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
       mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
       boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
-      // marginLeft: '12%',
-      // border: '1px solid red',
+      border: '1px solid red',
 
     },
 
@@ -188,40 +201,51 @@ export const useStyles = createUseStyles({
       display: 'inline',
       fontFamily: 'Roboto',
       fontSize: '2em',
+      border: '1px solid red',
+    },
+
+    blogHr: {
+      color: '#e5e5e5',
+      width: '85%',
+      marginBottom: '3%',
+      border: '1px solid red',
+
+    },
+
+    blogHeading: {
+      fontSize: '2em',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      marginTop: '2%',
+      padding: '3% 0% 3% 0%',
+      border: '1px solid red',
 
     },
 
     blogCardContainer: {
       width: '100%',
-
-      // borderRadius: 10,
-
-      // border: '1px solid red'
+      border: '1px solid red'
     },
 
     blogCardContainer: {
       alignSelf: 'center',
       marginBottom: '0%',
-
-      // border: '1px solid red',
-
+      border: '1px solid red',
     },
 
     blogCard: {
       width: '100%',
       borderRadius: 15,
-
       height: 'auto',
       borderRadius: 0,
       background: 'white',
       webkitBoxShadow: `none`,
       mozBoxShadow: `none`,
       boxShadow: `none`,
-      // color: '#495057',
-      // fontWeight: 'bolder',
       padding: '0%',
-      // position: 'relative',padding:
       bottom: 50,
+      border: '1px solid red',
+
     },
 
     blogImage: {
@@ -229,18 +253,25 @@ export const useStyles = createUseStyles({
       height: '40vh',
       borderRadius: 15,
 
+      border: '1px solid red',
     },
 
     mardownContainer: {
-      padding: '1%'
+      padding: '0% 6% 0% 6%',
+      border: '1px solid red',
+
     },
 
     blogBody: {
-      padding: '1%'
+      padding: '0% 6% 0% 6%',
+      border: '1px solid red',
+
     },
 
     blogAuthor: {
-      padding: '1%'
+      padding: '0% 6% 0% 6%',
+      border: '1px solid red',
+
     },
   },
 })
