@@ -303,7 +303,8 @@ export const useStyles = createUseStyles({
 
     blogBody: {
       padding: '0% 6% 0% 6%',
-      // border: '1px solid red',
+      width: '50%',
+      border: '1px solid red',
 
     },
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import ReactMarkdown from 'react-markdown'
 
@@ -34,8 +35,10 @@ const Blog = () => {
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
+  }
 
-    console.log('DATA >>> ', data)
+  const truncateStr = (str, num) => {
+    return str.slice(0, num) + '...'
   }
 
   useEffect(() => {
@@ -67,10 +70,15 @@ const Blog = () => {
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
                     <hr className={classes.blogHr} />
-                    <div className={classes.blogBody}  > <ReactMarkdown source={post.body} /></div>
-                    <br></br>
-                    <div className={classes.blogAuthor}  > - {post.author}</div>
-                    <hr className={classes.blogHr} />
+                    <div className={classes.blogBody}  > <ReactMarkdown source={truncateStr(post.body, 550)} /></div>
+
+
+                    <Link to={`/blog-posts/${post.id}/`}>
+                      <h3>Read More</h3>
+                    </Link>
+
+
+
                     <h3 className={classes.tagsHeading} >Tags</h3>
                     <div className={classes.linksContainer} >
                       {post.tags.map((item, index) => <p
@@ -80,7 +88,11 @@ const Blog = () => {
                       >{item.name}
                       </p>)}
                     </div>
-                    <h3 className={classes.referenceHeading} >References</h3>
+                    {/*<br></br>
+                    <div className={classes.blogAuthor}  > - {post.author}</div>
+                    <hr className={classes.blogHr} />
+                    <h3 className={classes.tagsHeading} >Tags</h3>*/}
+                    {/*<h3 className={classes.referenceHeading} >References</h3>
                     <div className={classes.mardownContainer} >
                       <ReactMarkdown
                         escapeHtml={false}
@@ -104,7 +116,7 @@ const Blog = () => {
                           </div>
                         </div>
                       )}
-                    </div>
+                            </div>*/}
                   </div>
                 </div>
               ) : (
@@ -113,6 +125,7 @@ const Blog = () => {
             )
           )}
         </div>
+        <div>HELLO</div>
       </div>
     </div>
   )

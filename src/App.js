@@ -12,6 +12,7 @@ import Footer from './components/footer/footer.component.js'
 import Home from './pages/home/home.component.js'
 import About from './pages/about/about.component.js'
 import Blog from './pages/blog/blog.component.js'
+import BlogDetail from './pages/blog-detail/blog-detail.component.js'
 import Contact from './pages/contact/contact.component.js'
 import LatestReleases from './pages/latest-releases/latest-releases.component.js'
 import Podcast from './pages/podcast/podcast.component.js'
@@ -45,6 +46,10 @@ const App = () => {
 
           <Route path="/blog">
             <Blog />
+          </Route>
+
+          <Route path="/blog-posts/:postID/" exact>
+            <BlogDetail />
           </Route>
 
           <Route path="/contact">
