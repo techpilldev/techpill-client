@@ -133,6 +133,7 @@ export const useStyles = createUseStyles({
 
   smallCard: {
     width: '90%',
+    height: 'auto',
     borderRadius: '0px 0px 10px 10px',
     objectFit: 'contain',
     webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
@@ -140,12 +141,14 @@ export const useStyles = createUseStyles({
     boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
     fontWeight: 'bolder',
     fontFamily: 'Roboto',
+
     // border: '1px solid red'
   },
 
   smallImg: {
     borderRadius: '10px 10px 0px 0px',
-    height: '30%',
+    objectFit: 'cover',
+    height: '200px',
     width: '100%',
   },
 
@@ -226,6 +229,31 @@ export const useStyles = createUseStyles({
     cursor: 'pointer'
   },
 
+  smallCardContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    lineHeight: 1.5,
+    marginBottom: '5%'
+  },
+
+
+  sidebar: {
+    display: 'none'
+  },
+
+  sidebarContainer1: {
+    display: 'none'
+
+  },
+
+  sidebarContainer2: {
+    display: 'none'
+  },
+
+  container2: {
+    border: '1px solid red'
+  },
+
   '@media (min-width: 472)': {
     titleContainer: {
 
@@ -271,7 +299,7 @@ export const useStyles = createUseStyles({
     blogHr: {
       color: '#e5e5e5',
       width: '85%',
-      marginBottom: '3%',
+      marginBottom: '0%',
       // border: '1px solid red',
 
     },
@@ -319,12 +347,6 @@ export const useStyles = createUseStyles({
       bottom: 50,
       // border: '1px solid red',
 
-    },
-
-    smallCard: {
-      // width: 10,
-      // height: 10,
-      // border: '1px solid red'
     },
 
     blogImage: {
@@ -413,6 +435,68 @@ export const useStyles = createUseStyles({
       // cursor: 'pointer',
       // paddingTop: '2%',
       // paddingBottom: '2%'
+    },
+
+    container2: {
+      width: '85%',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+
+      border: '1px solid red',
+    },
+
+    sidebar: {
+      width: '30%',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      border: '1px solid red',
+    },
+
+    sidebarContainer1: {
+      border: '1px solid red',
+
+    },
+
+    sidebarContainer2: {
+      border: '1px solid red',
+
+    },
+
+    smallCard: {
+      width: '50%',
+      height: '500px',
+
+      border: '1px solid red'
+    },
+
+    smallImg: {
+      // width: '100%',
+      height: '50%',
+      // borderRadius: '10px 10px 0px 0px',
+      // objectFit: 'cover',
+      // height: '30%',
+      // width: '100%',
+    },
+
+    smallHeading: {
+      padding: '0% 0% 0% 0%',
+      marginTop: '0%',
+    },
+
+    smallDate: {
+      color: '#495057',
+      fontStyle: 'italic',
+
+      '& p': {
+        padding: '2%',
+      }
+    },
+
+    markdown: {
+      color: '#495057',
+      padding: '2% 0% 2% 0%',
     },
   },
 })

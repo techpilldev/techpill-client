@@ -13,6 +13,8 @@ const Blog = () => {
   const titles = ["BLOG", "let's talk tech"]
   const [data, setData] = useState(null)
   const [reads, setReads] = useState(null)
+  const [tags, setTags] = useState(null)
+
 
   const bannerTitle = (
     <Title
@@ -23,9 +25,9 @@ const Blog = () => {
 
   const description = `To find a specific article please search here`
 
-  const formatDate = () => {
-    const date = new Date(data[0].created_at)
-    const fmtDate = date.toString().split("G")
+  const formatDate = (date) => {
+    const dateObj = new Date(date)
+    const fmtDate = dateObj.toString().split("G")
     return fmtDate[0]
   }
 
@@ -36,6 +38,9 @@ const Blog = () => {
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
+    let tagRes = await fetch(`http://api.thetechpill.com/tags`)
+    let tagData = await tagRes.json()
+    setTags(tagData)
   }
 
   const truncateStr = (str, num) => {
@@ -98,29 +103,37 @@ const Blog = () => {
             )
           )}
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', lineHeight: 1.5, marginBottom: '5%' }} >
-          {reads && (
-            data.map((post, index) =>
-              !post.featured === true && (
-                <div key={index} className={classes.smallCard} >
-                  <img
-                    className={classes.smallImg}
-                    src={`http://api.thetechpill.com${post.cover_image.url}`}
-                  />
-                  <div style={{ padding: '2%' }} >
-                    <h3 className={classes.smallHeading} >{post.title}</h3>
-                    <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
-                    <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
-                    <br></br>
-                    <Link to={`/blog-posts/${post.id}/`}>
-                      <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
-                    </Link>
+        <div className={classes.container2} >
+          <div className={classes.smallCardContainer} >
+            {reads && (
+              data.map((post, index) =>
+                !post.featured === true && (
+                  <div key={index} className={classes.smallCard} >
+                    <img
+                      className={classes.smallImg}
+                      src={`http://api.thetechpill.com${post.cover_image.url}`}
+                    />
+                    <div style={{ padding: '2%' }} >
+                      <h3 className={classes.smallHeading} >{post.title}</h3>
+                      <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
+                      <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
+                      <br></br>
+                      <Link to={`/blog-posts/${post.id}/`}>
+                        <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              ))
-          )}
-        </div>
-        <div>
+                ))
+            )}
+          </div>
+          <div className={classes.sidebar} >
+            <div className={classes.sidebarContainer1} >
+
+            </div>
+            <div className={classes.sidebarContainer2} >
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
