@@ -13,6 +13,7 @@ const Blog = () => {
   const titles = ["BLOG", "let's talk tech"]
   const [data, setData] = useState(null)
   const [reads, setReads] = useState(null)
+
   const bannerTitle = (
     <Title
       color='black'
@@ -60,8 +61,7 @@ const Blog = () => {
         <div className={classes.outerContainer} >
           {reads && (
             data.map((post, index) =>
-
-              post.featured === true ? (
+              post.featured === true && (
                 <div className={classes.blogCardContainer} key={index} >
                   <img
                     className={classes.blogImage}
@@ -70,15 +70,19 @@ const Blog = () => {
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
                     <hr className={classes.blogHr} />
-                    <div className={classes.blogBody}  > <ReactMarkdown source={truncateStr(post.body, 550)} /></div>
+                    <div className={classes.blogBody}  >
+                      <div className={classes.innderBody} >
+                        <ReactMarkdown source={truncateStr(post.body, 550)} />
+                        <br></br>
+                        <Link to={`/blog-posts/${post.id}/`}>
+                          <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
+                        </Link>
+                      </div>
 
+                      <div className={classes.authorContainer}  >
 
-                    <Link to={`/blog-posts/${post.id}/`}>
-                      <h3>Read More</h3>
-                    </Link>
-
-
-
+                      </div>
+                    </div>
                     <h3 className={classes.tagsHeading} >Tags</h3>
                     <div className={classes.linksContainer} >
                       {post.tags.map((item, index) => <p
@@ -88,44 +92,36 @@ const Blog = () => {
                       >{item.name}
                       </p>)}
                     </div>
-                    {/*<br></br>
-                    <div className={classes.blogAuthor}  > - {post.author}</div>
-                    <hr className={classes.blogHr} />
-                    <h3 className={classes.tagsHeading} >Tags</h3>*/}
-                    {/*<h3 className={classes.referenceHeading} >References</h3>
-                    <div className={classes.mardownContainer} >
-                      <ReactMarkdown
-                        escapeHtml={false}
-                        source={post.notes_and_links}
-                      />
-                    </div>
-                    <h3 className={classes.recommendedHeading} >Recommended Reads</h3>
-                    <div className={classes.recOuterContainer} >
-                      {reads.map((item, index) =>
-                        <div key={index} className={classes.recommendedContainer} >
-                          <img className={classes.recommendedImage} src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
-                          <div className={classes.recommendedImageContainer}  >
-                            <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
-                            <p
-                              className={classes.link}
-                              onClick={() => {
-                                window.open(item.Recommended_Read.link, '_blank')
-                              }}
-                            >On Amazon
-                        </p>
-                          </div>
-                        </div>
-                      )}
-                            </div>*/}
                   </div>
                 </div>
-              ) : (
-                  <div>Insert other posts here</div>
-                )
+              )
             )
           )}
         </div>
-        <div>HELLO</div>
+        <div style={{ display: 'flex', justifyContent: 'center', lineHeight: 1.5, marginBottom: '5%' }} >
+          {reads && (
+            data.map((post, index) =>
+              !post.featured === true && (
+                <div key={index} className={classes.smallCard} >
+                  <img
+                    className={classes.smallImg}
+                    src={`http://api.thetechpill.com${post.cover_image.url}`}
+                  />
+                  <div style={{ padding: '2%' }} >
+                    <h3 className={classes.smallHeading} >{post.title}</h3>
+                    <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
+                    <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
+                    <br></br>
+                    <Link to={`/blog-posts/${post.id}/`}>
+                      <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
+                    </Link>
+                  </div>
+                </div>
+              ))
+          )}
+        </div>
+        <div>
+        </div>
       </div>
     </div>
   )

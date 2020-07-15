@@ -9,11 +9,10 @@ export const useStyles = createUseStyles({
   },
 
   link: {
-    color: 'blue',
+    color: '#2DC4EE',
     cursor: 'pointer',
     margin: '1% 5% 1% 0%',
     // border: '1px solid red',
-    // width: 0
   },
 
   linksContainer: {
@@ -26,11 +25,15 @@ export const useStyles = createUseStyles({
     // border: '1px solid red',
   },
 
+  authorContainer: {
+    display: 'none'
+  },
+
   tagsHeading: {
     fontSize: '1.5em',
     fontWeight: 'bolder',
     alignSelf: 'center',
-    margin: '2% 0% 4% 0%',
+    margin: '7% 0% 4% 0%',
 
     // border: '1px solid red'
   },
@@ -68,7 +71,7 @@ export const useStyles = createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'Roboto',
-    marginBottom: '25%',
+    marginBottom: '5%',
   },
 
   blogImage: {
@@ -94,7 +97,7 @@ export const useStyles = createUseStyles({
     fontWeight: 'bolder',
     padding: '2%',
     position: 'relative',
-    bottom: 50,
+    bottom: 5,
 
     // border: '1px solid red',
   },
@@ -128,12 +131,51 @@ export const useStyles = createUseStyles({
     marginBottom: '5%'
   },
 
+  smallCard: {
+    width: '90%',
+    borderRadius: '0px 0px 10px 10px',
+    objectFit: 'contain',
+    webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
+    mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+    boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+    fontWeight: 'bolder',
+    fontFamily: 'Roboto',
+    // border: '1px solid red'
+  },
+
+  smallImg: {
+    borderRadius: '10px 10px 0px 0px',
+    height: '30%',
+    width: '100%',
+  },
+
+  smallHeading: {
+    fontSize: '1.5em',
+    padding: '2% 0% 2% 0%',
+    color: '#495057',
+    marginTop: '3%',
+  },
+
+  smallDate: {
+    color: '#495057',
+    fontStyle: 'italic',
+
+    '& p': {
+      padding: '2%',
+    }
+  },
+
+  markdown: {
+    color: '#495057',
+    padding: '2% 0% 2% 0%',
+  },
+
   referenceHeading: {
     fontSize: '1.5em',
     textAlign: 'center',
     fontWeight: 'bolder',
     marginBottom: '4%',
-    margin: '2% 0% 2% 0%',
+    margin: '2% 0% 0% 0%',
 
   },
 
@@ -279,6 +321,12 @@ export const useStyles = createUseStyles({
 
     },
 
+    smallCard: {
+      // width: 10,
+      // height: 10,
+      // border: '1px solid red'
+    },
+
     blogImage: {
       width: '100%',
       height: '40vh',
@@ -303,9 +351,25 @@ export const useStyles = createUseStyles({
 
     blogBody: {
       padding: '0% 6% 0% 6%',
+      margin: '3% 0% 3% 0%',
       width: '50%',
-      border: '1px solid red',
 
+      // border: '1px solid red',
+    },
+
+    authorContainer: {
+      // border: '1px solid red',
+      width: '100%',
+      backgroundColor: 'pink'
+    },
+
+    innderBody: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '70%', paddingLeft: '50%'
+
+
+      // border: '1px solid red',
     },
 
     blogAuthor: {
