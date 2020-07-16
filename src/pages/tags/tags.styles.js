@@ -16,6 +16,8 @@ export const useStyles = createUseStyles({
     fontFamily: 'Roboto',
     fontSize: '2em',
     marginBottom: '3%',
+    color: '#495057',
+
   },
 
   sidebarContainer1: {
@@ -24,7 +26,7 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     fontFamily: 'Roboto',
     lineHeight: 1.5,
-    margin: '0% 0% 5% 10%',
+    margin: '0% 0% 5% 20%',
     padding: '5%',
     // border: '1px solid red',
   },
@@ -45,7 +47,7 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     fontFamily: 'Roboto',
-    margin: '0% 0% 5% 10%',
+    margin: '0% 0% 5% 20%',
     padding: '5%',
     // border: '1px solid red',
   },
@@ -87,7 +89,7 @@ export const useStyles = createUseStyles({
   },
   '@media (min-width: 1240px)': {
     container2: {
-      width: '85%',
+      width: '90%',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',

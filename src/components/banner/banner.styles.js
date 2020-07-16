@@ -106,7 +106,8 @@ export const useStyles = createUseStyles({
 
     desktopImageContainer: {
       display: 'flex',
-
+      // width: '50%',
+      height: 'auto'
       //Debug
       // border: '1px solid red'
     }

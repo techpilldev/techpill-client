@@ -80,11 +80,11 @@ const TagResult = () => {
                 <div key={index} >
                   <Link to={`/latest-releases`} >
                     <img
-                      style={{ width: '95%', height: 'auto', cursor: 'pointer' }}
+                      style={{ width: 200, height: 'auto', cursor: 'pointer' }}
                       src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
                     />
                   </Link>
-                  <p style={{ margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 50)}</p>
+                  <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 50)}</p>
                   <Link to={`/latest-releases`}>
                     <h2 style={{ color: '#2DC4EE' }}>Read more</h2>
                   </Link>

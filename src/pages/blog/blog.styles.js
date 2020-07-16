@@ -447,7 +447,7 @@ export const useStyles = createUseStyles({
     },
 
     sidebar: {
-      width: '50%',
+      width: '30%',
       display: 'flex',
       flexDirection: 'column',
       // justifyContent: 'space-between',
@@ -455,7 +455,6 @@ export const useStyles = createUseStyles({
     },
 
     sidebarContainer1: {
-      width: 'auto',
       display: 'flex',
       flexDirection: 'column',
       fontFamily: 'Roboto',
@@ -470,6 +469,7 @@ export const useStyles = createUseStyles({
     },
 
     sidebarContainer2: {
+      // width: '50%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -477,6 +477,10 @@ export const useStyles = createUseStyles({
       margin: '0% 0% 5% 10%',
       padding: '5%',
       // border: '1px solid red',
+    },
+
+    smallCardContainer: {
+      width: '70%',
     },
 
     smallCard: {

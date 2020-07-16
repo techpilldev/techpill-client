@@ -144,11 +144,11 @@ const Blog = () => {
                   <div key={index} >
                     <Link to={`/latest-releases`} >
                       <img
-                        style={{ width: '90%', cursor: 'pointer' }}
+                        style={{ width: 200, height: 'auto', cursor: 'pointer' }}
                         src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
                       />
                     </Link>
-                    <p style={{ margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>
+                    <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>
                     <Link to={`/latest-releases`}>
                       <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
                     </Link>
