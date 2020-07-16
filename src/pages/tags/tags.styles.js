@@ -19,7 +19,7 @@ export const useStyles = createUseStyles({
   },
 
   sidebarContainer1: {
-    width: 'auto',
+    width: '100%',
     display: 'flex',
     flexDirection: 'column',
     fontFamily: 'Roboto',

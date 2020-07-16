@@ -31,9 +31,13 @@ const TagResult = () => {
     return fmtDate[0]
   }
 
+  const handleClick = () => {
+
+  }
+
   useEffect(() => {
     getData()
-  }, [])
+  }, [data])
 
   return (
     <div style={{ margin: '5% 5% 5% 5%' }}>
@@ -53,7 +57,7 @@ const TagResult = () => {
                   <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
                   <br></br>
                   <Link to={`/blog-posts/${post.id}/`}>
-                    <h3 style={{ color: '#2DC4EE' }}>Continue Reading</h3>
+                    <h3 style={{ color: '#2DC4EE', marginBottom: '2%' }}>Continue Reading</h3>
                   </Link>
                 </div>
               </div>
@@ -64,7 +68,7 @@ const TagResult = () => {
             <h5 style={{ marginBottom: '5%' }} >All tags</h5>
             {tags && (
               tags.map((tag, index) =>
-                <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
+                <Link onClick={handleClick} key={index} to={`/tags/${tag.name}/${tag.id}/`} >
                   <p style={{ color: '#2DC4EE' }}>{tag.name} <span style={{ color: 'grey' }} >({tag.blog_posts.length})</span></p>
                 </Link>
               )
