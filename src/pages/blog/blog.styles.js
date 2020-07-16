@@ -251,7 +251,7 @@ export const useStyles = createUseStyles({
   },
 
   container2: {
-    border: '1px solid red'
+    // border: '1px solid red'
   },
 
   '@media (min-width: 472)': {
@@ -380,16 +380,15 @@ export const useStyles = createUseStyles({
     },
 
     authorContainer: {
-      // border: '1px solid red',
       width: '100%',
       backgroundColor: 'pink'
+      // border: '1px solid red',
     },
 
     innderBody: {
       display: 'flex',
       flexDirection: 'column',
       width: '70%', paddingLeft: '50%'
-
 
       // border: '1px solid red',
     },
@@ -441,34 +440,49 @@ export const useStyles = createUseStyles({
       width: '85%',
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
+      marginTop: '5%',
 
-      border: '1px solid red',
+      // border: '1px solid red',
     },
 
     sidebar: {
-      width: '30%',
+      width: '50%',
       display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      border: '1px solid red',
+      flexDirection: 'column',
+      // justifyContent: 'space-between',
+      // border: '1px solid red',
     },
 
     sidebarContainer1: {
-      border: '1px solid red',
+      width: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      fontFamily: 'Roboto',
+      lineHeight: 1.5,
+      margin: '0% 0% 5% 10%',
+      padding: '5%',
+      // border: '1px solid red',
+    },
 
+    sidebarTags: {
+      color: 'blue',
     },
 
     sidebarContainer2: {
-      border: '1px solid red',
-
+      display: 'flex',
+      flexDirection: 'column',
+      backgroundColor: 'pink',
+      margin: '0% 0% 5% 10%',
+      padding: '5%',
+      // border: '1px solid red',
     },
 
     smallCard: {
-      width: '50%',
+      width: '100%',
       height: '500px',
 
-      border: '1px solid red'
+      // border: '1px solid red'
     },
 
     smallImg: {

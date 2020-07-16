@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import ReactMarkdown from 'react-markdown'
 
@@ -8,7 +8,6 @@ import { useStyles } from './blog-detail.styles'
 const BlogDetail = (props) => {
   const classes = useStyles()
   const { postID } = useParams()
-  console.log("post id", postID)
   const [data, setData] = useState()
   const [reads, setReads] = useState(null)
 
@@ -49,12 +48,10 @@ const BlogDetail = (props) => {
               <hr className={classes.blogHr} />
               <h3 className={classes.tagsHeading} >Tags</h3>
               <div className={classes.linksContainer} >
-                {data.tags.map((item, index) => <p
-                  key={index}
-                  className={classes.link}
-                  onClick={() => { console.log('item.name>>>>', item.name) }}
-                >{item.name}
-                </p>)}
+                {data.tags.map((item, index) =>
+                  <Link className={classes.link} key={index} to={`/tags/${item.name}/${item.id}/`} >
+                    <p style={{ color: '#2DC4EE' }}>{item.name} </p>
+                  </Link>)}
               </div>
               <br></br>
               <h3 className={classes.referenceHeading} >References</h3>

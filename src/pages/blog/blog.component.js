@@ -90,12 +90,10 @@ const Blog = () => {
                     </div>
                     <h3 className={classes.tagsHeading} >Tags</h3>
                     <div className={classes.linksContainer} >
-                      {post.tags.map((item, index) => <p
-                        key={index}
-                        className={classes.link}
-                        onClick={() => { console.log('item.name>>>>', item.name) }}
-                      >{item.name}
-                      </p>)}
+                      {post.tags.map((item, index) =>
+                        <Link className={classes.link} key={index} to={`/tags/${item.name}/${item.id}/`} >
+                          <p style={{ color: '#2DC4EE' }}>{item.name} </p>
+                        </Link>)}
                     </div>
                   </div>
                 </div>
@@ -117,9 +115,8 @@ const Blog = () => {
                       <h3 className={classes.smallHeading} >{post.title}</h3>
                       <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
                       <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
-                      <br></br>
                       <Link to={`/blog-posts/${post.id}/`}>
-                        <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
+                        <h3 style={{ color: '#2DC4EE' }}>Continue Reading</h3>
                       </Link>
                     </div>
                   </div>
@@ -128,10 +125,17 @@ const Blog = () => {
           </div>
           <div className={classes.sidebar} >
             <div className={classes.sidebarContainer1} >
-
+              <h5 style={{ marginBottom: '5%' }} >All tags</h5>
+              {tags && (
+                tags.map((tag, index) =>
+                  <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
+                    <p style={{ color: '#2DC4EE' }}>{tag.name} <span style={{ color: 'grey' }} >({tag.blog_posts.length})</span></p>
+                  </Link>
+                )
+              )}
             </div>
             <div className={classes.sidebarContainer2} >
-
+              Latest release
             </div>
           </div>
         </div>
