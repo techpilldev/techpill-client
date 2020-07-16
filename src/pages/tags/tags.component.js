@@ -10,6 +10,7 @@ const TagResult = () => {
   const { tagID, tagName } = useParams()
   const [data, setData] = useState(null)
   const [tags, setTags] = useState(null)
+  const [latest, setLatest] = useState(null)
 
 
   const getData = async () => {
@@ -19,6 +20,9 @@ const TagResult = () => {
     let tagRes = await fetch(`http://api.thetechpill.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
+    let latRes = await fetch(`http://api.thetechpill.com/latest-releases`)
+    let letData = await latRes.json()
+    setLatest(letData)
   }
 
   const truncateStr = (str, num) => {
@@ -29,10 +33,6 @@ const TagResult = () => {
     const date = new Date(data.created_at)
     const fmtDate = date.toString().split("G")
     return fmtDate[0]
-  }
-
-  const handleClick = () => {
-
   }
 
   useEffect(() => {
@@ -68,15 +68,32 @@ const TagResult = () => {
             <h5 style={{ marginBottom: '5%' }} >All tags</h5>
             {tags && (
               tags.map((tag, index) =>
-                <Link onClick={handleClick} key={index} to={`/tags/${tag.name}/${tag.id}/`} >
+                <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
                   <p style={{ color: '#2DC4EE' }}>{tag.name} <span style={{ color: 'grey' }} >({tag.blog_posts.length})</span></p>
                 </Link>
               )
             )}
           </div>
           <div className={classes.sidebarContainer2} >
-            Latest release
-            </div>
+            {latest !== null ? (
+              latest.map((item, index) =>
+                <div key={index} >
+                  <Link to={`/latest-releases`} >
+                    <img
+                      style={{ width: '95%', height: 'auto', cursor: 'pointer' }}
+                      src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
+                    />
+                  </Link>
+                  <p style={{ margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 50)}</p>
+                  <Link to={`/latest-releases`}>
+                    <h2 style={{ color: '#2DC4EE' }}>Read more</h2>
+                  </Link>
+                </div>
+              )
+            ) : (
+                <div></div>
+              )}
+          </div>
         </div>
       </div>
     </div>

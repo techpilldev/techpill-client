@@ -14,7 +14,7 @@ const Blog = () => {
   const [data, setData] = useState(null)
   const [reads, setReads] = useState(null)
   const [tags, setTags] = useState(null)
-
+  const [latest, setLatest] = useState(null)
 
   const bannerTitle = (
     <Title
@@ -41,6 +41,9 @@ const Blog = () => {
     let tagRes = await fetch(`http://api.thetechpill.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
+    let latRes = await fetch(`http://api.thetechpill.com/latest-releases`)
+    let letData = await latRes.json()
+    setLatest(letData)
   }
 
   const truncateStr = (str, num) => {
@@ -125,7 +128,7 @@ const Blog = () => {
           </div>
           <div className={classes.sidebar} >
             <div className={classes.sidebarContainer1} >
-              <h5 style={{ marginBottom: '5%' }} >All tags</h5>
+              <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >All tags</h5>
               {tags && (
                 tags.map((tag, index) =>
                   <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
@@ -135,7 +138,25 @@ const Blog = () => {
               )}
             </div>
             <div className={classes.sidebarContainer2} >
-              Latest release
+              <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Latest release</h5>
+              {latest !== null ? (
+                latest.map((item, index) =>
+                  <div key={index} >
+                    <Link to={`/latest-releases`} >
+                      <img
+                        style={{ width: '90%', cursor: 'pointer' }}
+                        src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
+                      />
+                    </Link>
+                    <p style={{ margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>
+                    <Link to={`/latest-releases`}>
+                      <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
+                    </Link>
+                  </div>
+                )
+              ) : (
+                  <div></div>
+                )}
             </div>
           </div>
         </div>

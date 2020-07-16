@@ -472,7 +472,8 @@ export const useStyles = createUseStyles({
     sidebarContainer2: {
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: 'pink',
+      justifyContent: 'center',
+      fontFamily: 'Roboto',
       margin: '0% 0% 5% 10%',
       padding: '5%',
       // border: '1px solid red',
