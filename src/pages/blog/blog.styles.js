@@ -19,7 +19,7 @@ export const useStyles = createUseStyles({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     margin: '2% 0% 4% 0%',
 
     // border: '1px solid red',
@@ -32,7 +32,7 @@ export const useStyles = createUseStyles({
   tagsHeading: {
     fontSize: '1.5em',
     fontWeight: 'bolder',
-    alignSelf: 'center',
+    // alignSelf: 'center',
     margin: '7% 0% 4% 0%',
 
     // border: '1px solid red'
@@ -134,6 +134,7 @@ export const useStyles = createUseStyles({
   smallCard: {
     width: '90%',
     height: 'auto',
+    alignSelf: 'center',
     borderRadius: '0px 0px 10px 10px',
     objectFit: 'contain',
     webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
@@ -141,6 +142,7 @@ export const useStyles = createUseStyles({
     boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
     fontWeight: 'bolder',
     fontFamily: 'Roboto',
+    marginBottom: '3%',
 
     // border: '1px solid red'
   },
@@ -231,6 +233,7 @@ export const useStyles = createUseStyles({
 
   smallCardContainer: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     lineHeight: 1.5,
     marginBottom: '5%'
@@ -460,7 +463,7 @@ export const useStyles = createUseStyles({
       fontFamily: 'Roboto',
       lineHeight: 1.5,
       margin: '0% 0% 5% 10%',
-      padding: '5%',
+      padding: '0% 5% 5% 5%',
       // border: '1px solid red',
     },
 
@@ -486,6 +489,7 @@ export const useStyles = createUseStyles({
     smallCard: {
       width: '100%',
       height: '500px',
+      marginBottom: '3%',
 
       // border: '1px solid red'
     },

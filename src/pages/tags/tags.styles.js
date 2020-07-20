@@ -14,7 +14,7 @@ export const useStyles = createUseStyles({
 
   heading: {
     fontFamily: 'Roboto',
-    fontSize: '2em',
+    fontSize: '2.5em',
     marginBottom: '3%',
     color: '#495057',
 
@@ -27,7 +27,8 @@ export const useStyles = createUseStyles({
     fontFamily: 'Roboto',
     lineHeight: 1.5,
     margin: '0% 0% 5% 20%',
-    padding: '5%',
+    padding: '0% 5% 5% 5%',
+
     // border: '1px solid red',
   },
 

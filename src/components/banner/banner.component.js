@@ -10,7 +10,6 @@ const Banner = (props) => {
     description,
     bgColor,
     desColor,
-    latestReleaseImage
   } = props
 
   const classes = useStyles()

@@ -29,10 +29,14 @@ const TagResult = () => {
     return str.slice(0, num) + '...'
   }
 
-  const formatDate = () => {
-    const date = new Date(data.created_at)
+  const formatDate = (newDate) => {
+    const date = new Date(newDate)
     const fmtDate = date.toString().split("G")
     return fmtDate[0]
+  }
+
+  const formatString = () => {
+
   }
 
   useEffect(() => {
@@ -75,6 +79,7 @@ const TagResult = () => {
             )}
           </div>
           <div className={classes.sidebarContainer2} >
+            <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Latest release</h5>
             {latest !== null ? (
               latest.map((item, index) =>
                 <div key={index} >

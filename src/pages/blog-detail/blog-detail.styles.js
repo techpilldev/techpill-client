@@ -14,7 +14,7 @@ export const useStyles = createUseStyles({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     margin: '2% 0% 4% 0%',
 
     // border: '1px solid red',
@@ -23,7 +23,7 @@ export const useStyles = createUseStyles({
   tagsHeading: {
     fontSize: '1.5em',
     fontWeight: 'bolder',
-    alignSelf: 'center',
+    // alignSelf: 'center',
     margin: '2% 0% 4% 0%',
 
     // border: '1px solid red'
@@ -118,7 +118,7 @@ export const useStyles = createUseStyles({
 
   referenceHeading: {
     fontSize: '1.5em',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: 'bolder',
     marginBottom: '4%',
     margin: '2% 0% 2% 0%',
@@ -136,7 +136,7 @@ export const useStyles = createUseStyles({
 
   recommendedHeading: {
     fontSize: '1.5em',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: 'bolder',
     marginTop: '5%',
   },
@@ -188,7 +188,7 @@ export const useStyles = createUseStyles({
 
   //------------------------------------------- DESKTOP -------------------------------------------------
 
-  '@media (min-width: 1240px)': {
+  '@media (min-width: 768px)': {
     root: {
       display: 'flex',
       flexDirection: 'column',

@@ -26,7 +26,7 @@ export const useStyles = createUseStyles({
 
   descriptionContainer: {
     margin: '1%',
-    padding: '6%',
+    padding: '2%',
     textAlign: 'center',
     fontFamily: 'Roboto, sans-serif',
     color: '#858585',
@@ -105,8 +105,9 @@ export const useStyles = createUseStyles({
     },
 
     desktopImageContainer: {
+      overflow: 'hidden',
       display: 'flex',
-      // width: '50%',
+      width: 'auto',
       height: 'auto'
       //Debug
       // border: '1px solid red'
