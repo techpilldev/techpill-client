@@ -42,7 +42,8 @@ const BlogDetail = (props) => {
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <hr className={classes.blogHr} />
-              <div className={classes.blogBody}  > <ReactMarkdown source={data.body} />
+              <div className={classes.blogBody}>
+                <ReactMarkdown source={data.body} />
               </div>
               <div className={classes.blogAuthor} > - {data.author}</div>
               <hr className={classes.blogHr} />

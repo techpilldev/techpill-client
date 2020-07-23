@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss'
 export const useStyles = createUseStyles({
   root: {
     boxSizing: 'border-box',
-
     //debug
     // border: '1px solid red'
   },
@@ -55,7 +54,6 @@ export const useStyles = createUseStyles({
     width: '100%',
     height: 'auto',
     // border: '1px solid red',
-
   },
 
   featuredHeading: {
@@ -124,11 +122,25 @@ export const useStyles = createUseStyles({
   blogBody: {
     fontSize: '1.1em',
     lineHeight: 1.5,
+
+    // border: '1px solid red',
+  },
+
+  innderBody: {
+    // display: 'flex',
+    // flexDirection: 'column',
+    // width: 'auto',
+    // paddingLeft: '50%',
+
+    // border: '1px solid red',
   },
 
   blogAuthor: {
     fontSize: '1.2em',
-    marginBottom: '5%'
+    marginBottom: '5%',
+
+    // border: '1px solid red',
+
   },
 
   smallCard: {
@@ -375,23 +387,27 @@ export const useStyles = createUseStyles({
     },
 
     blogBody: {
-      padding: '0% 6% 0% 6%',
+      display: 'flex',
+      flexDirection: 'row',
+      padding: '0% 0% 0% 6%',
       margin: '3% 0% 3% 0%',
-      width: '50%',
+      width: '90%',
 
       // border: '1px solid red',
     },
 
     authorContainer: {
-      width: '100%',
-      backgroundColor: 'pink'
+      width: '40%',
+      display: 'flex',
+      // backgroundColor: 'pink',
       // border: '1px solid red',
     },
 
     innderBody: {
       display: 'flex',
       flexDirection: 'column',
-      width: '70%', paddingLeft: '50%'
+      width: '60%',
+      // paddingLeft: '50%',
 
       // border: '1px solid red',
     },

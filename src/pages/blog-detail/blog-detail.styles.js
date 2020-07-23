@@ -109,6 +109,8 @@ export const useStyles = createUseStyles({
   blogBody: {
     fontSize: '1.1em',
     lineHeight: 1.5,
+
+    // border: '1px solid red',
   },
 
   blogAuthor: {

@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 
 import Title from '../../components/title/title.component.js'
 import Banner from '../../components/banner/banner.component.js'
+import AuthorCard from '../../components/author/author.component'
 import { cables, cables2 } from '../../assets/svgs.js'
 import { useStyles } from './blog.styles.js'
 
@@ -79,6 +80,7 @@ const Blog = () => {
                     <h3 className={classes.blogHeading} >{post.title}</h3>
                     <hr className={classes.blogHr} />
                     <div className={classes.blogBody}  >
+
                       <div className={classes.innderBody} >
                         <ReactMarkdown source={truncateStr(post.body, 550)} />
                         <br></br>
@@ -87,9 +89,10 @@ const Blog = () => {
                         </Link>
                       </div>
 
-                      <div className={classes.authorContainer}  >
-
+                      <div className={classes.authorContainer} >
+                        <AuthorCard />
                       </div>
+
                     </div>
                     <h3 className={classes.tagsHeading} >Tags</h3>
                     <div className={classes.linksContainer} >
