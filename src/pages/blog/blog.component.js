@@ -8,6 +8,7 @@ import Banner from '../../components/banner/banner.component.js'
 import AuthorCard from '../../components/author/author.component'
 import { cables, cables2 } from '../../assets/svgs.js'
 import { useStyles } from './blog.styles.js'
+import Searchbar from '../../components/searchbar/searchbar.component.js'
 
 const Blog = () => {
   const classes = useStyles()
@@ -23,6 +24,10 @@ const Blog = () => {
       title={titles[0]}
       subTitle={titles[1]}
     />)
+
+  const searchbar = (
+    <Searchbar />
+  )
 
   const description = `To find a specific article please search here`
 
@@ -62,6 +67,7 @@ const Blog = () => {
         description={description}
         mobileImage={cables}
         desktopImage={cables2}
+        searchbar={searchbar}
       />
       <div className={classes.mainContainer} >
         <div className={classes.headingContainer} >
@@ -134,8 +140,17 @@ const Blog = () => {
               <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >All tags</h5>
               {tags && (
                 tags.map((tag, index) =>
-                  <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
-                    <p style={{ color: '#2DC4EE' }}>{tag.name} <span style={{ color: 'grey' }} >({tag.blog_posts.length})</span></p>
+                  <Link
+                    style={{ width: '50%' }}
+                    key={index}
+                    to={`/tags/${tag.name}/${tag.id}/`}
+                  >
+                    <p style={{ color: '#2DC4EE' }}>
+                      {tag.name}
+                      <span style={{ color: 'grey' }}>
+                        ({tag.blog_posts.length})
+                      </span>
+                    </p>
                   </Link>
                 )
               )}

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Searchbar from '../searchbar/searchbar.component'
+
 import { useStyles } from './banner.styles.js'
 
 const Banner = (props) => {
@@ -10,6 +12,7 @@ const Banner = (props) => {
     description,
     bgColor,
     desColor,
+    searchbar,
   } = props
 
   const classes = useStyles()
@@ -26,6 +29,7 @@ const Banner = (props) => {
       </div>
       <div className={classes.descriptionContainer} >
         {description}
+        {searchbar && searchbar}
       </div>
       <div className={classes.desktopContainer} >
         <div className={classes.desktopDetailsContainer} >

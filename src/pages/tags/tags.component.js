@@ -50,7 +50,7 @@ const TagResult = () => {
         <div className={classes.smallCardContainer} >
           {data !== null && (
             data.blog_posts.map((post, index) =>
-              <div key={index} className={classes.smallCard} >
+              <div key={index} className={classes.smallCard}>
                 <img
                   className={classes.smallImg}
                   src={`http://api.thetechpill.com${post.cover_image.url}`}

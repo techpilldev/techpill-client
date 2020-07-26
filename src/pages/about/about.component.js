@@ -24,10 +24,11 @@ const About = () => {
         </div>
       </div>
       <div>
-        ABOUT PAGE
+        ABOUT
       </div>
     </div>
   )
 }
 
 export default About
+
