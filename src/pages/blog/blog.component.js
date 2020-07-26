@@ -17,7 +17,8 @@ const Blog = () => {
   const [reads, setReads] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
-
+  const [search, setSearch] = useState('')
+  const description = `To find a specific article please search here`
   const bannerTitle = (
     <Title
       color='black'
@@ -25,22 +26,17 @@ const Blog = () => {
       subTitle={titles[1]}
     />)
 
-  const searchbar = (
-    <Searchbar />
-  )
-
-  const description = `To find a specific article please search here`
-
-  const formatDate = (date) => {
-    const dateObj = new Date(date)
-    const fmtDate = dateObj.toString().split("G")
-    return fmtDate[0]
+  const filterData = (data) => {
+    const filteredPosts = data.filter(post =>
+      post.body.toLowerCase().includes(search.toLowerCase()))
+    setData(filteredPosts)
   }
 
   const getData = async () => {
     let result = await fetch(`http://api.thetechpill.com/blog-posts`)
     let data = await result.json()
-    setData(data)
+    filterData(data)
+
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
@@ -52,9 +48,34 @@ const Blog = () => {
     setLatest(letData)
   }
 
+  const handleChange = (event) => {
+    setSearch(event.target.value)
+    filterData(data)
+    // console.log("search words", event.target.value)
+  }
+
+  const searchbar = (
+    <Searchbar
+      placeholder={'key words '}
+      handleChange={handleChange}
+    />
+  )
+
+  const formatDate = (date) => {
+    const dateObj = new Date(date)
+    const fmtDate = dateObj.toString().split("G")
+    return fmtDate[0]
+  }
   const truncateStr = (str, num) => {
     return str.slice(0, num) + '...'
   }
+
+  // const filteredPosts
+
+  // if (data !== null) {
+  //   filteredPosts = data.filter(post =>
+  //     post.body.toLowerCase().includes(search.toLowerCase()))
+  // }
 
   useEffect(() => {
     getData()

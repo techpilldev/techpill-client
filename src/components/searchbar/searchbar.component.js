@@ -4,7 +4,7 @@ import { useStyles } from './searchbar.styles'
 
 const Searchbar = (props) => {
   console.log("Serchbar")
-  // const { description } = props
+  const { handleChange, placeholder } = props
   const classes = useStyles()
   const {
     searchbar,
@@ -13,7 +13,12 @@ const Searchbar = (props) => {
 
   return (
     <div className={searchbar} >
-      <input className={searchbar_input} type='text' placeholder={'article, guest, tag ...'} />
+      <input
+        className={searchbar_input}
+        type='text'
+        placeholder={placeholder}
+        onChange={handleChange}
+      />
     </div>
   )
 }
