@@ -3,7 +3,6 @@ import React from 'react'
 import { useStyles } from './searchbar.styles'
 
 const Searchbar = (props) => {
-  console.log("Serchbar")
   const { handleChange, placeholder } = props
   const classes = useStyles()
   const {
