@@ -97,6 +97,7 @@ export const useStyles = createUseStyles({
 
     desktopDescription: {
       display: 'flex',
+      flexDirection: 'column',
       // justifyContent: 'flex-start',
       // width: 'auto', 
       fontSize: '0.7em',

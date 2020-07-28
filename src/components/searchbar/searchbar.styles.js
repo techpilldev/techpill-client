@@ -25,4 +25,19 @@ export const useStyles = createUseStyles({
 
     },
   },
+
+  '@media (min-width: 800px)': {
+    searchbar_input: {
+      width: '110%',
+      height: 50,
+      borderRadius: 25,
+      padding: '0% 3% 0% 3%',
+
+      border: '2px solid #2DC4EE',
+
+      '&:focus': {
+        outline: 'none',
+      }
+    },
+  },
 })

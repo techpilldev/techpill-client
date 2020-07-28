@@ -38,6 +38,7 @@ const Banner = (props) => {
             style={desColor !== null && { color: desColor }}
             className={classes.desktopDescription} >
             {description}
+            {searchbar && searchbar}
           </div>
         </div>
         <div className={classes.desktopImageContainer}>

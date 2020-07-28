@@ -48,7 +48,7 @@ const Blog = () => {
 
   const searchbar = (
     <Searchbar
-      placeholder={'key words '}
+      placeholder={'Search by title or keywords..'}
       handleChange={handleChange}
     />
   )
