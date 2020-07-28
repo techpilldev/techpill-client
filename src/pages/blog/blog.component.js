@@ -14,7 +14,6 @@ const Blog = () => {
   const classes = useStyles()
   const titles = ["BLOG", "let's talk tech"]
   const [data, setData] = useState(null)
-  const [reads, setReads] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
   const [search, setSearch] = useState('')
@@ -30,10 +29,6 @@ const Blog = () => {
     let result = await fetch(`http://api.thetechpill.com/blog-posts`)
     let data = await result.json()
     setData(data)
-
-    let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
-    let recReads = await res.json()
-    setReads(recReads)
     let tagRes = await fetch(`http://api.thetechpill.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
@@ -86,7 +81,7 @@ const Blog = () => {
       />
       <div className={classes.mainContainer} >
         <div className={classes.headingContainer} >
-          <div style={{ alignSelf: 'flex-start' }} className={classes.featuredHeading} >Featured Article</div>
+          <div style={{ alignSelf: 'flex-start' }} className={classes.featuredHeading} >{search == '' ? 'Featured Article' : ''} </div>
         </div>
         <div className={classes.outerContainer} >
           {filteredPosts && (
