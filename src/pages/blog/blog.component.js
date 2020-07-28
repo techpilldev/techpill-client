@@ -26,19 +26,11 @@ const Blog = () => {
       subTitle={titles[1]}
     />)
 
-  const filterData = (data) => {
-    const filteredPosts = data.filter(post => (
-      post.body.toLowerCase().includes(search.toLowerCase()))
-      ||
-      post.title.toLowerCase().includes(search.toLowerCase()
-      ))
-    setData(filteredPosts)
-  }
-
   const getData = async () => {
     let result = await fetch(`http://api.thetechpill.com/blog-posts`)
     let data = await result.json()
-    filterData(data)
+    setData(data)
+
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
@@ -52,7 +44,6 @@ const Blog = () => {
 
   const handleChange = (event) => {
     setSearch(event.target.value)
-    filterData(data)
   }
 
   const searchbar = (
@@ -75,6 +66,15 @@ const Blog = () => {
     getData()
   }, [])
 
+  let filteredPosts
+  if (data !== null) {
+    filteredPosts = data.filter(post => (
+      post.body.toLowerCase().includes(search.toLowerCase()))
+      ||
+      post.title.toLowerCase().includes(search.toLowerCase()
+      ))
+  }
+
   return (
     <div className={classes.root} >
       <Banner
@@ -89,8 +89,8 @@ const Blog = () => {
           <div style={{ alignSelf: 'flex-start' }} className={classes.featuredHeading} >Featured Article</div>
         </div>
         <div className={classes.outerContainer} >
-          {reads && (
-            data.map((post, index) =>
+          {filteredPosts && (
+            filteredPosts.map((post, index) =>
               post.featured === true && (
                 <div className={classes.blogCardContainer} key={index} >
                   <img
@@ -130,8 +130,8 @@ const Blog = () => {
         </div>
         <div className={classes.container2} >
           <div className={classes.smallCardContainer} >
-            {reads && (
-              data.map((post, index) =>
+            {filteredPosts && (
+              filteredPosts.map((post, index) =>
                 !post.featured === true && (
                   <div key={index} className={classes.smallCard} >
                     <img
