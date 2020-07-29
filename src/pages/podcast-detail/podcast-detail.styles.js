@@ -1,17 +1,13 @@
 import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
-  root: {
-    boxSizing: 'border-box',
-    //debug
-    // border: '1px solid red'
-  },
 
   link: {
     color: '#2DC4EE',
     cursor: 'pointer',
     margin: '1% 5% 1% 0%',
     // border: '1px solid red',
+    // width: 0
   },
 
   linksContainer: {
@@ -24,15 +20,11 @@ export const useStyles = createUseStyles({
     // border: '1px solid red',
   },
 
-  authorContainer: {
-    display: 'none'
-  },
-
   tagsHeading: {
     fontSize: '1.5em',
     fontWeight: 'bolder',
     // alignSelf: 'center',
-    margin: '7% 0% 4% 0%',
+    margin: '2% 0% 4% 0%',
 
     // border: '1px solid red'
   },
@@ -41,26 +33,21 @@ export const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: '5% 0% 5% 0%',
   },
 
-  headingContainer: {
-    width: '85%',
-    display: 'flex',
-    flexDirection: 'row'
+  mardown: {
+    '& a': {
+      color: '#2DC4EE',
+    }
   },
 
   outerContainer: {
     width: '100%',
     height: 'auto',
     // border: '1px solid red',
-  },
 
-  featuredHeading: {
-    padding: '2% 0% 2% 0%',
-    color: '#495057',
-    marginTop: '5%',
-    display: 'none',
   },
 
   blogCardContainer: {
@@ -95,7 +82,7 @@ export const useStyles = createUseStyles({
     fontWeight: 'bolder',
     padding: '2%',
     position: 'relative',
-    bottom: 5,
+    bottom: 50,
 
     // border: '1px solid red',
   },
@@ -126,73 +113,17 @@ export const useStyles = createUseStyles({
     // border: '1px solid red',
   },
 
-  innderBody: {
-    // display: 'flex',
-    // flexDirection: 'column',
-    // width: 'auto',
-    // paddingLeft: '50%',
-
-    // border: '1px solid red',
-  },
-
   blogAuthor: {
     fontSize: '1.2em',
-    marginBottom: '5%',
-
-    // border: '1px solid red',
-
-  },
-
-  smallCard: {
-    width: '90%',
-    height: 'auto',
-    alignSelf: 'center',
-    borderRadius: '0px 0px 10px 10px',
-    objectFit: 'contain',
-    webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
-    mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
-    boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
-    fontWeight: 'bolder',
-    fontFamily: 'Roboto',
-    marginBottom: '3%',
-
-    // border: '1px solid red'
-  },
-
-  smallImg: {
-    borderRadius: '10px 10px 0px 0px',
-    objectFit: 'cover',
-    height: '200px',
-    width: '100%',
-  },
-
-  smallHeading: {
-    fontSize: '1.5em',
-    padding: '2% 0% 2% 0%',
-    color: '#495057',
-    marginTop: '3%',
-  },
-
-  smallDate: {
-    color: '#495057',
-    fontStyle: 'italic',
-
-    '& p': {
-      padding: '2%',
-    }
-  },
-
-  markdown: {
-    color: '#495057',
-    padding: '2% 0% 2% 0%',
+    marginBottom: '5%'
   },
 
   referenceHeading: {
     fontSize: '1.5em',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: 'bolder',
     marginBottom: '4%',
-    margin: '2% 0% 0% 0%',
+    margin: '2% 0% 2% 0%',
 
   },
 
@@ -207,7 +138,7 @@ export const useStyles = createUseStyles({
 
   recommendedHeading: {
     fontSize: '1.5em',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontWeight: 'bolder',
     marginTop: '5%',
   },
@@ -243,32 +174,6 @@ export const useStyles = createUseStyles({
     cursor: 'pointer'
   },
 
-  smallCardContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    lineHeight: 1.5,
-    marginBottom: '5%'
-  },
-
-
-  sidebar: {
-    display: 'none'
-  },
-
-  sidebarContainer1: {
-    display: 'none'
-
-  },
-
-  sidebarContainer2: {
-    display: 'none'
-  },
-
-  container2: {
-    // border: '1px solid red'
-  },
-
   '@media (min-width: 472)': {
     titleContainer: {
 
@@ -285,7 +190,7 @@ export const useStyles = createUseStyles({
 
   //------------------------------------------- DESKTOP -------------------------------------------------
 
-  '@media (min-width: 1240px)': {
+  '@media (min-width: 768px)': {
     root: {
       display: 'flex',
       flexDirection: 'column',
@@ -314,7 +219,7 @@ export const useStyles = createUseStyles({
     blogHr: {
       color: '#e5e5e5',
       width: '85%',
-      marginBottom: '0%',
+      marginBottom: '3%',
       // border: '1px solid red',
 
     },
@@ -387,29 +292,10 @@ export const useStyles = createUseStyles({
     },
 
     blogBody: {
-      display: 'flex',
-      flexDirection: 'row',
-      padding: '0% 0% 0% 6%',
-      margin: '3% 0% 3% 0%',
-      width: '90%',
-
+      padding: '0% 6% 0% 6%',
+      // width: '50%',
       // border: '1px solid red',
-    },
 
-    authorContainer: {
-      width: '40%',
-      display: 'flex',
-      // backgroundColor: 'pink',
-      // border: '1px solid red',
-    },
-
-    innderBody: {
-      display: 'flex',
-      flexDirection: 'column',
-      width: '60%',
-      // paddingLeft: '50%',
-
-      // border: '1px solid red',
     },
 
     blogAuthor: {
@@ -453,89 +339,6 @@ export const useStyles = createUseStyles({
       // cursor: 'pointer',
       // paddingTop: '2%',
       // paddingBottom: '2%'
-    },
-
-    container2: {
-      width: '85%',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginTop: '5%',
-
-      // border: '1px solid red',
-    },
-
-    sidebar: {
-      width: '30%',
-      display: 'flex',
-      flexDirection: 'column',
-      // justifyContent: 'space-between',
-      // border: '1px solid red',
-    },
-
-    sidebarContainer1: {
-      display: 'flex',
-      flexDirection: 'column',
-      fontFamily: 'Roboto',
-      lineHeight: 1.5,
-      margin: '0% 0% 5% 10%',
-      padding: '0% 5% 5% 5%',
-      // border: '1px solid red',
-    },
-
-    sidebarTags: {
-      color: 'blue',
-    },
-
-    sidebarContainer2: {
-      // width: '50%',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      fontFamily: 'Roboto',
-      margin: '0% 0% 5% 10%',
-      padding: '5%',
-      // border: '1px solid red',
-    },
-
-    smallCardContainer: {
-      width: '70%',
-    },
-
-    smallCard: {
-      width: '100%',
-      height: '500px',
-      marginBottom: '3%',
-
-      // border: '1px solid red'
-    },
-
-    smallImg: {
-      // width: '100%',
-      height: '50%',
-      // borderRadius: '10px 10px 0px 0px',
-      // objectFit: 'cover',
-      // height: '30%',
-      // width: '100%',
-    },
-
-    smallHeading: {
-      padding: '0% 0% 0% 0%',
-      marginTop: '0%',
-    },
-
-    smallDate: {
-      color: '#495057',
-      fontStyle: 'italic',
-
-      '& p': {
-        padding: '2%',
-      }
-    },
-
-    markdown: {
-      color: '#495057',
-      padding: '2% 0% 2% 0%',
     },
   },
 })

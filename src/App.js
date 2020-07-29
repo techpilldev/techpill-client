@@ -17,6 +17,7 @@ import TagResult from './pages/tags/tags.component.js'
 import Contact from './pages/contact/contact.component.js'
 import LatestReleases from './pages/latest-releases/latest-releases.component.js'
 import Podcast from './pages/podcast/podcast.component.js'
+import PodcastDetail from './pages/podcast-detail/podcast-detail.component.js'
 import Legal from './pages/legal/legal.component.js'
 import './index.css'
 
@@ -67,6 +68,10 @@ const App = () => {
 
           <Route path="/podcasts">
             <Podcast />
+          </Route>
+
+          <Route path="/podcast-post/:postID/" exact>
+            <PodcastDetail />
           </Route>
 
           <Route path="/legal">
