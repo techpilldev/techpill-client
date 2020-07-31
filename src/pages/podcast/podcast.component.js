@@ -112,7 +112,7 @@ const Podcasts = () => {
                         {post.guests.map(item => console.log("item", item))}
                         {post.guests.map(item =>
                           <div className={classes.featuringRoot}>
-                            <div className={classes.container} >
+                            <Link className={classes.container} to='/about' >
                               <div className={classes.imageCnt} >
                                 <img
                                   src={`http://api.thetechpill.com${item.avatar.url}`}
@@ -127,7 +127,7 @@ const Podcasts = () => {
                                   {item.description}
                                 </p>
                               </div>
-                            </div>
+                            </Link>
                           </div>
                         )}
                       </div>

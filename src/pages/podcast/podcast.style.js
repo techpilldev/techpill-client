@@ -307,6 +307,7 @@ export const useStyles = createUseStyles({
   },
 
   featuringRoot: {
+    cursor: 'pointer',
     display: 'flex',
     flexDirection: 'column',
     marginLeft: '5%',
