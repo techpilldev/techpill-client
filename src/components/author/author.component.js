@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 
 import { useStyles } from './author.styles'
 
-const AuthorCard = () => {
+const AuthorCard = (props) => {
+  const { title } = props
   const classes = useStyles()
   const {
     root,
@@ -18,7 +19,7 @@ const AuthorCard = () => {
 
   return (
     <div className={root}>
-      <div className={author} >AUTHOR</div>
+      <div className={author} >{title}</div>
       <Link className={container} to='/about' >
         <div className={imageCnt} >
           <img

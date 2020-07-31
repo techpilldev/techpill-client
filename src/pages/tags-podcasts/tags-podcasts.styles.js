@@ -64,12 +64,6 @@ export const useStyles = createUseStyles({
     // border: '1px solid red'
   },
 
-  markdown: {
-    '& a': {
-      color: '#2DC4EE'
-    }
-  },
-
   smallImg: {
     width: '100%',
     height: 200,

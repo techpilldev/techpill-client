@@ -106,7 +106,7 @@ const Blog = () => {
                       </div>
 
                       <div className={classes.authorContainer} >
-                        <AuthorCard />
+                        <AuthorCard title='Author' />
                       </div>
 
                     </div>

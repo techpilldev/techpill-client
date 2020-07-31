@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 
 
-import { useStyles } from './tags.styles'
+import { useStyles } from './tags-podcasts.styles'
 
 const TagResult = () => {
   const classes = useStyles()
@@ -16,10 +16,7 @@ const TagResult = () => {
   const getData = async () => {
     const result = await fetch(`http://api.thetechpill.com/tags/${tagID}`)
     const data = await result.json()
-    const blogTags = data.blog_posts.map(item => item)
-    const podcastTags = data.podcasts.map(item => item)
-    const newArr = [...blogTags, ...podcastTags]
-    setData(newArr.reverse())
+    setData(data)
     let tagRes = await fetch(`http://api.thetechpill.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
@@ -52,7 +49,7 @@ const TagResult = () => {
       <div className={classes.container2} >
         <div className={classes.smallCardContainer} >
           {data !== null && (
-            data.map((post, index) =>
+            data.podcasts.map((post, index) =>
               <div key={index} className={classes.smallCard}>
                 <img
                   className={classes.smallImg}
@@ -61,27 +58,11 @@ const TagResult = () => {
                 <div style={{ padding: '2%' }} >
                   <h3 className={classes.smallHeading} >{post.title}</h3>
                   <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
-                  {post.body ? (
-                    <ReactMarkdown
-                      className={classes.markdown}
-                      source={truncateStr(post.body, 300)}
-                    />) : (
-                      <ReactMarkdown
-                        className={classes.markdown}
-                        source={truncateStr(post.notes_and_links, 300)}
-                      />
-                    )}
-
+                  <ReactMarkdown className={classes.markdown} source={truncateStr(post.notes_and_links, 300)} />
                   <br></br>
-                  {post.body ? (
-                    <Link to={`/blog-posts/${post.id}/`}>
-                      <h3 style={{ color: '#2DC4EE', marginBottom: '2%' }}>Continue Reading</h3>
-                    </Link>
-                  ) : (
-                      <Link to={`/podcasts-post/${post.id}/`}>
-                        <h3 style={{ color: '#2DC4EE', marginBottom: '2%' }}>Listen to Episode</h3>
-                      </Link>
-                    )}
+                  <Link to={`/blog-posts/${post.id}/`}>
+                    <h3 style={{ color: '#2DC4EE', marginBottom: '2%' }}>Continue Reading</h3>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -92,7 +73,7 @@ const TagResult = () => {
             {tags && (
               tags.map((tag, index) =>
                 <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
-                  <p style={{ color: '#2DC4EE' }}>{tag.name} <span style={{ color: 'grey' }} >({tag.blog_posts.length + tag.podcasts.length})</span></p>
+                  <p style={{ color: '#2DC4EE' }}>{tag.name} <span style={{ color: 'grey' }} >({tag.podcasts.length})</span></p>
                 </Link>
               )
             )}

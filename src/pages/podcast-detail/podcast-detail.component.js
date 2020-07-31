@@ -12,7 +12,7 @@ const PodcastDetails = (props) => {
   const [reads, setReads] = useState(null)
 
   const getData = async (postID) => {
-    const result = await fetch(`http://api.thetechpill.com/blog-posts/${postID}`)
+    const result = await fetch(`http://api.thetechpill.com/podcasts/${postID}`)
     const data = await result.json()
     setData(data)
     let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
@@ -41,9 +41,12 @@ const PodcastDetails = (props) => {
             <div className={classes.blogCard} >
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
+              <div style={{ display: 'flex', justifyContent: 'center' }} >
+                <audio style={{ width: '70%' }} controls src={`http://api.thetechpill.com${data.audio.url}`} />
+              </div>
               <hr className={classes.blogHr} />
               <div className={classes.blogBody}>
-                <ReactMarkdown source={data.body} />
+                <ReactMarkdown className={classes.mardown} source={data.notes_and_links} />
               </div>
               <div className={classes.blogAuthor} > - {data.author}</div>
               <hr className={classes.blogHr} />

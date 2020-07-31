@@ -25,7 +25,7 @@ const Podcasts = () => {
     />)
 
   const getData = async () => {
-    let result = await fetch(`http://api.thetechpill.com/blog-posts`)
+    let result = await fetch(`http://api.thetechpill.com/podcasts`)
     let data = await result.json()
     setData(data)
     let tagRes = await fetch(`http://api.thetechpill.com/tags`)
@@ -63,7 +63,7 @@ const Podcasts = () => {
   let filteredPosts
   if (data !== null) {
     filteredPosts = data.filter(post => (
-      post.body.toLowerCase().includes(search.toLowerCase()))
+      post.notes_and_links.toLowerCase().includes(search.toLowerCase()))
       ||
       post.title.toLowerCase().includes(search.toLowerCase()
       ))
@@ -99,15 +99,15 @@ const Podcasts = () => {
                     <div className={classes.blogBody}  >
 
                       <div className={classes.innderBody} >
-                        <ReactMarkdown source={truncateStr(post.body, 550)} />
+                        <ReactMarkdown className={classes.mardown} source={post.notes_and_links} />
                         <br></br>
                         <Link to={`/podcast-post/${post.id}/`}>
-                          <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
+                          <h3 style={{ color: '#2DC4EE' }}  >Play Episode</h3>
                         </Link>
                       </div>
 
                       <div className={classes.authorContainer} >
-                        <AuthorCard />
+                        <AuthorCard title='Featuring' />
                       </div>
 
                     </div>

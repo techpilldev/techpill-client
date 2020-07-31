@@ -24,6 +24,12 @@ export const useStyles = createUseStyles({
     // border: '1px solid red',
   },
 
+  mardown: {
+    '& a': {
+      color: '#2DC4EE',
+    }
+  },
+
   authorContainer: {
     display: 'none'
   },
