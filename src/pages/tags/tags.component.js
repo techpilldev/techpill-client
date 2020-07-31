@@ -78,7 +78,7 @@ const TagResult = () => {
                       <h3 style={{ color: '#2DC4EE', marginBottom: '2%' }}>Continue Reading</h3>
                     </Link>
                   ) : (
-                      <Link to={`/podcasts-post/${post.id}/`}>
+                      <Link to={`/podcast-post/${post.id}/`}>
                         <h3 style={{ color: '#2DC4EE', marginBottom: '2%' }}>Listen to Episode</h3>
                       </Link>
                     )}

@@ -101,8 +101,8 @@ const Podcasts = () => {
                       <div className={classes.innderBody} >
                         <ReactMarkdown className={classes.mardown} source={post.notes_and_links} />
                         <br></br>
-                        <Link to={`/podcast-post/${post.id}/`}>
-                          <h3 style={{ color: '#2DC4EE' }}  >Play Episode</h3>
+                        <Link style={{ width: 110, marginTop: '5%' }} to={`/podcast-post/${post.id}/`}>
+                          <h3 className={classes.detailLink}  >Play Episode</h3>
                         </Link>
                       </div>
 

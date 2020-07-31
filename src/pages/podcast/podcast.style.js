@@ -30,6 +30,17 @@ export const useStyles = createUseStyles({
     }
   },
 
+  detailLink: {
+    color: '#2DC4EE',
+    border: '1px solid #2DC4EE',
+    padding: '2%',
+
+    '&:hover': {
+      color: 'white',
+      backgroundColor: '#2DC4EE',
+    }
+  },
+
   authorContainer: {
     display: 'none'
   },

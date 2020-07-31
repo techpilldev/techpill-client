@@ -100,8 +100,8 @@ const Blog = () => {
                       <div className={classes.innderBody} >
                         <ReactMarkdown source={truncateStr(post.body, 550)} />
                         <br></br>
-                        <Link to={`/blog-posts/${post.id}/`}>
-                          <h3 style={{ color: '#2DC4EE' }}  >Continue Reading</h3>
+                        <Link style={{ width: 160, marginTop: '5%' }} to={`/blog-posts/${post.id}/`}>
+                          <h3 className={classes.detailLink}  >Continue Reading</h3>
                         </Link>
                       </div>
 

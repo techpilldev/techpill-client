@@ -14,6 +14,17 @@ export const useStyles = createUseStyles({
     // border: '1px solid red',
   },
 
+  detailLink: {
+    color: '#2DC4EE',
+    border: '1px solid #2DC4EE',
+    padding: '2%',
+
+    '&:hover': {
+      color: 'white',
+      backgroundColor: '#2DC4EE',
+    }
+  },
+
   linksContainer: {
     display: 'flex',
     flexWrap: 'wrap',
