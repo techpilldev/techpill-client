@@ -31,6 +31,7 @@ export const useStyles = createUseStyles({
   },
 
   detailLink: {
+    width: 115,
     color: '#2DC4EE',
     border: '1px solid #2DC4EE',
     padding: '2%',
@@ -183,6 +184,11 @@ export const useStyles = createUseStyles({
     width: '100%',
   },
 
+  linkCnt: {
+    width: 110,
+    marginTop: '5%'
+  },
+
   smallHeading: {
     fontSize: '1.5em',
     padding: '2% 0% 2% 0%',
@@ -300,6 +306,65 @@ export const useStyles = createUseStyles({
     },
   },
 
+  featuringRoot: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: '5%',
+    height: 160,
+    marginTop: '10%',
+    // border: '1px solid red'
+  },
+
+  author: {
+    fontWeight: 'bolder',
+  },
+
+  container: {
+    height: '100%',
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    background: 'white',
+    webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
+    mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+    boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+    color: '#495057'
+    // border: '1px solid red'
+  },
+
+  linkCnt: {
+    width: 110,
+    marginTop: '5%'
+  },
+
+  imageCnt: {
+    height: '100%',
+    // border: '1px solid red'
+  },
+
+  image: {
+    borderRadius: '10px 0px 0px 10px',
+    width: 'auto',
+    height: '100%',
+    objectFit: 'contain',
+  },
+
+  name: {
+    padding: '1%',
+    // border: '1px solid red'
+  },
+
+  author: {
+
+  },
+
+  bio: {
+    padding: '1%',
+    fontWeight: 'lighter',
+    lineHeight: 1,
+    // border: '1px solid red'
+  },
+
   //------------------------------------------- DESKTOP -------------------------------------------------
 
   '@media (min-width: 1240px)': {
@@ -309,6 +374,26 @@ export const useStyles = createUseStyles({
       justifyContent: 'center',
       // border: '1px solid red',
     },
+
+
+    detailLink: {
+      color: '#2DC4EE',
+      border: '1px solid #2DC4EE',
+      padding: '2%',
+
+      '&:hover': {
+        color: 'white',
+        backgroundColor: '#2DC4EE',
+      }
+    },
+
+
+    linkCnt: {
+      width: 110,
+      marginTop: '5%'
+    },
+
+
 
     outerContainer: {
       borderRadius: 15,
@@ -416,6 +501,7 @@ export const useStyles = createUseStyles({
     authorContainer: {
       width: '40%',
       display: 'flex',
+      flexDirection: 'column',
       // backgroundColor: 'pink',
       // border: '1px solid red',
     },

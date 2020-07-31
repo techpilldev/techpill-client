@@ -101,13 +101,35 @@ const Podcasts = () => {
                       <div className={classes.innderBody} >
                         <ReactMarkdown className={classes.mardown} source={post.notes_and_links} />
                         <br></br>
-                        <Link style={{ width: 110, marginTop: '5%' }} to={`/podcast-post/${post.id}/`}>
+                        <Link className={classes.linkCnt} to={`/podcast-post/${post.id}/`}>
                           <h3 className={classes.detailLink}  >Play Episode</h3>
                         </Link>
                       </div>
 
                       <div className={classes.authorContainer} >
                         <AuthorCard title='Featuring' />
+
+                        {post.guests.map(item => console.log("item", item))}
+                        {post.guests.map(item =>
+                          <div className={classes.featuringRoot}>
+                            <div className={classes.container} >
+                              <div className={classes.imageCnt} >
+                                <img
+                                  src={`http://api.thetechpill.com${item.avatar.url}`}
+                                  className={classes.image}
+                                />
+                              </div>
+                              <div>
+                                <div className={classes.name} >
+                                  {item.name}
+                                </div>
+                                <p className={classes.bio} >
+                                  {item.description}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
 
                     </div>

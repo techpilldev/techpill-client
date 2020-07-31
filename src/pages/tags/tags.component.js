@@ -71,7 +71,6 @@ const TagResult = () => {
                         source={truncateStr(post.notes_and_links, 300)}
                       />
                     )}
-
                   <br></br>
                   {post.body ? (
                     <Link to={`/blog-posts/${post.id}/`}>
