@@ -96,7 +96,7 @@ const Podcasts = () => {
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
                     <hr className={classes.blogHr} />
-                    <div className={classes.blogBody}  >
+                    <div className={classes.blogBody}>
 
                       <div className={classes.innderBody} >
                         <ReactMarkdown className={classes.mardown} source={post.notes_and_links} />

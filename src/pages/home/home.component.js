@@ -36,6 +36,10 @@ const Home = () => {
 
     const newArr = [...podcastData, ...blogData]
 
+    newArr.sort((x, y) => {
+      return new Date(y.created_at) - new Date(x.created_at)
+    })
+
     setData(newArr)
 
     let tagRes = await fetch(`http://api.thetechpill.com/tags`)
@@ -44,10 +48,6 @@ const Home = () => {
     let latRes = await fetch(`http://api.thetechpill.com/latest-releases`)
     let letData = await latRes.json()
     setLatest(letData)
-  }
-
-  const handleChange = (event) => {
-    setSearch(event.target.value)
   }
 
   const formatDate = (date) => {
