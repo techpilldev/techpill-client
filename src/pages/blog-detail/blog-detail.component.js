@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 
 import ReactMarkdown from 'react-markdown'
 
+import ShareButtons from '../../components/share-buttons/share-buttons.component'
 import { useStyles } from './blog-detail.styles'
 
 const BlogDetail = (props) => {
@@ -39,6 +40,7 @@ const BlogDetail = (props) => {
               className={classes.blogImage}
               src={`http://api.thetechpill.com${data.cover_image.url}`} />
             <div className={classes.blogCard} >
+              <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <hr className={classes.blogHr} />
