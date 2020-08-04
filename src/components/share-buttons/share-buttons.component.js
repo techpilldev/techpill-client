@@ -10,7 +10,9 @@ import {
   FacebookShareButton,
   FacebookIcon,
   WhatsappShareButton,
-  WhatsappIcon
+  WhatsappIcon,
+  RedditShareButton,
+  RedditIcon
 } from 'react-share'
 
 import { useStyles } from './share-buttons.styles.js'
@@ -34,14 +36,18 @@ const ShareButtons = ({ pageUrl }) => {
         />
       </LinkedinShareButton>
 
-
       <FacebookShareButton className={classes.icon} url={pageUrl} >
         <FacebookIcon
           size={32}
           round={true}
         />
       </FacebookShareButton>
-
+      <RedditShareButton className={classes.icon} url={pageUrl} >
+        <RedditIcon
+          size={32}
+          round={true}
+        />
+      </RedditShareButton>
       <WhatsappShareButton className={classes.icon} url={pageUrl} >
         <WhatsappIcon
           size={32}
@@ -55,6 +61,7 @@ const ShareButtons = ({ pageUrl }) => {
           round={true}
         />
       </EmailShareButton>
+
     </div>
   )
 }
