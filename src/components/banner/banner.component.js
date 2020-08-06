@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Searchbar from '../searchbar/searchbar.component'
-
 import { useStyles } from './banner.styles.js'
 
 const Banner = (props) => {
@@ -13,6 +11,7 @@ const Banner = (props) => {
     bgColor,
     desColor,
     searchbar,
+    aboutImage
   } = props
 
   const classes = useStyles()

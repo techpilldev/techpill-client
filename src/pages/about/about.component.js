@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Title from '../../components/title/title.component.js'
 import Banner from '../../components//banner/banner.component.js'
 
@@ -6,6 +7,7 @@ import { useStyles } from './about.styles.js'
 
 const About = () => {
   const classes = useStyles()
+  const [data, setData] = useState()
   const titles = ["Niels pederson", "author. educator. speaker."]
   const bannerTitle = (
     <Title
@@ -13,6 +15,17 @@ const About = () => {
       title={titles[0]}
       subTitle={titles[1]}
     />)
+
+  const getData = async () => {
+    const result = await fetch(`http://api.thetechpill.com/about-page`)
+    const data = await result.json()
+    console.log("data", data)
+    setData(data)
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <div className={classes.root} >
@@ -23,8 +36,21 @@ const About = () => {
           />
         </div>
       </div>
-      <div>
-        ABOUT
+      <div className={classes.cardContainer} >
+        {data && (
+          <div className={classes.aboutCard} >
+            <h3 className={classes.aboutTitle}>{data.title}</h3>
+            <img className={classes.aboutImage} src={`http://api.thetechpill.com${data.image.url}`} />
+            <div className={classes.aboutBody}>
+              {data.body}
+              <div style={{ alignSelf: 'center' }} className={classes.aboutBtn} >
+                <Link to='/contact' >
+                  <div className={classes.aboutText}>Contact Niels</div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

@@ -109,9 +109,8 @@ const Podcasts = () => {
                       <div className={classes.authorContainer} >
                         <AuthorCard title='Featuring' />
 
-                        {post.guests.map(item => console.log("item", item))}
-                        {post.guests.map(item =>
-                          <div className={classes.featuringRoot}>
+                        {post.guests.map((item, index) =>
+                          <div key={index} className={classes.featuringRoot}>
                             <Link className={classes.container} to='/about' >
                               <div className={classes.imageCnt} >
                                 <img
