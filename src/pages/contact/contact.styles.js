@@ -2,9 +2,8 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
   root: {
-    boxSizing: 'border-box',
+    // width: '100%',
 
-    //debug
     // border: '1px solid red'
   },
 
@@ -13,17 +12,23 @@ export const useStyles = createUseStyles({
     height: '30%'
   },
 
-  innerBanner: {
-    display: 'none'
+  subscribeForm: {
+    fontSize: 20,
+    position: 'relative'
   },
 
-  '@media (min-width: 600px)': {
-    bannerContainer: {
-      height: 'auto'
-    },
+  formSubmitButton: {
+    cursor: 'pointer'
+  },
 
-    innerBanner: {
-      display: 'inline'
-    },
+  formContainer: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+
+    // border: '1px solid red'
+
   },
 })

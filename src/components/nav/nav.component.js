@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import SocialLinks from '../social-links/social-links.component.js'
 import NavLinkItem from '../nav-link/nav-link.component.js'
 import { useStyles } from './nav.styles.js'
@@ -9,38 +9,37 @@ const Nav = (props) => {
   const [pages, setPages] = useState([])
 
   const pagesArr = [
-    // ['/home', 'Home'],
     ['/podcasts', 'Podcasts'],
     ['/blog', 'Blog'],
     ['/about', 'About'],
     ['/contact', 'Contact'],
-    ['/latest-releases', 'Latest Releases']
+    ['/library', 'Library']
   ]
 
   useEffect(() => {
     setPages(pagesArr)
   }, [])
 
-  return(
+  return (
     <div className={classes.root} >
-      <ul 
+      <ul
         className={type === 'drawer' ? (
-          classes.drawer):(classes.nav
-        )}
+          classes.drawer) : (classes.nav
+          )}
       >
-      {pages.map((item, index) => (
-        <li 
-          key={index} 
-          onClick={action}
-          className={item[1] === "Home" ? 
-            (classes.homeLink):(classes.link)} 
+        {pages.map((item, index) => (
+          <li
+            key={index}
+            onClick={action}
+            className={item[1] === "Home" ?
+              (classes.homeLink) : (classes.link)}
           >
-          <NavLinkItem 
-            linkUrl={item[0]} 
-            pageName={item[1]} 
-          />
-        </li>
-      ))}
+            <NavLinkItem
+              linkUrl={item[0]}
+              pageName={item[1]}
+            />
+          </li>
+        ))}
       </ul>
       <div className={classes.socials} >
         <SocialLinks />

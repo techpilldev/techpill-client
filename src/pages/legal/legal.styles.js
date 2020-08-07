@@ -21,7 +21,7 @@ export const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
   },
-  aboutCard: {
+  legalCard: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -36,18 +36,13 @@ export const useStyles = createUseStyles({
     boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
     // border: '1px solid red'
   },
-  aboutImage: {
-    borderRadius: 10,
-    width: 150,
-    height: 150,
-  },
-  aboutTitle: {
+  legalTitle: {
     fontSize: '2em',
     color: '#495057',
     fontFamily: 'Roboto',
     margin: '2%',
   },
-  aboutBody: {
+  legalBody: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -56,44 +51,14 @@ export const useStyles = createUseStyles({
     fontFamily: 'Roboto',
     padding: '3%'
   },
-  aboutBtn: {
-    margin: '3%',
-    width: 200,
-    height: 'auto',
-    border: '2px solid #2DC4EE',
-    borderRadius: 30,
-    alignSelf: 'center'
-  },
-  aboutText: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontFamily: 'Roboto',
-    color: '#2DC4EE',
-    width: 200,
-    height: 50
-  },
   '@media (min-width: 600px)': {
     bannerContainer: {
-      height: 'auto',
-    },
-    aboutImage: {
-      borderRadius: 10,
-      width: 'auto',
       height: 'auto',
     },
     innerBanner: {
       display: 'inline'
     },
-    aboutBtn: {
-      margin: '3%',
-      width: 400,
-      height: 'auto',
-      border: '2px solid #2DC4EE',
-      borderRadius: 30,
-      alignSelf: 'center'
-    },
-    aboutText: {
+    legalText: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

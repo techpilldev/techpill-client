@@ -15,7 +15,7 @@ import Blog from './pages/blog/blog.component.js'
 import BlogDetail from './pages/blog-detail/blog-detail.component.js'
 import TagResult from './pages/tags/tags.component.js'
 import Contact from './pages/contact/contact.component.js'
-import LatestReleases from './pages/latest-releases/latest-releases.component.js'
+import Library from './pages/Library/Library.component.js'
 import Podcast from './pages/podcast/podcast.component.js'
 import PodcastDetail from './pages/podcast-detail/podcast-detail.component.js'
 import Legal from './pages/legal/legal.component.js'
@@ -62,8 +62,8 @@ const App = () => {
             <Contact />
           </Route>
 
-          <Route path="/latest-releases" >
-            <LatestReleases />
+          <Route path="/library" >
+            <Library />
           </Route>
 
           <Route path="/podcasts">

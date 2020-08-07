@@ -13,10 +13,10 @@ const BlogDetail = (props) => {
   const [reads, setReads] = useState(null)
 
   const getData = async (postID) => {
-    const result = await fetch(`http://api.thetechpill.com/blog-posts/${postID}`)
+    const result = await fetch(`http://api.stressfreegut.com/blog-posts/${postID}`)
     const data = await result.json()
     setData(data)
-    let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
+    let res = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
   }
@@ -38,7 +38,7 @@ const BlogDetail = (props) => {
           <div className={classes.blogCardContainer} >
             <img
               className={classes.blogImage}
-              src={`http://api.thetechpill.com${data.cover_image.url}`} />
+              src={`http://api.stressfreegut.com${data.cover_image.url}`} />
             <div className={classes.blogCard} >
               <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
@@ -72,7 +72,7 @@ const BlogDetail = (props) => {
                     <div key={index} className={classes.recommendedContainer} >
                       <img
                         className={classes.recommendedImage}
-                        src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
+                        src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
                       <div
                         className={classes.recommendedImageContainer}  >
                         <p

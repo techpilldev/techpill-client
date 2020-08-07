@@ -23,7 +23,7 @@ const BottomNav = () => {
           <Link className={classes.navLink} to="/about">About</Link>
         </li>
         <li className={classes.link} >
-          <Link className={classes.navLink} to="/latest-releases">Latest Releases</Link>
+          <Link className={classes.navLink} to="/library">Library</Link>
         </li>
         <li className={classes.link} >
           <Link className={classes.navLink} to="/legal">Legal</Link>

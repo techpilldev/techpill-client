@@ -14,16 +14,16 @@ const TagResult = () => {
 
 
   const getData = async () => {
-    const result = await fetch(`http://api.thetechpill.com/tags/${tagID}`)
+    const result = await fetch(`http://api.stressfreegut.com/tags/${tagID}`)
     const data = await result.json()
     const blogTags = data.blog_posts.map(item => item)
     const podcastTags = data.podcasts.map(item => item)
     const newArr = [...blogTags, ...podcastTags]
     setData(newArr.reverse())
-    let tagRes = await fetch(`http://api.thetechpill.com/tags`)
+    let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.thetechpill.com/latest-releases`)
+    let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
     let letData = await latRes.json()
     setLatest(letData)
   }
@@ -56,7 +56,7 @@ const TagResult = () => {
               <div key={index} className={classes.smallCard}>
                 <img
                   className={classes.smallImg}
-                  src={`http://api.thetechpill.com${post.cover_image.url}`}
+                  src={`http://api.stressfreegut.com${post.cover_image.url}`}
                 />
                 <div style={{ padding: '2%' }} >
                   <h3 className={classes.smallHeading} >{post.title}</h3>
@@ -104,7 +104,7 @@ const TagResult = () => {
                   <Link to={`/latest-releases`} >
                     <img
                       style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                      src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
+                      src={`http://api.stressfreegut.com${item.latest.cover_image.url}`}
                     />
                   </Link>
                   <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 50)}</p>

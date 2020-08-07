@@ -28,10 +28,10 @@ const Home = () => {
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
 
   const getData = async () => {
-    let blogResult = await fetch(`http://api.thetechpill.com/blog-posts`)
+    let blogResult = await fetch(`http://api.stressfreegut.com/blog-posts`)
     let blogData = await blogResult.json()
 
-    let podcastResult = await fetch(`http://api.thetechpill.com/podcasts`)
+    let podcastResult = await fetch(`http://api.stressfreegut.com/podcasts`)
     let podcastData = await podcastResult.json()
 
     const newArr = [...podcastData, ...blogData]
@@ -42,10 +42,10 @@ const Home = () => {
 
     setData(newArr)
 
-    let tagRes = await fetch(`http://api.thetechpill.com/tags`)
+    let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.thetechpill.com/latest-releases`)
+    let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
     let letData = await latRes.json()
     setLatest(letData)
   }
@@ -82,7 +82,7 @@ const Home = () => {
                 <div key={index} className={classes.smallCard} >
                   <img
                     className={classes.smallImg}
-                    src={`http://api.thetechpill.com${post.cover_image.url}`}
+                    src={`http://api.stressfreegut.com${post.cover_image.url}`}
                   />
                   <div style={{ padding: '2%' }} >
                     <h3 className={classes.smallHeading} >{post.title}</h3>
@@ -155,7 +155,7 @@ const Home = () => {
                     <Link to={`/latest-releases`} >
                       <img
                         style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                        src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
+                        src={`http://api.stressfreegut.com${item.latest.cover_image.url}`}
                       />
                     </Link>
                     <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>

@@ -25,13 +25,13 @@ const Podcasts = () => {
     />)
 
   const getData = async () => {
-    let result = await fetch(`http://api.thetechpill.com/podcasts`)
+    let result = await fetch(`http://api.stressfreegut.com/podcasts`)
     let data = await result.json()
     setData(data)
-    let tagRes = await fetch(`http://api.thetechpill.com/tags`)
+    let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.thetechpill.com/latest-releases`)
+    let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
     let letData = await latRes.json()
     setLatest(letData)
   }
@@ -91,7 +91,7 @@ const Podcasts = () => {
                 <div className={classes.blogCardContainer} key={index} >
                   <img
                     className={classes.blogImage}
-                    src={`http://api.thetechpill.com${post.cover_image.url}`} />
+                    src={`http://api.stressfreegut.com${post.cover_image.url}`} />
                   <div className={classes.blogCard} >
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
@@ -114,7 +114,7 @@ const Podcasts = () => {
                             <Link className={classes.container} to='/about' >
                               <div className={classes.imageCnt} >
                                 <img
-                                  src={`http://api.thetechpill.com${item.avatar.url}`}
+                                  src={`http://api.stressfreegut.com${item.avatar.url}`}
                                   className={classes.image}
                                 />
                               </div>
@@ -153,7 +153,7 @@ const Podcasts = () => {
                   <div key={index} className={classes.smallCard} >
                     <img
                       className={classes.smallImg}
-                      src={`http://api.thetechpill.com${post.cover_image.url}`}
+                      src={`http://api.stressfreegut.com${post.cover_image.url}`}
                     />
                     <div style={{ padding: '2%' }} >
                       <h3 className={classes.smallHeading} >{post.title}</h3>
@@ -195,7 +195,7 @@ const Podcasts = () => {
                     <Link to={`/latest-releases`} >
                       <img
                         style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                        src={`http://api.thetechpill.com${item.latest.cover_image.url}`}
+                        src={`http://api.stressfreegut.com${item.latest.cover_image.url}`}
                       />
                     </Link>
                     <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>

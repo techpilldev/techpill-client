@@ -13,10 +13,10 @@ const PodcastDetails = (props) => {
   const [reads, setReads] = useState(null)
 
   const getData = async (postID) => {
-    const result = await fetch(`http://api.thetechpill.com/podcasts/${postID}`)
+    const result = await fetch(`http://api.stressfreegut.com/podcasts/${postID}`)
     const data = await result.json()
     setData(data)
-    let res = await fetch(`http://api.thetechpill.com/recommended-reads`)
+    let res = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
   }
@@ -38,13 +38,13 @@ const PodcastDetails = (props) => {
           <div className={classes.blogCardContainer} >
             <img
               className={classes.blogImage}
-              src={`http://api.thetechpill.com${data.cover_image.url}`} />
+              src={`http://api.stressfreegut.com${data.cover_image.url}`} />
             <div className={classes.blogCard} >
               <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <div style={{ display: 'flex', justifyContent: 'center' }} >
-                <audio style={{ width: '70%' }} controls src={`http://api.thetechpill.com${data.audio.url}`} />
+                <audio style={{ width: '70%' }} controls src={`http://api.stressfreegut.com${data.audio.url}`} />
               </div>
               <hr className={classes.blogHr} />
               <div className={classes.blogBody}>
@@ -75,7 +75,7 @@ const PodcastDetails = (props) => {
                     <div key={index} className={classes.recommendedContainer} >
                       <img
                         className={classes.recommendedImage}
-                        src={`http://api.thetechpill.com${item.Recommended_Read.image.url}`} />
+                        src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
                       <div
                         className={classes.recommendedImageContainer}  >
                         <p
