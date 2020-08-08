@@ -8,8 +8,6 @@ import { useStyles } from './about.styles.js'
 const About = () => {
   const classes = useStyles()
   const [data, setData] = useState(null)
-  const [title, setTitle] = useState(null)
-  const titles = ["Niels pederson", "author. educator. speaker."]
 
   const getData = async () => {
     const result = await fetch(`http://api.stressfreegut.com/about-page`)
@@ -45,7 +43,7 @@ const About = () => {
       <div className={classes.cardContainer} >
         {data && (
           <div className={classes.aboutCard} >
-            <h3 className={classes.aboutTitle}>{data.title}</h3>
+            <h3 className={classes.aboutTitle}>Meet {data.title}</h3>
             <img className={classes.aboutImage} src={`http://api.stressfreegut.com${data.image.url}`} />
             <div className={classes.aboutBody}>
               {data.body}
