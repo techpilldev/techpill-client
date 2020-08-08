@@ -9,11 +9,11 @@ export const useStyles = createUseStyles({
 
   bannerContainer: {
     background: 'linear-gradient(to right, #2DAAE0 0%, #179FDC 50% ,#117ADB 100%)',
-    height: '30%'
+    height: 'auto'
   },
 
   innerBanner: {
-    display: 'none'
+    // display: 'none'
   },
 
   cardContainer: {

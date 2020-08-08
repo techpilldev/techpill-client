@@ -16,18 +16,18 @@ const Home = () => {
   const [data, setData] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
+  const [homeTitle, setHomeTitle] = useState(null)
   const [search, setSearch] = useState('')
-  const bannerTitle = (
-    <Title
-      color='black'
-      title={titles[0]}
-      subTitle={titles[1]}
-    />)
 
   const description = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
 
   const getData = async () => {
+
+    let homeResult = await fetch(`http://api.stressfreegut.com/home-page`)
+    let homeData = await homeResult.json()
+    setHomeTitle(homeData)
+
     let blogResult = await fetch(`http://api.stressfreegut.com/blog-posts`)
     let blogData = await blogResult.json()
 
@@ -59,18 +59,30 @@ const Home = () => {
     return str.slice(0, num) + '...'
   }
 
+  let bannerTitle = null;
+  if (homeTitle !== null) {
+    bannerTitle = (
+      <Title
+        color='black'
+        title={homeTitle.Title}
+        subTitle={homeTitle.Subtitle}
+      />)
+  }
+
   useEffect(() => {
     getData()
   }, [])
 
   return (
     <div className={classes.root} >
-      <Banner
-        title={bannerTitle}
-        description={description}
-        mobileImage={robotMobile}
-        desktopImage={robotDestop}
-      />
+      {homeTitle && (
+        <Banner
+          title={bannerTitle}
+          description={homeTitle.Description}
+          mobileImage={robotMobile}
+          desktopImage={robotDestop}
+        />
+      )}
       <div className={classes.mainContainer} >
         <div className={classes.headingContainer} >
           <div style={{ alignSelf: 'flex-start' }} className={classes.featuredHeading} >Latest Uploads </div>

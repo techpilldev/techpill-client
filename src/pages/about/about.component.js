@@ -7,20 +7,24 @@ import { useStyles } from './about.styles.js'
 
 const About = () => {
   const classes = useStyles()
-  const [data, setData] = useState()
+  const [data, setData] = useState(null)
+  const [title, setTitle] = useState(null)
   const titles = ["Niels pederson", "author. educator. speaker."]
-  const bannerTitle = (
-    <Title
-      color='white'
-      title={titles[0]}
-      subTitle={titles[1]}
-    />)
 
   const getData = async () => {
     const result = await fetch(`http://api.stressfreegut.com/about-page`)
     const data = await result.json()
-    console.log("data", data)
     setData(data)
+  }
+
+  let podTitle = null;
+  if (data !== null) {
+    podTitle = (
+      <Title
+        color='white'
+        title={data.title}
+        subTitle={data.Subtitle}
+      />)
   }
 
   useEffect(() => {
@@ -31,9 +35,11 @@ const About = () => {
     <div className={classes.root} >
       <div className={classes.bannerContainer}>
         <div className={classes.innerBanner} >
-          <Banner
-            title={bannerTitle}
-          />
+          {data && (
+            <Banner
+              title={podTitle}
+            />
+          )}
         </div>
       </div>
       <div className={classes.cardContainer} >

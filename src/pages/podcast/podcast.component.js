@@ -16,14 +16,9 @@ const Podcasts = () => {
   const [data, setData] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
+  const [title, setTitle] = useState(null)
   const [search, setSearch] = useState('')
-  const bannerTitle = (
-    <Title
-      color='black'
-      title={titles[0]}
-      subTitle={titles[1]}
-    />)
-
+  const description = `To find a specific article please search here`
   const getData = async () => {
     let result = await fetch(`http://api.stressfreegut.com/podcasts`)
     let data = await result.json()
@@ -34,6 +29,9 @@ const Podcasts = () => {
     let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
     let letData = await latRes.json()
     setLatest(letData)
+    let titleRes = await fetch(`http://api.stressfreegut.com/podcast-page`)
+    let titleData = await titleRes.json()
+    setTitle(titleData)
   }
 
   const handleChange = (event) => {
@@ -56,6 +54,17 @@ const Podcasts = () => {
     return str.slice(0, num) + '...'
   }
 
+  let podTitle = null;
+  if (title !== null) {
+    podTitle = (
+      <Title
+        color='black'
+        title={title.Title}
+        subTitle={title.Subtitle}
+      />)
+  }
+
+
   useEffect(() => {
     getData()
   }, [])
@@ -69,17 +78,17 @@ const Podcasts = () => {
       ))
   }
 
-  const description = `To find a specific episode please search here`
-
   return (
     <div className={classes.root} >
-      <Banner
-        title={bannerTitle}
-        description={description}
-        mobileImage={cables}
-        desktopImage={cables2}
-        searchbar={searchbar}
-      />
+      {title && (
+        <Banner
+          title={podTitle}
+          mobileImage={cables}
+          desktopImage={cables2}
+          searchbar={searchbar}
+          description={description}
+        />
+      )}
       <div className={classes.mainContainer} >
         <div className={classes.headingContainer} >
           <div style={{ alignSelf: 'flex-start' }} className={classes.featuredHeading} >{search == '' ? 'Featured Podcast' : ''} </div>

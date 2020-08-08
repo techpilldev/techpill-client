@@ -21,9 +21,14 @@ export const useStyles = createUseStyles({
     textAlign: 'center',
     color: '#858585',
   },
+  '@media (min-width: 140px)': {
+    title: {
+      textAlign: 'center'
+    }
+  },
 
   '@media (min-width: 472px)': {
-    root:{
+    root: {
       flexDirection: 'column',
       marginTop: '0%',
     },
@@ -43,7 +48,7 @@ export const useStyles = createUseStyles({
   '@media (min-width: 600px)': {
     title: {
       fontSize: '2.5em',
-      width: 250
+      width: '80%'
     },
 
     subTitle: {
@@ -59,8 +64,9 @@ export const useStyles = createUseStyles({
 
     title: {
       display: 'flex',
-      alignItems: 'center',
+      // alignItems: 'center',
       width: '100%',
+      textAlign: 'start',
     },
 
     subTitle: {
@@ -68,9 +74,4 @@ export const useStyles = createUseStyles({
     },
   },
 
-  '@media (min-width: 140px)': {
-    title: {
-      textAlign: 'center'
-    }
-  }
 })

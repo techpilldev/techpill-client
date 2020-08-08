@@ -17,13 +17,8 @@ const Blog = () => {
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
   const [search, setSearch] = useState('')
+  const [title, setTitle] = useState(null)
   const description = `To find a specific article please search here`
-  const bannerTitle = (
-    <Title
-      color='black'
-      title={titles[0]}
-      subTitle={titles[1]}
-    />)
 
   const getData = async () => {
     let result = await fetch(`http://api.stressfreegut.com/blog-posts`)
@@ -35,6 +30,9 @@ const Blog = () => {
     let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
     let letData = await latRes.json()
     setLatest(letData)
+    let titleRes = await fetch(`http://api.stressfreegut.com/blog-page`)
+    let titleData = await titleRes.json()
+    setTitle(titleData)
   }
 
   const handleChange = (event) => {
@@ -57,6 +55,16 @@ const Blog = () => {
     return str.slice(0, num) + '...'
   }
 
+  let podTitle = null;
+  if (title !== null) {
+    podTitle = (
+      <Title
+        color='black'
+        title={title.Title}
+        subTitle={title.Subtitle}
+      />)
+  }
+
   useEffect(() => {
     getData()
   }, [])
@@ -72,13 +80,15 @@ const Blog = () => {
 
   return (
     <div className={classes.root} >
-      <Banner
-        title={bannerTitle}
-        description={description}
-        mobileImage={cables}
-        desktopImage={cables2}
-        searchbar={searchbar}
-      />
+      {title && (
+        <Banner
+          title={podTitle}
+          description={description}
+          mobileImage={cables}
+          desktopImage={cables2}
+          searchbar={searchbar}
+        />
+      )}
       <div className={classes.mainContainer} >
         <div className={classes.headingContainer} >
           <div style={{ alignSelf: 'flex-start' }} className={classes.featuredHeading} >{search == '' ? 'Featured Article' : ''} </div>

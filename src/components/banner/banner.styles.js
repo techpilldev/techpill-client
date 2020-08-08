@@ -79,17 +79,17 @@ export const useStyles = createUseStyles({
     },
 
     desktopDetailsContainer: {
-      width: '51%',
+      width: 'auto',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
+      // justifyContent: 'center',
       alignItems: 'flex-start',
       fontFamily: 'Roboto, sans-serif',
       fontSize: '1.7em',
       // textAlign: 'censter',
       lineHeight: '2em',
       color: '#858585',
-      padding: '7% 7% 7% 12%',
+      padding: '7%',
 
       //Debug
       // border: '1px solid red'

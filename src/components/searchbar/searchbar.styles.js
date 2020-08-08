@@ -8,7 +8,7 @@ export const useStyles = createUseStyles({
   },
 
   searchbar_input: {
-    width: '80%',
+    width: '100%',
     height: '5%',
     borderRadius: 25,
     padding: '0% 3% 0% 3%',
