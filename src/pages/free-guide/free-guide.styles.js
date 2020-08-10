@@ -7,9 +7,14 @@ export const useStyles = createUseStyles({
     // border: '1px solid red'
   },
 
+  cardContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+
   bannerContainer: {
     background: 'linear-gradient(to right, #2DAAE0 0%, #179FDC 50% ,#117ADB 100%)',
-    height: '30%'
+    height: 'auto'
   },
 
   subscribeForm: {
@@ -29,6 +34,26 @@ export const useStyles = createUseStyles({
     alignItems: 'center',
 
     // border: '1px solid red'
+  },
 
+  formSubmitButton: {
+
+  },
+
+  aboutCard: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '90%',
+    alignSelf: 'center',
+    margin: '1%',
+    // textAlign: 'center',
+    borderRadius: 10,
+    webkitBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107,1)`,
+    mozBoxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+    boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
+    // border: '1px solid red'
   },
 })

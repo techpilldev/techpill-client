@@ -110,16 +110,18 @@ const FreeGuide = () => {
         </div>
       </div>
       <div className={classes.cardContainer} >
-        <MailchimpSubscribe
-          url={url}
-          render={({ subscribe, status, message }) => (
-            <CustomForm
-              status={status}
-              message={message}
-              onValidated={formData => subscribe(formData)}
-            />
-          )}
-        />
+        <div className={classes.aboutCard} >
+          <MailchimpSubscribe
+            url={url}
+            render={({ subscribe, status, message }) => (
+              <CustomForm
+                status={status}
+                message={message}
+                onValidated={formData => subscribe(formData)}
+              />
+            )}
+          />
+        </div>
       </div>
     </div>
   )

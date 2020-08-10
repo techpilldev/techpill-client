@@ -388,13 +388,10 @@ export const useStyles = createUseStyles({
       }
     },
 
-
     linkCnt: {
       width: 110,
       marginTop: '5%'
     },
-
-
 
     outerContainer: {
       borderRadius: 15,
