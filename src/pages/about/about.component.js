@@ -48,7 +48,7 @@ const About = () => {
             <div className={classes.aboutBody}>
               {data.body}
               <div style={{ alignSelf: 'center' }} className={classes.aboutBtn} >
-                <Link to='/contact' >
+                <Link to='/free-guide' >
                   <div className={classes.aboutText}>Contact Niels</div>
                 </Link>
               </div>

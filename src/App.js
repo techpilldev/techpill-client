@@ -14,7 +14,7 @@ import About from './pages/about/about.component.js'
 import Blog from './pages/blog/blog.component.js'
 import BlogDetail from './pages/blog-detail/blog-detail.component.js'
 import TagResult from './pages/tags/tags.component.js'
-import Contact from './pages/contact/contact.component.js'
+import FreeGuide from './pages/free-guide/free-guide.component.js'
 import Library from './pages/Library/Library.component.js'
 import Podcast from './pages/podcast/podcast.component.js'
 import PodcastDetail from './pages/podcast-detail/podcast-detail.component.js'
@@ -58,8 +58,8 @@ const App = () => {
             <TagResult />
           </Route>
 
-          <Route path="/contact">
-            <Contact />
+          <Route path="/free-guide">
+            <FreeGuide />
           </Route>
 
           <Route path="/library" >

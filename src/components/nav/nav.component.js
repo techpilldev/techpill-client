@@ -12,7 +12,7 @@ const Nav = (props) => {
     ['/podcasts', 'Podcasts'],
     ['/blog', 'Blog'],
     ['/about', 'About'],
-    ['/contact', 'Contact'],
+    ['/free-guide', 'Free Guide'],
     ['/library', 'Library']
   ]
 

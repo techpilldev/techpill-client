@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from 'react'
 import Title from '../../components/title/title.component.js'
-import Banner from '../../components//banner/banner.component.js'
+import Banner from '../../components/banner/banner.component.js'
 
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
-import { useStyles } from './contact.styles.js'
+import { useStyles } from './free-guide.styles.js'
 
-const Contact = () => {
+const FreeGuide = () => {
   const classes = useStyles()
   const [data, setData] = useState(null)
   const titles = ["contact", "let's chat"]
   const [isEmailValid, setIsEmailVaild] = useState(null)
   const [float, setFloat] = useState(false)
   const url = "https://stressfreegut.us17.list-manage.com/subscribe/post?u=ef2f9a50e05d4ad9d7089ca2e&amp;id=157318a47f"
-  const bannerTitle = (
-    <Title
-      color='white'
-      title={titles[0]}
-      subTitle={titles[1]}
-    />)
 
   const description = `Please fill out the form below. We will get back to you as soon as we can!`
 
   const getData = async () => {
-    const result = await fetch(`http://api.stressfreegut.com/legal`)
+    const result = await fetch(`http://api.stressfreegut.com/free-guide-page`)
     const data = await result.json()
-    console.log("data", data)
     setData(data)
+  }
+
+  let title = null;
+  if (data !== null) {
+    title = (
+      <Title
+        color='white'
+        title={data.Title}
+        subTitle={data.Subtitle}
+      />)
   }
 
   const CustomForm = ({ status, message, onValidated }) => {
@@ -94,11 +97,13 @@ const Contact = () => {
     <div className={classes.root} >
       <div className={classes.bannerContainer}>
         <div className={classes.innerBanner} >
-          <Banner
-            title={bannerTitle}
-            description={description}
-            desColor='white'
-          />
+          {data !== null && (
+            <Banner
+              title={title}
+              description={data.Description}
+              desColor='white'
+            />
+          )}
         </div>
       </div>
       <div className={classes.cardContainer} >
@@ -117,4 +122,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default FreeGuide
