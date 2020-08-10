@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Title from '../../components/title/title.component'
 import Banner from '../../components/banner/banner.component'
 import { useStyles } from './library.styles.js'
@@ -28,6 +29,10 @@ const Library = () => {
       />)
   }
 
+  const handleClick = (URL) => {
+    window.open(URL, '_blank')
+  }
+
   useEffect(() => {
     getData()
   }, [])
@@ -44,11 +49,21 @@ const Library = () => {
         </div>
       </div>
       <div className={classes.cardContainer} >
-        {data && (
-          <div className={classes.aboutCard} >
-            Books here
-          </div>
-        )}
+        <div className={classes.aboutCard} >
+          {data !== null && data.map((item, index) =>
+            <div key={index} style={{ margin: '3%' }} >
+              <h2 className={classes.bookHeading} >{item.Recommended_Read.title}</h2>
+              <div >
+                <img
+                  onClick={() => handleClick(item.Recommended_Read.link)}
+                  style={{ width: 200, height: 'auto', cursor: 'pointer' }}
+                  src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
+                />
+              </div>
+              <h2 onClick={() => handleClick(item.Recommended_Read.url)} className={classes.bookLink}>Read more</h2>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )

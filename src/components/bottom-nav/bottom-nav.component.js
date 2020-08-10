@@ -17,7 +17,7 @@ const BottomNav = () => {
           <Link className={classes.navLink} to="/blog">Blog</Link>
         </li>
         <li className={classes.link} >
-          <Link className={classes.navLink} to="/contact">Contact</Link>
+          <Link className={classes.navLink} to="/free-guide">Free Guide</Link>
         </li>
         <li className={classes.link} >
           <Link className={classes.navLink} to="/about">About</Link>

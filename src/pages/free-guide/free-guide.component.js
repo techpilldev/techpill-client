@@ -3,23 +3,26 @@ import Title from '../../components/title/title.component.js'
 import Banner from '../../components/banner/banner.component.js'
 
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
+import FloatingText from '../../components/floating-text/floating-text.component'
 
 import { useStyles } from './free-guide.styles.js'
 
 const FreeGuide = () => {
   const classes = useStyles()
   const [data, setData] = useState(null)
-  const titles = ["contact", "let's chat"]
   const [isEmailValid, setIsEmailVaild] = useState(null)
   const [float, setFloat] = useState(false)
   const url = "https://stressfreegut.us17.list-manage.com/subscribe/post?u=ef2f9a50e05d4ad9d7089ca2e&amp;id=157318a47f"
 
-  const description = `Please fill out the form below. We will get back to you as soon as we can!`
 
   const getData = async () => {
     const result = await fetch(`http://api.stressfreegut.com/free-guide-page`)
     const data = await result.json()
     setData(data)
+  }
+
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
   }
 
   let title = null;

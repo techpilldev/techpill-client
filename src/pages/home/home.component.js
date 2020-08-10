@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-import AuthorCard from '../../components/author/author.component'
-
 import Title from '../../components/title/title.component.js'
 import Banner from '../../components/banner/banner.component.js'
 import { robotDestop, robotMobile } from '../../assets/svgs.js'
-import Searchbar from '../../components/searchbar/searchbar.component.js'
 import ReactMarkdown from 'react-markdown'
 import { useStyles } from './home.styles.js'
 

@@ -20,9 +20,10 @@ export const useStyles = createUseStyles({
 
   aboutCard: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
+    justifyContent: 'center',
     width: '90%',
     alignSelf: 'center',
     margin: '1%',
@@ -33,4 +34,19 @@ export const useStyles = createUseStyles({
     boxShadow: `0px 5px 4px 0px rgba(107, 104, 107, 1)`,
     // border: '1px solid red'
   },
+
+  bookHeading: {
+    fontSize: '1.5em',
+    color: '#495057',
+    fontFamily: 'Roboto',
+    cursor: 'pointer',
+  },
+
+  bookLink: {
+    fontSize: '1.3em',
+    color: '#2DC4EE',
+    fontFamily: 'Roboto',
+    cursor: 'pointer',
+
+  }
 })

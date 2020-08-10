@@ -52,9 +52,9 @@ export const useStyles = createUseStyles({
 
     titleContainer: {
       display: 'flex',
-      justifyContent:'center',
+      justifyContent: 'center',
       alignItems: 'center',
-      width: '15%',
+      width: 'auto',
       marginTop: '1%',
     },
 
@@ -64,7 +64,7 @@ export const useStyles = createUseStyles({
       // border: '1px solid red'
     },
 
-    copywrite:{
+    copywrite: {
       padding: '1%',
       marginRight: '1%',
     }
