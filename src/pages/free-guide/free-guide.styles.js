@@ -10,6 +10,7 @@ export const useStyles = createUseStyles({
   cardContainer: {
     display: 'flex',
     justifyContent: 'center',
+    padding: '5%',
   },
 
   bannerContainer: {
@@ -18,8 +19,15 @@ export const useStyles = createUseStyles({
   },
 
   subscribeForm: {
+    marginTop: '3%',
+    color: '#2DC4EE',
+    width: '70%',
+    height: 50,
     fontSize: 20,
-    position: 'relative'
+    padding: '1%',
+    fontFamily: 'Roboto',
+    position: 'relative',
+    border: '2px solid #2DC4EE',
   },
 
   formSubmitButton: {
@@ -37,7 +45,20 @@ export const useStyles = createUseStyles({
   },
 
   formSubmitButton: {
+    background: 'none',
+    color: '#2DC4EE',
+    fontSize: '1.5em',
+    width: 200,
+    height: 50,
+    border: '2px solid #2DC4EE',
+    fontFamily: 'Roboto',
+    margin: '3%',
+    cursor: 'pointer',
 
+    '&:hover': {
+      color: 'white',
+      background: '#2DC4EE',
+    }
   },
 
   aboutCard: {

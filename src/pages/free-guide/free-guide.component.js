@@ -54,13 +54,13 @@ const FreeGuide = () => {
       <div className={classes.formContainer} >
         <div style={{ height: '15' }} >
           {isEmailValid === false && (
-            <div style={{ color: "red" }}>
+            <div style={{ color: "red", fontFamily: 'Roboto' }}>
               invalid email
             </div>
           )}
-          {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+          {status === "sending" && <div style={{ color: "blue", fontFamily: 'Roboto' }}>sending...</div>}
           {status === "error" && (
-            <div style={{ color: "red" }}>
+            <div style={{ color: "red", fontFamily: 'Roboto' }}>
               invalid email are you already subscribed?
             </div>
           )}
