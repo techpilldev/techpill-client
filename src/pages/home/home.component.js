@@ -12,18 +12,12 @@ import { useStyles } from './home.styles.js'
 
 const Home = () => {
   const classes = useStyles()
-  const titles = ["THE TECH PILL", "TECHNOLOGICAL EDUCATION"]
   const [data, setData] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
   const [homeTitle, setHomeTitle] = useState(null)
-  const [search, setSearch] = useState('')
-
-  const description = `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,`
 
   const getData = async () => {
-
     let homeResult = await fetch(`http://api.stressfreegut.com/home-page`)
     let homeData = await homeResult.json()
     setHomeTitle(homeData)
@@ -45,8 +39,9 @@ const Home = () => {
     let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
+    let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let letData = await latRes.json()
+    console.log(letData[0].Recommended_Read.featured)
     setLatest(letData)
   }
 
@@ -152,7 +147,7 @@ const Home = () => {
                     <p style={{ color: '#2DC4EE' }}>
                       {tag.name}
                       <span style={{ color: 'grey' }}>
-                        ({tag.blog_posts.length})
+                        ({tag.blog_posts.length + tag.podcasts.length})
                       </span>
                     </p>
                   </Link>
@@ -160,21 +155,24 @@ const Home = () => {
               )}
             </div>
             <div className={classes.sidebarContainer2} >
-              <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Latest release</h5>
+              <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Read This:</h5>
               {latest !== null ? (
                 latest.map((item, index) =>
-                  <div key={index} >
-                    <Link to={`/latest-releases`} >
-                      <img
-                        style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                        src={`http://api.stressfreegut.com${item.latest.cover_image.url}`}
-                      />
-                    </Link>
-                    <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>
-                    <Link to={`/latest-releases`}>
-                      <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
-                    </Link>
-                  </div>
+                  item.Recommended_Read.featured == true && (
+                    <div key={index} style={{ margin: '3% 0% 3% 0%' }} >
+                      <Link to={`/library`} >
+                        <img
+                          style={{ width: 200, height: 'auto', cursor: 'pointer' }}
+                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
+                        />
+                      </Link>
+                      <Link to={`/library`}>
+                        <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
+                      </Link>
+                    </div>
+                  )
+
+
                 )
               ) : (
                   <div></div>

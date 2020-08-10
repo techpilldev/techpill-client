@@ -27,7 +27,7 @@ const Blog = () => {
     let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
+    let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let letData = await latRes.json()
     setLatest(letData)
     let titleRes = await fetch(`http://api.stressfreegut.com/blog-page`)
@@ -168,7 +168,7 @@ const Blog = () => {
                     <p style={{ color: '#2DC4EE' }}>
                       {tag.name}
                       <span style={{ color: 'grey' }}>
-                        ({tag.blog_posts.length})
+                        ({tag.blog_posts.length + 1})
                       </span>
                     </p>
                   </Link>
@@ -176,22 +176,22 @@ const Blog = () => {
               )}
             </div>
             <div className={classes.sidebarContainer2} >
-              <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Read this:</h5>
+              <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Read This:</h5>
               {latest !== null ? (
                 latest.map((item, index) =>
-                  <div key={index} >
-                    <Link to={`/latest-releases`} >
-                      <img
-                        style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                        src={`http://api.stressfreegut.com${item.latest.cover_image.url}`}
-                      />
-                    </Link>
-                    <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 150)}</p>
-                    <Link to={`/latest-releases`}>
-                      <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
-                    </Link>
-                  </div>
-                )
+                  item.Recommended_Read.featured == true && (
+                    <div key={index} style={{ margin: '3% 0% 3% 0%' }} >
+                      <Link to={`/library`} >
+                        <img
+                          style={{ width: 200, height: 'auto', cursor: 'pointer' }}
+                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
+                        />
+                      </Link>
+                      <Link to={`/library`}>
+                        <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
+                      </Link>
+                    </div>
+                  ))
               ) : (
                   <div></div>
                 )}

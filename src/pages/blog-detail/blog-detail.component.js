@@ -69,23 +69,26 @@ const BlogDetail = (props) => {
               <div className={classes.recOuterContainer} >
                 {reads &&
                   reads.map((item, index) =>
-                    <div key={index} className={classes.recommendedContainer} >
-                      <img
-                        className={classes.recommendedImage}
-                        src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
-                      <div
-                        className={classes.recommendedImageContainer}  >
-                        <p
-                          className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
-                        <p
-                          className={classes.link}
-                          onClick={() => {
-                            window.open(item.Recommended_Read.link, '_blank')
-                          }}
-                        >On Amazon
+                    item.Recommended_Read.featured == true && (
+                      <div key={index} className={classes.recommendedContainer} >
+                        <img
+                          className={classes.recommendedImage}
+                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
+                        <div
+                          className={classes.recommendedImageContainer}  >
+                          <p
+                            className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
+                          <p
+                            className={classes.link}
+                            onClick={() => {
+                              window.open(item.Recommended_Read.link, '_blank')
+                            }}
+                          >Read more
                         </p>
+                        </div>
                       </div>
-                    </div>
+                    )
+
                   )}
               </div>
             </div>
