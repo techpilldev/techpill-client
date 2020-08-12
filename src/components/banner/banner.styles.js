@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss'
 export const useStyles = createUseStyles({
   root: {
     boxShadow: '0 10px 10px 0px #black',
+
     //Debug
     // border: '1px solid red'
   },
@@ -16,9 +17,7 @@ export const useStyles = createUseStyles({
   },
 
   mobileImageContainer: {
-    // margin: '1%',
     display: 'none',
-    // justifyContent: 'center',
 
     //Debug
     // border: '1px solid red'
@@ -29,7 +28,7 @@ export const useStyles = createUseStyles({
     padding: '2%',
     textAlign: 'center',
     fontFamily: 'Roboto, sans-serif',
-    color: '#858585',
+    color: 'white',
     lineHeight: '1.7em',
 
     //Debug
@@ -98,6 +97,18 @@ export const useStyles = createUseStyles({
     desktopDescription: {
       display: 'flex',
       flexDirection: 'column',
+      color: 'white',
+      // justifyContent: 'flex-start',
+      // width: 'auto', 
+      fontSize: '0.7em',
+      lineHeight: '2em',
+      marginTop: '1%',
+    },
+
+    desktopDescriptionGrey: {
+      display: 'flex',
+      flexDirection: 'column',
+      color: '#495057',
       // justifyContent: 'flex-start',
       // width: 'auto', 
       fontSize: '0.7em',

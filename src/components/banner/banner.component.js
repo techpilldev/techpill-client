@@ -23,10 +23,9 @@ const Banner = (props) => {
       <div className={title !== null && classes.titleContainer} >
         {title}
       </div>
-      <div className={classes.mobileImageContainer}>
-        {mobileImage}
-      </div>
-      <div className={classes.descriptionContainer} >
+      <div
+        style={desColor !== null && { color: desColor }}
+        className={classes.descriptionContainer} >
         {description}
         {searchbar && searchbar}
       </div>
@@ -35,13 +34,15 @@ const Banner = (props) => {
           {title}
           <div
             style={desColor !== null && { color: desColor }}
-            className={classes.desktopDescription} >
+            className={
+              classes.desktopDescription
+            }>
             {description}
             {searchbar && searchbar}
           </div>
         </div>
         <div className={classes.desktopImageContainer}>
-          {desktopImage}
+          <img src={`http://api.stressfreegut.com${desktopImage}`} />
         </div>
       </div>
     </div>

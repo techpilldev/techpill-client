@@ -84,8 +84,7 @@ const Blog = () => {
         <Banner
           title={podTitle}
           description={description}
-          mobileImage={cables}
-          desktopImage={cables2}
+          desktopImage={title.Image[0].url}
           searchbar={searchbar}
         />
       )}

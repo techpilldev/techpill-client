@@ -37,6 +37,7 @@ const FreeGuide = () => {
 
   const CustomForm = ({ status, message, onValidated }) => {
     let email
+    let name
     const submit = () => {
       setIsEmailVaild(null)
       if (validateEmail(email) === true) {
@@ -44,6 +45,7 @@ const FreeGuide = () => {
         setFloat(true)
         onValidated({
           EMAIL: email.value,
+          FNAME: name.value
         })
       } else {
         setIsEmailVaild(false)
@@ -75,6 +77,12 @@ const FreeGuide = () => {
             </div>
           )}
         </div>
+        <input
+          className={classes.subscribeForm}
+          ref={node => (name = node)}
+          type="text"
+          placeholder="Your name"
+        />
         <input
           className={classes.subscribeForm}
           ref={node => (email = node)}

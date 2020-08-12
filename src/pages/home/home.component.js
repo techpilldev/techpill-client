@@ -38,7 +38,6 @@ const Home = () => {
     setTags(tagData)
     let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let letData = await latRes.json()
-    console.log(letData[0].Recommended_Read.featured)
     setLatest(letData)
   }
 
@@ -58,7 +57,8 @@ const Home = () => {
         color='black'
         title={homeTitle.Title}
         subTitle={homeTitle.Subtitle}
-      />)
+      />
+    )
   }
 
   useEffect(() => {
@@ -72,7 +72,8 @@ const Home = () => {
           title={bannerTitle}
           description={homeTitle.Description}
           mobileImage={robotMobile}
-          desktopImage={robotDestop}
+          desktopImage={homeTitle.image.url}
+          desColor='#495057'
         />
       )}
       <div className={classes.mainContainer} >

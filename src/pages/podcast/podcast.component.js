@@ -83,8 +83,7 @@ const Podcasts = () => {
       {title && (
         <Banner
           title={podTitle}
-          mobileImage={cables}
-          desktopImage={cables2}
+          desktopImage={title.Image[0].url}
           searchbar={searchbar}
           description={description}
         />
