@@ -7,12 +7,13 @@ export const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '10%',
+    marginTop: '10% 0% 0% 0%',
   },
 
   title: {
     fontFamily: 'SPOTNIK_BOLD_2',
     fontSize: '2.5em',
+    margin: 0
   },
 
   subTitle: {
@@ -20,6 +21,7 @@ export const useStyles = createUseStyles({
     fontSize: '1.2em',
     textAlign: 'center',
     color: '#858585',
+    margin: 0
   },
   '@media (min-width: 140px)': {
     title: {

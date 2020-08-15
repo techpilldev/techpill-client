@@ -23,7 +23,7 @@ const TagResult = () => {
     let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.stressfreegut.com/latest-releases`)
+    let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let letData = await latRes.json()
     setLatest(letData)
   }
@@ -36,10 +36,6 @@ const TagResult = () => {
     const date = new Date(newDate)
     const fmtDate = date.toString().split("G")
     return fmtDate[0]
-  }
-
-  const formatString = () => {
-
   }
 
   useEffect(() => {
@@ -98,24 +94,22 @@ const TagResult = () => {
           </div>
           <div className={classes.sidebarContainer2} >
             <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Latest release</h5>
-            {latest !== null ? (
+            {latest && (
               latest.map((item, index) =>
                 <div key={index} >
-                  <Link to={`/latest-releases`} >
+                  <Link to={`/library`} >
                     <img
                       style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                      src={`http://api.stressfreegut.com${item.latest.cover_image.url}`}
+                      src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
                     />
                   </Link>
-                  <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{truncateStr(item.latest.description, 50)}</p>
-                  <Link to={`/latest-releases`}>
+                  <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{item.Recommended_Read.title}</p>
+                  <Link to={`/library`}>
                     <h2 style={{ color: '#2DC4EE' }}>Read more</h2>
                   </Link>
                 </div>
               )
-            ) : (
-                <div></div>
-              )}
+            )}
           </div>
         </div>
       </div>

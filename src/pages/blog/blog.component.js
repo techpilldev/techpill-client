@@ -150,7 +150,7 @@ const Blog = () => {
                         source={truncateStr(post.body, 300)}
                       />
                       <Link to={`/blog-posts/${post.id}/`}>
-                        <h3 style={{ color: '#2DC4EE' }}>Continue Reading</h3>
+                        <h3 style={{ color: '#2DC4EE', margin: 0 }}>Continue Reading</h3>
                       </Link>
                     </div>
                   </div>

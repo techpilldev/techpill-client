@@ -15,6 +15,8 @@ const PodcastDetails = (props) => {
   const getData = async (postID) => {
     const result = await fetch(`http://api.stressfreegut.com/podcasts/${postID}`)
     const data = await result.json()
+    console.log("author", data)
+
     setData(data)
     let res = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     let recReads = await res.json()
@@ -47,11 +49,6 @@ const PodcastDetails = (props) => {
                 <audio style={{ width: '70%' }} controls src={`http://api.stressfreegut.com${data.audio.url}`} />
               </div>
               <hr className={classes.blogHr} />
-              <div className={classes.blogBody}>
-                <ReactMarkdown className={classes.mardown} source={data.notes_and_links} />
-              </div>
-              <div className={classes.blogAuthor} > - {data.author}</div>
-              <hr className={classes.blogHr} />
               <h3 className={classes.tagsHeading} >Tags</h3>
               <div className={classes.linksContainer} >
                 {data.tags.map((item, index) =>
@@ -61,12 +58,14 @@ const PodcastDetails = (props) => {
               </div>
               <br></br>
               <h3 className={classes.referenceHeading} >References</h3>
-              <div className={classes.mardownContainer} >
+              <div className={classes.blogBody} >
                 <ReactMarkdown
                   className={classes.mardown}
-                  escapeHtml={false}
                   source={data.notes_and_links}
                 />
+                <div style={{ display: 'flex', flexDirection: 'row', margin: '0% 2% 0% 0%', alignItems: 'center' }} >
+                  <span style={{ fontSize: '1.5em' }} >Share</span><ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
+                </div>
               </div>
               <h3 className={classes.recommendedHeading} >Recommended Reads</h3>
               <div className={classes.recOuterContainer} >

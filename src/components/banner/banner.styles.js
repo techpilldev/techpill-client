@@ -97,12 +97,12 @@ export const useStyles = createUseStyles({
     desktopDescription: {
       display: 'flex',
       flexDirection: 'column',
-      color: 'white',
+      color: 'grey',
       // justifyContent: 'flex-start',
-      // width: 'auto', 
+      width: 'auto',
       fontSize: '0.7em',
       lineHeight: '2em',
-      marginTop: '1%',
+      // marginTop: '1%',
     },
 
     desktopDescriptionGrey: {

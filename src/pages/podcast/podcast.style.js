@@ -31,10 +31,11 @@ export const useStyles = createUseStyles({
   },
 
   detailLink: {
-    width: 115,
+    textAlign: 'center',
+    width: 'auto',
     color: '#2DC4EE',
     border: '1px solid #2DC4EE',
-    padding: '2%',
+    padding: '0% 2% 0% 2%',
 
     '&:hover': {
       color: 'white',
@@ -186,7 +187,7 @@ export const useStyles = createUseStyles({
 
   linkCnt: {
     width: 110,
-    marginTop: '5%'
+    marginTop: '1%'
   },
 
   smallHeading: {
@@ -335,7 +336,7 @@ export const useStyles = createUseStyles({
 
   linkCnt: {
     width: 110,
-    marginTop: '5%'
+    marginTop: '1%'
   },
 
   imageCnt: {
@@ -378,6 +379,8 @@ export const useStyles = createUseStyles({
 
 
     detailLink: {
+      textAlign: 'start',
+      width: '110%',
       color: '#2DC4EE',
       border: '1px solid #2DC4EE',
       padding: '2%',
@@ -390,7 +393,7 @@ export const useStyles = createUseStyles({
 
     linkCnt: {
       width: 110,
-      marginTop: '5%'
+      marginTop: '0%'
     },
 
     outerContainer: {

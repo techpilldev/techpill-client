@@ -98,11 +98,11 @@ const Home = () => {
                         (truncateStr(post.body, 300)) : truncateStr(post.notes_and_links, 300)} />
                     {post.body ? (
                       <Link to={`/blog-posts/${post.id}/`}>
-                        <h3 style={{ color: '#2DC4EE' }}>{'Continue reading'}</h3>
+                        <h3 style={{ color: '#2DC4EE', margin: 0 }}>{'Continue reading'}</h3>
                       </Link>
                     ) : (
                         <Link to={`/podcast-post/${post.id}/`}>
-                          <h3 style={{ color: '#2DC4EE' }}>{'Listen to episode'}</h3>
+                          <h3 style={{ color: '#2DC4EE', margin: 0 }}>{'Listen to episode'}</h3>
                         </Link>
                       )
                     }

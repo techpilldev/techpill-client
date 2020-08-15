@@ -15,10 +15,11 @@ export const useStyles = createUseStyles({
   },
 
   detailLink: {
+    textAlign: 'center',
     color: '#2DC4EE',
     border: '1px solid #2DC4EE',
-    padding: '2%',
-
+    padding: '3%',
+    margin: 0,
     '&:hover': {
       color: 'white',
       backgroundColor: '#2DC4EE',
@@ -195,7 +196,7 @@ export const useStyles = createUseStyles({
 
   markdown: {
     color: '#495057',
-    padding: '2% 0% 2% 0%',
+    padding: '1% 0% 1% 0%',
   },
 
   referenceHeading: {
@@ -328,6 +329,19 @@ export const useStyles = createUseStyles({
       marginBottom: '0%',
       // border: '1px solid red',
 
+    },
+
+    detailLink: {
+      textAlign: 'start',
+      width: '110%',
+      color: '#2DC4EE',
+      border: '1px solid #2DC4EE',
+      padding: '2%',
+
+      '&:hover': {
+        color: 'white',
+        backgroundColor: '#2DC4EE',
+      }
     },
 
     tagsHeading: {
@@ -546,7 +560,7 @@ export const useStyles = createUseStyles({
 
     markdown: {
       color: '#495057',
-      padding: '2% 0% 2% 0%',
+      padding: '0% 0% 0% 0%',
     },
   },
 })

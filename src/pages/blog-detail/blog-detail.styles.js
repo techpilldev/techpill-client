@@ -125,7 +125,7 @@ export const useStyles = createUseStyles({
 
   blogAuthor: {
     fontSize: '1.2em',
-    marginBottom: '5%'
+    marginBottom: '1%'
   },
 
   referenceHeading: {
@@ -289,7 +289,6 @@ export const useStyles = createUseStyles({
 
     mardownContainer: {
       padding: '2% 7% 0% 7%',
-
     },
 
     referenceHeading: {
@@ -309,7 +308,7 @@ export const useStyles = createUseStyles({
     },
 
     blogAuthor: {
-      padding: '3% 0% 0% 6%',
+      padding: '1% 0% 0% 6%',
       // border: '1px solid red',
 
     },

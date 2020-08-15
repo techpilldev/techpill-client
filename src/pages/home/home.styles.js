@@ -182,7 +182,7 @@ export const useStyles = createUseStyles({
     fontSize: '1.5em',
     padding: '2% 0% 2% 0%',
     color: '#495057',
-    marginTop: '3%',
+    marginTop: '0%',
   },
 
   smallDate: {
@@ -623,7 +623,7 @@ export const useStyles = createUseStyles({
 
     markdown: {
       color: '#495057',
-      padding: '2% 0% 2% 0%',
+      padding: '0% 0% 2% 0%',
     },
   },
 })

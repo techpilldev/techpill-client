@@ -20,7 +20,7 @@ export const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     userSelect: 'none',
-    marginTop: '1%',
+    marginTop: '5%',
   },
 
   innerContainer: {

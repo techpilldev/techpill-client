@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 import Title from '../../components/title/title.component.js'
 import Banner from '../../components/banner/banner.component.js'
 import AuthorCard from '../../components/author/author.component'
-import { cables, cables2 } from '../../assets/svgs.js'
 import { useStyles } from './podcast.style.js'
 import Searchbar from '../../components/searchbar/searchbar.component.js'
 
 
 const Podcasts = () => {
   const classes = useStyles()
-  const titles = ["Podcasts", "let's talk tech"]
   const [data, setData] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
   const [title, setTitle] = useState(null)
   const [search, setSearch] = useState('')
   const description = `To find a specific article please search here`
+
+
   const getData = async () => {
     let result = await fetch(`http://api.stressfreegut.com/podcasts`)
     let data = await result.json()
@@ -107,7 +107,7 @@ const Podcasts = () => {
                     <div className={classes.blogBody}>
 
                       <div className={classes.innderBody} >
-                        <ReactMarkdown className={classes.mardown} source={post.notes_and_links} />
+                        <ReactMarkdown className={classes.mardown} source={truncateStr(post.notes_and_links, 550)} />
                         <br></br>
                         <Link className={classes.linkCnt} to={`/podcast-post/${post.id}/`}>
                           <h3 className={classes.detailLink}  >Play Episode</h3>

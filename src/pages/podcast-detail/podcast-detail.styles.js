@@ -40,6 +40,14 @@ export const useStyles = createUseStyles({
   mardown: {
     '& a': {
       color: '#2DC4EE',
+    },
+    '& p': {
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    '& img': {
+      objectFit: 'contain',
+      margin: '3%'
     }
   },
 
@@ -89,7 +97,7 @@ export const useStyles = createUseStyles({
 
   blogDate: {
     fontStyle: 'italic',
-    padding: '2% 0% 0% 2%'
+    padding: '0% 0% 0% 2%'
   },
 
   blogHeading: {
@@ -107,6 +115,16 @@ export const useStyles = createUseStyles({
   },
 
   blogBody: {
+    fontSize: '1.1em',
+    lineHeight: 1.5,
+
+    // border: '1px solid red',
+  },
+
+
+  blogBody: {
+    display: 'flex',
+    flexDirection: 'column',
     fontSize: '1.1em',
     lineHeight: 1.5,
 
@@ -228,7 +246,7 @@ export const useStyles = createUseStyles({
       alignSelf: 'flex-start',
       fontSize: '1.7em',
       fontWeight: 'bolder',
-      margin: '0% 0% 0% 7%',
+      margin: '0% 0% 0% 6%',
 
       // border: '1px solid red'
     },
@@ -286,7 +304,7 @@ export const useStyles = createUseStyles({
       fontSize: '1.7em',
       alignSelf: 'flex-start',
       fontWeight: 'bolder',
-      margin: '3% 0% 0% 7%',
+      margin: '3% 0% 1% 6%',
 
       // border: '1px solid red',
     },
@@ -330,7 +348,7 @@ export const useStyles = createUseStyles({
       fontSize: '1.7em',
       alignSelf: 'flex-start',
       fontWeight: 'bolder',
-      margin: '3% 0% 0% 7%',
+      margin: '2% 0% 0% 6%',
     },
 
     recommendedImage: {
