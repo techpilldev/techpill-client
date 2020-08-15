@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import ShareButtons from '../../components/share-buttons/share-buttons.component'
 import { useStyles } from './blog-detail.styles'
 
-const BlogDetail = (props) => {
+const BlogDetail = () => {
   const classes = useStyles()
   const { postID } = useParams()
   const [data, setData] = useState()
@@ -45,7 +45,9 @@ const BlogDetail = (props) => {
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <hr className={classes.blogHr} />
               <div className={classes.blogBody}>
-                <ReactMarkdown source={data.body} />
+                <ReactMarkdown
+                  source={data.body}
+                />
               </div>
               <div className={classes.blogAuthor} > - {data.author}</div>
               <hr className={classes.blogHr} />
@@ -61,7 +63,7 @@ const BlogDetail = (props) => {
               <div className={classes.mardownContainer} >
                 <ReactMarkdown
                   className={classes.mardown}
-                  escapeHtml={false}
+                  escapeHtml={true}
                   source={data.notes_and_links}
                 />
               </div>
@@ -74,10 +76,8 @@ const BlogDetail = (props) => {
                         <img
                           className={classes.recommendedImage}
                           src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
-                        <div
-                          className={classes.recommendedImageContainer}  >
-                          <p
-                            className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
+                        <div className={classes.recommendedImageContainer}  >
+                          <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
                           <p
                             className={classes.link}
                             onClick={() => {
@@ -88,7 +88,6 @@ const BlogDetail = (props) => {
                         </div>
                       </div>
                     )
-
                   )}
               </div>
             </div>

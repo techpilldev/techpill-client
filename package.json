@@ -13,6 +13,7 @@
     "@material-ui/icons": "^4.9.1",
     "@types/react": "^16.8.6",
     "esm": "^3.2.25",
+    "marked": "^1.1.1",
     "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4",
     "react": "15||16",

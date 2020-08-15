@@ -5,13 +5,11 @@ import { useStyles } from './banner.styles.js'
 const Banner = (props) => {
   const {
     desktopImage,
-    mobileImage,
     title,
     description,
     bgColor,
     desColor,
     searchbar,
-    aboutImage
   } = props
 
   const classes = useStyles()
