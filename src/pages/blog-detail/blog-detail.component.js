@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom'
 
 import ReactMarkdown from 'react-markdown'
 
+import PreviewWysiwyg from '../../components/markdown-renderer'
+
 import ShareButtons from '../../components/share-buttons/share-buttons.component'
 import { useStyles } from './blog-detail.styles'
 
@@ -46,6 +48,7 @@ const BlogDetail = () => {
               <hr className={classes.blogHr} />
               <div className={classes.blogBody}>
                 <ReactMarkdown
+                  className={classes.mardown}
                   source={data.body}
                 />
               </div>
@@ -63,7 +66,6 @@ const BlogDetail = () => {
               <div className={classes.mardownContainer} >
                 <ReactMarkdown
                   className={classes.mardown}
-                  escapeHtml={true}
                   source={data.notes_and_links}
                 />
               </div>

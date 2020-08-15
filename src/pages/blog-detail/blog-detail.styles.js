@@ -40,6 +40,14 @@ export const useStyles = createUseStyles({
   mardown: {
     '& a': {
       color: '#2DC4EE',
+    },
+    '& p': {
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    '& img': {
+      objectFit: 'contain',
+      margin: '3%'
     }
   },
 
@@ -107,6 +115,8 @@ export const useStyles = createUseStyles({
   },
 
   blogBody: {
+    display: 'flex',
+    flexDirection: 'column',
     fontSize: '1.1em',
     lineHeight: 1.5,
 

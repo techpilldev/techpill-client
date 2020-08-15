@@ -145,7 +145,10 @@ const Blog = () => {
                     <div style={{ padding: '2%' }} >
                       <h3 className={classes.smallHeading} >{post.title}</h3>
                       <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
-                      <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
+                      <ReactMarkdown
+                        className={classes.markdown}
+                        source={truncateStr(post.body, 300)}
+                      />
                       <Link to={`/blog-posts/${post.id}/`}>
                         <h3 style={{ color: '#2DC4EE' }}>Continue Reading</h3>
                       </Link>
