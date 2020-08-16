@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Title from '../../components/title/title.component.js'
 import Banner from '../../components//banner/banner.component.js'
+import ReactMarkdown from 'react-markdown'
 
 import { useStyles } from './about.styles.js'
 
@@ -46,7 +47,10 @@ const About = () => {
             <h3 className={classes.aboutTitle}>Meet {data.title}</h3>
             <img className={classes.aboutImage} src={`http://api.stressfreegut.com${data.image.url}`} />
             <div className={classes.aboutBody}>
-              {data.body}
+              <ReactMarkdown
+                className={classes.mardown}
+                source={data.body}
+              />
               <div style={{ alignSelf: 'center' }} className={classes.aboutBtn} >
                 <Link to='/free-guide' >
                   <div className={classes.aboutText}>Contact Niels</div>

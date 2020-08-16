@@ -16,6 +16,7 @@ const Library = () => {
     setTitle(data)
     const libRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
     const libData = await libRes.json()
+    console.log("lib data>>>>>", libData)
     setData(libData)
   }
 
@@ -52,15 +53,15 @@ const Library = () => {
         <div className={classes.aboutCard} >
           {data !== null && data.map((item, index) =>
             <div key={index} style={{ margin: '3%' }} >
-              <h2 className={classes.bookHeading} >{item.Recommended_Read.title}</h2>
+              <h2 className={classes.bookHeading} >{item.title}</h2>
               <div >
                 <img
-                  onClick={() => handleClick(item.Recommended_Read.link)}
+                  onClick={() => handleClick(item.link)}
                   style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                  src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
+                  src={`http://api.stressfreegut.com${item.image[0].url}`}
                 />
               </div>
-              <h2 onClick={() => handleClick(item.Recommended_Read.url)} className={classes.bookLink}>Read more</h2>
+              <h2 onClick={() => handleClick(item.link)} className={classes.bookLink}>Read more</h2>
             </div>
           )}
         </div>

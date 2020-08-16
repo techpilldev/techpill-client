@@ -83,7 +83,7 @@ const TagResult = () => {
         </div>
         <div className={classes.sidebar} >
           <div className={classes.sidebarContainer1} >
-            <h5 style={{ marginBottom: '5%' }} >All tags</h5>
+            <h5 style={{ fontSize: '1.2em', marginBottom: '5%' }} >All tags</h5>
             {tags && (
               tags.map((tag, index) =>
                 <Link key={index} to={`/tags/${tag.name}/${tag.id}/`} >
@@ -93,17 +93,17 @@ const TagResult = () => {
             )}
           </div>
           <div className={classes.sidebarContainer2} >
-            <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Latest release</h5>
+            <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Library</h5>
             {latest && (
               latest.map((item, index) =>
                 <div key={index} >
+                  <p style={{ fontSize: '1.2em', width: 200, margin: '3% 0% 3% 0%' }} >{item.Recommended_Read.title}</p>
                   <Link to={`/library`} >
                     <img
                       style={{ width: 200, height: 'auto', cursor: 'pointer' }}
                       src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
                     />
                   </Link>
-                  <p style={{ width: 200, margin: '3% 0% 3% 0%' }} >{item.Recommended_Read.title}</p>
                   <Link to={`/library`}>
                     <h2 style={{ color: '#2DC4EE' }}>Read more</h2>
                   </Link>

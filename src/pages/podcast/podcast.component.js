@@ -113,10 +113,8 @@ const Podcasts = () => {
                           <h3 className={classes.detailLink}  >Play Episode</h3>
                         </Link>
                       </div>
-
                       <div className={classes.authorContainer} >
                         <AuthorCard title='Featuring' />
-
                         {post.guests.map((item, index) =>
                           <div key={index} className={classes.featuringRoot}>
                             <Link className={classes.container} to='/about' >
@@ -166,9 +164,9 @@ const Podcasts = () => {
                     <div style={{ padding: '2%' }} >
                       <h3 className={classes.smallHeading} >{post.title}</h3>
                       <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
-                      <ReactMarkdown className={classes.markdown} source={truncateStr(post.body, 300)} />
-                      <Link to={`/blog-posts/${post.id}/`}>
-                        <h3 style={{ color: '#2DC4EE' }}>Continue Reading</h3>
+                      <ReactMarkdown className={classes.markdown} source={truncateStr(post.notes_and_links, 300)} />
+                      <Link to={`/podcast-post/${post.id}/`}>
+                        <h3 style={{ color: '#2DC4EE', margin: 0 }}>Litsen to episode</h3>
                       </Link>
                     </div>
                   </div>
@@ -199,12 +197,12 @@ const Podcasts = () => {
               <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Read This:</h5>
               {latest !== null ? (
                 latest.map((item, index) =>
-                  item.Recommended_Read.featured == true && (
+                  item.featured == true && (
                     <div key={index} style={{ margin: '3% 0% 3% 0%' }} >
                       <Link to={`/library`} >
                         <img
                           style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
+                          src={`http://api.stressfreegut.com${item.image[0].url}`}
                         />
                       </Link>
                       <Link to={`/library`}>

@@ -47,7 +47,9 @@ export const useStyles = createUseStyles({
     },
     '& img': {
       objectFit: 'contain',
-      margin: '3%'
+      margin: '3%',
+      height: '25em',
+      alignSelf: 'center',
     }
   },
 

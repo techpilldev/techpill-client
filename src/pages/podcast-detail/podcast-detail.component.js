@@ -71,19 +71,21 @@ const PodcastDetails = (props) => {
               <div className={classes.recOuterContainer} >
                 {reads &&
                   reads.map((item, index) =>
-                    item.Recommended_Read.featured == true && (
+                    item.featured == true && (
                       <div key={index} className={classes.recommendedContainer} >
                         <img
+                          onClick={() => {
+                            window.open(item.link, '_blank')
+                          }}
                           className={classes.recommendedImage}
-                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
+                          src={`http://api.stressfreegut.com${item.image[0].url}`} />
                         <div
                           className={classes.recommendedImageContainer}  >
-                          <p
-                            className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
+                          <p className={classes.recommendedTitle} >{item.title}</p>
                           <p
                             className={classes.link}
                             onClick={() => {
-                              window.open(item.Recommended_Read.link, '_blank')
+                              window.open(item.link, '_blank')
                             }}
                           >Read more
                         </p>

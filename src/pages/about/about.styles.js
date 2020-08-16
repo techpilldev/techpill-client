@@ -21,6 +21,19 @@ export const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
   },
+  mardown: {
+    '& a': {
+      color: '#2DC4EE',
+    },
+    '& p': {
+      display: 'flex',
+      flexDirection: 'column'
+    },
+    '& img': {
+      objectFit: 'contain',
+      margin: '3%'
+    }
+  },
   aboutCard: {
     display: 'flex',
     flexDirection: 'column',

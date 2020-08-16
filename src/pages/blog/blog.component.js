@@ -181,12 +181,12 @@ const Blog = () => {
               <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Read This:</h5>
               {latest !== null ? (
                 latest.map((item, index) =>
-                  item.Recommended_Read.featured == true && (
+                  item.featured == true && (
                     <div key={index} style={{ margin: '3% 0% 3% 0%' }} >
                       <Link to={`/library`} >
                         <img
                           style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
+                          src={`http://api.stressfreegut.com${item.image[0].url}`}
                         />
                       </Link>
                       <Link to={`/library`}>

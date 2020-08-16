@@ -76,17 +76,21 @@ const BlogDetail = () => {
               <div className={classes.recOuterContainer} >
                 {reads &&
                   reads.map((item, index) =>
-                    item.Recommended_Read.featured == true && (
+                    item.featured == true && (
                       <div key={index} className={classes.recommendedContainer} >
                         <img
                           className={classes.recommendedImage}
-                          src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`} />
+                          src={`http://api.stressfreegut.com${item.image[0].url}`}
+                          onClick={() => {
+                            window.open(item.link, '_blank')
+                          }}
+                        />
                         <div className={classes.recommendedImageContainer}  >
-                          <p className={classes.recommendedTitle} >{item.Recommended_Read.title}</p>
+                          <p className={classes.recommendedTitle} >{item.title}</p>
                           <p
                             className={classes.link}
                             onClick={() => {
-                              window.open(item.Recommended_Read.link, '_blank')
+                              window.open(item.link, '_blank')
                             }}
                           >Read more
                         </p>

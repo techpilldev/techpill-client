@@ -270,7 +270,7 @@ export const useStyles = createUseStyles({
   smallCardContainer: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     lineHeight: 1.5,
     marginBottom: '5%'
   },
@@ -602,13 +602,13 @@ export const useStyles = createUseStyles({
       // border: '1px solid red',
     },
 
-    smallCardContainer: {
+    Container: {
       width: '70%',
     },
 
     smallCard: {
       width: '100%',
-      height: '500px',
+      height: 'auto',
       marginBottom: '3%',
 
       // border: '1px solid red'
@@ -616,7 +616,7 @@ export const useStyles = createUseStyles({
 
     smallImg: {
       // width: '100%',
-      height: '50%',
+      height: 400,
       // borderRadius: '10px 10px 0px 0px',
       // objectFit: 'cover',
       // height: '30%',
@@ -625,7 +625,7 @@ export const useStyles = createUseStyles({
 
     smallHeading: {
       padding: '0% 0% 0% 0%',
-      marginTop: '0%',
+      margin: '0%',
     },
 
     smallDate: {
