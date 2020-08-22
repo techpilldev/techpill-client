@@ -11,12 +11,11 @@ const Library = () => {
   const [data, setData] = useState(null)
 
   const getData = async () => {
-    const result = await fetch(`http://api.stressfreegut.com/library`)
+    const result = await fetch(`${process.env.API}/library`)
     const data = await result.json()
     setTitle(data)
-    const libRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
+    const libRes = await fetch(`${process.env.API}/recommended-reads`)
     const libData = await libRes.json()
-    console.log("lib data>>>>>", libData)
     setData(libData)
   }
 
@@ -58,7 +57,7 @@ const Library = () => {
                 <img
                   onClick={() => handleClick(item.link)}
                   style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                  src={`http://api.stressfreegut.com${item.image[0].url}`}
+                  src={`${process.env.API}${item.image[0].url}`}
                 />
               </div>
               <h2 onClick={() => handleClick(item.link)} className={classes.bookLink}>Read more</h2>

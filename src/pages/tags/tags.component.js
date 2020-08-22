@@ -14,16 +14,16 @@ const TagResult = () => {
 
 
   const getData = async () => {
-    const result = await fetch(`http://api.stressfreegut.com/tags/${tagID}`)
+    const result = await fetch(`${process.env.API}/tags/${tagID}`)
     const data = await result.json()
     const blogTags = data.blog_posts.map(item => item)
     const podcastTags = data.podcasts.map(item => item)
     const newArr = [...blogTags, ...podcastTags]
     setData(newArr.reverse())
-    let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
+    let tagRes = await fetch(`${process.env.API}/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
+    let latRes = await fetch(`${process.env.API}/recommended-reads`)
     let letData = await latRes.json()
     setLatest(letData)
   }
@@ -50,10 +50,21 @@ const TagResult = () => {
           {data !== null && (
             data.map((post, index) =>
               <div key={index} className={classes.smallCard}>
-                <img
-                  className={classes.smallImg}
-                  src={`http://api.stressfreegut.com${post.cover_image.url}`}
-                />
+                {post.body ? (
+                  <Link to={`/blog-posts/${post.id}/`}>
+                    <img
+                      className={classes.smallImg}
+                      src={`${process.env.API}${post.cover_image.url}`}
+                    />
+                  </Link>
+                ) : (
+                    <Link to={`/podcast-post/${post.id}/`}>
+                      <img
+                        className={classes.smallImg}
+                        src={`${process.env.API}${post.cover_image.url}`}
+                      />
+                    </Link>
+                  )}
                 <div style={{ padding: '2%' }} >
                   <h3 className={classes.smallHeading} >{post.title}</h3>
                   <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
@@ -94,22 +105,24 @@ const TagResult = () => {
           </div>
           <div className={classes.sidebarContainer2} >
             <h5 style={{ fontSize: '1.3em', marginBottom: '5%' }} >Library</h5>
-            {latest && (
+            {latest !== null ? (
               latest.map((item, index) =>
-                <div key={index} >
-                  <p style={{ fontSize: '1.2em', width: 200, margin: '3% 0% 3% 0%' }} >{item.Recommended_Read.title}</p>
-                  <Link to={`/library`} >
-                    <img
-                      style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                      src={`http://api.stressfreegut.com${item.Recommended_Read.image.url}`}
-                    />
-                  </Link>
-                  <Link to={`/library`}>
-                    <h2 style={{ color: '#2DC4EE' }}>Read more</h2>
-                  </Link>
-                </div>
-              )
-            )}
+                item.featured == true && (
+                  <div key={index} style={{ margin: '3% 0% 3% 0%' }} >
+                    <Link to={`/library`} >
+                      <img
+                        style={{ width: 200, height: 'auto', cursor: 'pointer' }}
+                        src={`${process.env.API}${item.image[0].url}`}
+                      />
+                    </Link>
+                    <Link to={`/library`}>
+                      <h2 style={{ fontSize: '1.3em', color: '#2DC4EE' }}>Read more</h2>
+                    </Link>
+                  </div>
+                ))
+            ) : (
+                <div></div>
+              )}
           </div>
         </div>
       </div>

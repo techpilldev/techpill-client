@@ -12,11 +12,11 @@ const FreeGuide = () => {
   const [data, setData] = useState(null)
   const [isEmailValid, setIsEmailVaild] = useState(null)
   const [float, setFloat] = useState(false)
-  const url = "https://stressfreegut.us17.list-manage.com/subscribe/post?u=ef2f9a50e05d4ad9d7089ca2e&amp;id=157318a47f"
+  const url = process.env.EMAIL
 
 
   const getData = async () => {
-    const result = await fetch(`http://api.stressfreegut.com/free-guide-page`)
+    const result = await fetch(`${process.env.API}/free-guide-page`)
     const data = await result.json()
     setData(data)
   }

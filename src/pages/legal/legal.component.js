@@ -8,9 +8,8 @@ const Legal = () => {
   const [data, setData] = useState()
 
   const getData = async () => {
-    const result = await fetch(`http://api.stressfreegut.com/legal`)
+    const result = await fetch(`${process.env.API}/legal`)
     const data = await result.json()
-    console.log("data", data)
     setData(data)
   }
 

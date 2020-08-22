@@ -15,10 +15,6 @@ const Button = (props) => {
     }
   }
 
-  useEffect(() => {
-    console.log("imgLink >>> ", imgLink)
-  }, [])
-
   const handleClick = () => {
     action()
   }
@@ -36,7 +32,7 @@ const Button = (props) => {
         )}
     >
       {imgLink ? (
-        <img style={{ width: 30, height: 30 }} src={`http://api.stressfreegut.com${imgLink}`} />
+        <img style={{ width: 30, height: 30 }} src={`${process.env.API}${imgLink}`} />
       ) : (
           image
         )}

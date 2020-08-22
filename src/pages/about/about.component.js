@@ -11,7 +11,7 @@ const About = () => {
   const [data, setData] = useState(null)
 
   const getData = async () => {
-    const result = await fetch(`http://api.stressfreegut.com/about-page`)
+    const result = await fetch(`${process.env.API}/about-page`)
     const data = await result.json()
     setData(data)
   }
@@ -45,7 +45,7 @@ const About = () => {
         {data && (
           <div className={classes.aboutCard} >
             <h3 className={classes.aboutTitle}>Meet {data.title}</h3>
-            <img className={classes.aboutImage} src={`http://api.stressfreegut.com${data.image.url}`} />
+            <img className={classes.aboutImage} src={`${process.env.API}${data.image.url}`} />
             <div className={classes.aboutBody}>
               <ReactMarkdown
                 className={classes.mardown}

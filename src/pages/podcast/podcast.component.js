@@ -20,16 +20,16 @@ const Podcasts = () => {
 
 
   const getData = async () => {
-    let result = await fetch(`http://api.stressfreegut.com/podcasts`)
+    let result = await fetch(`${process.env.API}/podcasts`)
     let data = await result.json()
     setData(data)
-    let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
+    let tagRes = await fetch(`${process.env.API}/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
+    let latRes = await fetch(`${process.env.API}/recommended-reads`)
     let letData = await latRes.json()
     setLatest(letData)
-    let titleRes = await fetch(`http://api.stressfreegut.com/podcast-page`)
+    let titleRes = await fetch(`${process.env.API}/podcast-page`)
     let titleData = await titleRes.json()
     setTitle(titleData)
   }
@@ -99,7 +99,7 @@ const Podcasts = () => {
                 <div className={classes.blogCardContainer} key={index} >
                   <img
                     className={classes.blogImage}
-                    src={`http://api.stressfreegut.com${post.cover_image.url}`} />
+                    src={`${process.env.API}${post.cover_image.url}`} />
                   <div className={classes.blogCard} >
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
@@ -120,7 +120,7 @@ const Podcasts = () => {
                             <Link className={classes.container} to='/about' >
                               <div className={classes.imageCnt} >
                                 <img
-                                  src={`http://api.stressfreegut.com${item.avatar.url}`}
+                                  src={`${process.env.API}${item.avatar.url}`}
                                   className={classes.image}
                                 />
                               </div>
@@ -160,7 +160,7 @@ const Podcasts = () => {
                     <Link to={`/podcast-post/${post.id}/`} >
                       <img
                         className={classes.smallImg}
-                        src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                        src={`${process.env.API}${post.cover_image.url}`}
                       />
                     </Link>
                     <div style={{ height: 'auto', padding: '2%' }} >
@@ -204,7 +204,7 @@ const Podcasts = () => {
                       <Link to={`/library`} >
                         <img
                           style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                          src={`http://api.stressfreegut.com${item.image[0].url}`}
+                          src={`${process.env.API}${item.image[0].url}`}
                         />
                       </Link>
                       <Link to={`/library`}>

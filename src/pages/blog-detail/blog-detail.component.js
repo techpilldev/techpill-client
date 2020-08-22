@@ -15,10 +15,10 @@ const BlogDetail = () => {
   const [reads, setReads] = useState(null)
 
   const getData = async (postID) => {
-    const result = await fetch(`http://api.stressfreegut.com/blog-posts/${postID}`)
+    const result = await fetch(`${process.env.API}/blog-posts/${postID}`)
     const data = await result.json()
     setData(data)
-    let res = await fetch(`http://api.stressfreegut.com/recommended-reads`)
+    let res = await fetch(`${process.env.API}/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
   }
@@ -40,7 +40,7 @@ const BlogDetail = () => {
           <div className={classes.blogCardContainer} >
             <img
               className={classes.blogImage}
-              src={`http://api.stressfreegut.com${data.cover_image.url}`} />
+              src={`${process.env.API}${data.cover_image.url}`} />
             <div className={classes.blogCard} >
               <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
@@ -80,7 +80,7 @@ const BlogDetail = () => {
                       <div key={index} className={classes.recommendedContainer} >
                         <img
                           className={classes.recommendedImage}
-                          src={`http://api.stressfreegut.com${item.image[0].url}`}
+                          src={`${process.env.API}${item.image[0].url}`}
                           onClick={() => {
                             window.open(item.link, '_blank')
                           }}

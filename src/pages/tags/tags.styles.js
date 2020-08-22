@@ -111,5 +111,19 @@ export const useStyles = createUseStyles({
       // justifyContent: 'space-between',
       // border: '1px solid red',
     },
+    smallCard: {
+      overflow: 'hidden'
+    },
+    smallImg: {
+      width: '100%',
+      height: 200,
+      borderRadius: '10px 10px 0px 0px',
+      // objectFit: 'cover',
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.1)',
+        transition: 'transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)',
+      }
+    },
   }
 })

@@ -10,7 +10,7 @@ const Footer = () => {
   const [text, setText] = useState(null)
 
   const getData = async () => {
-    const res = await fetch(`http://api.stressfreegut.com/nav-text`)
+    const res = await fetch(`${process.env.API}/nav-text`)
     const data = await res.json()
     setText(data)
   }

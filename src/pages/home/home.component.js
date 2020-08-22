@@ -7,6 +7,7 @@ import { robotDestop, robotMobile } from '../../assets/svgs.js'
 import ReactMarkdown from 'react-markdown'
 import { useStyles } from './home.styles.js'
 
+
 const Home = () => {
   const classes = useStyles()
   const [data, setData] = useState(null)
@@ -15,14 +16,14 @@ const Home = () => {
   const [homeTitle, setHomeTitle] = useState(null)
 
   const getData = async () => {
-    let homeResult = await fetch(`http://api.stressfreegut.com/home-page`)
+    let homeResult = await fetch(`${process.env.API}/home-page`)
     let homeData = await homeResult.json()
     setHomeTitle(homeData)
 
-    let blogResult = await fetch(`http://api.stressfreegut.com/blog-posts`)
+    let blogResult = await fetch(`${process.env.API}/blog-posts`)
     let blogData = await blogResult.json()
 
-    let podcastResult = await fetch(`http://api.stressfreegut.com/podcasts`)
+    let podcastResult = await fetch(`${process.env.API}/podcasts`)
     let podcastData = await podcastResult.json()
 
     const newArr = [...podcastData, ...blogData]
@@ -33,12 +34,11 @@ const Home = () => {
 
     setData(newArr)
 
-    let tagRes = await fetch(`http://api.stressfreegut.com/tags`)
+    let tagRes = await fetch(`${process.env.API}/tags`)
     let tagData = await tagRes.json()
     setTags(tagData)
-    let latRes = await fetch(`http://api.stressfreegut.com/recommended-reads`)
+    let latRes = await fetch(`${process.env.API}/recommended-reads`)
     let letData = await latRes.json()
-    console.log('let data>>>>>', letData)
     setLatest(letData)
   }
 
@@ -90,14 +90,14 @@ const Home = () => {
                     <Link to={`/blog-posts/${post.id}/`}>
                       <img
                         className={classes.smallImg}
-                        src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                        src={`${process.env.API}${post.cover_image.url}`}
                       />
                     </Link>
                   ) : (
                       <Link to={`/podcast-post/${post.id}/`}>
                         <img
                           className={classes.smallImg}
-                          src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                          src={`${process.env.API}${post.cover_image.url}`}
                         />
                       </Link>
                     )
@@ -174,7 +174,7 @@ const Home = () => {
                       <Link to={`/library`} >
                         <img
                           style={{ width: 200, height: 'auto', cursor: 'pointer' }}
-                          src={`http://api.stressfreegut.com${item.image[0].url}`}
+                          src={`${process.env.API}${item.image[0].url}`}
                         />
                       </Link>
                       <Link to={`/library`}>

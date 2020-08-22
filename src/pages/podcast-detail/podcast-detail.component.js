@@ -13,12 +13,12 @@ const PodcastDetails = (props) => {
   const [reads, setReads] = useState(null)
 
   const getData = async (postID) => {
-    const result = await fetch(`http://api.stressfreegut.com/podcasts/${postID}`)
+    const result = await fetch(`${process.env.API}/podcasts/${postID}`)
     const data = await result.json()
     console.log("author", data)
 
     setData(data)
-    let res = await fetch(`http://api.stressfreegut.com/recommended-reads`)
+    let res = await fetch(`${process.env.API}/recommended-reads`)
     let recReads = await res.json()
     setReads(recReads)
   }
@@ -40,13 +40,13 @@ const PodcastDetails = (props) => {
           <div className={classes.blogCardContainer} >
             <img
               className={classes.blogImage}
-              src={`http://api.stressfreegut.com${data.cover_image.url}`} />
+              src={`${process.env.API}${data.cover_image.url}`} />
             <div className={classes.blogCard} >
               <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <div style={{ display: 'flex', justifyContent: 'center' }} >
-                <audio style={{ width: '70%' }} controls src={`http://api.stressfreegut.com${data.audio.url}`} />
+                <audio style={{ width: '70%' }} controls src={`${process.env.API}${data.audio.url}`} />
               </div>
               <hr className={classes.blogHr} />
               <h3 className={classes.tagsHeading} >Tags</h3>
@@ -78,7 +78,7 @@ const PodcastDetails = (props) => {
                             window.open(item.link, '_blank')
                           }}
                           className={classes.recommendedImage}
-                          src={`http://api.stressfreegut.com${item.image[0].url}`} />
+                          src={`${process.env.API}${item.image[0].url}`} />
                         <div
                           className={classes.recommendedImageContainer}  >
                           <p className={classes.recommendedTitle} >{item.title}</p>

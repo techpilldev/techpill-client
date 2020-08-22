@@ -40,7 +40,7 @@ const Banner = (props) => {
           </div>
         </div>
         <div className={classes.desktopImageContainer}>
-          {desktopImage && <img src={`http://api.stressfreegut.com${desktopImage}`} />}
+          {desktopImage && <img src={`${process.env.API}${desktopImage}`} />}
         </div>
       </div>
     </div>

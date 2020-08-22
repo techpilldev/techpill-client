@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useStyles } from './author.styles'
@@ -15,17 +15,29 @@ const AuthorCard = (props) => {
     image,
     bio
   } = classes
+  const [data, setData] = useState(null)
 
+  const getData = async () => {
+    const result = await fetch(`${process.env.API}/about-page`)
+    const data = await result.json()
+    setData(data)
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <div className={root}>
       <div className={author} >{title}</div>
       <Link className={container} to='/about' >
         <div className={imageCnt} >
-          <img
-            src="https://media-exp1.licdn.com/dms/image/C5603AQEk1DPCbPv6yQ/profile-displayphoto-shrink_400_400/0?e=1600905600&v=beta&t=z2ENDBsAhjeW87LAYkrOa1B-V4MomNifW2_K9z5B7L4"
-            className={image}
-          />
+          {data && (
+            <img
+              src={`${process.env.API}${data.image.url}`}
+              className={image}
+            />
+          )}
         </div>
         <div>
           <div className={name} >
