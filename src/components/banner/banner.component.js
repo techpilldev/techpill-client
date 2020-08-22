@@ -35,12 +35,12 @@ const Banner = (props) => {
             className={
               classes.desktopDescription
             }>
-            {description}
+            {description && description}
             {searchbar && searchbar}
           </div>
         </div>
         <div className={classes.desktopImageContainer}>
-          <img src={`http://api.stressfreegut.com${desktopImage}`} />
+          {desktopImage && <img src={`http://api.stressfreegut.com${desktopImage}`} />}
         </div>
       </div>
     </div>

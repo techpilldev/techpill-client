@@ -174,15 +174,15 @@ export const useStyles = createUseStyles({
   smallImg: {
     borderRadius: '10px 10px 0px 0px',
     objectFit: 'cover',
-    height: '200px',
+    height: '300px',
     width: '100%',
   },
 
   smallHeading: {
     fontSize: '1.5em',
-    padding: '2% 0% 2% 0%',
+    padding: '0% 0% 0% 0%',
     color: '#495057',
-    marginTop: '3%',
+    marginTop: '0%',
   },
 
   smallDate: {
@@ -292,6 +292,21 @@ export const useStyles = createUseStyles({
 
     descriptionContainer: {
 
+    },
+  },
+
+  '@media(min-width: 500px)': {
+    detailLink: {
+      textAlign: 'start',
+      width: '170px',
+      color: '#2DC4EE',
+      border: '1px solid #2DC4EE',
+      padding: '0.5%',
+
+      '&:hover': {
+        color: 'white',
+        backgroundColor: '#2DC4EE',
+      }
     },
   },
 

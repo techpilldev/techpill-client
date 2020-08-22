@@ -174,7 +174,7 @@ export const useStyles = createUseStyles({
   smallImg: {
     borderRadius: '10px 10px 0px 0px',
     objectFit: 'cover',
-    height: '50%',
+    height: '300px',
     width: '100%',
   },
 

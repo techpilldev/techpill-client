@@ -13,7 +13,8 @@ export const useStyles = createUseStyles({
   title: {
     fontFamily: 'SPOTNIK_BOLD_2',
     fontSize: '2.5em',
-    margin: 0
+    margin: 0,
+    width: 'auto',
   },
 
   subTitle: {
@@ -21,7 +22,9 @@ export const useStyles = createUseStyles({
     fontSize: '1.2em',
     textAlign: 'center',
     color: '#858585',
-    margin: 0
+    margin: 0,
+    width: 'auto',
+
   },
   '@media (min-width: 140px)': {
     title: {
@@ -39,7 +42,8 @@ export const useStyles = createUseStyles({
       color: 'white',
       fontSize: '2em',
       lineHeight: '1em',
-      marginTop: '1%'
+      marginTop: '1%',
+      width: '200%'
     },
 
     subTitle: {
@@ -50,11 +54,12 @@ export const useStyles = createUseStyles({
   '@media (min-width: 600px)': {
     title: {
       fontSize: '2.5em',
-      width: '80%'
+      width: '100%'
     },
 
     subTitle: {
       fontSize: '1.3em',
+      textAlign: 'start',
     },
   },
 

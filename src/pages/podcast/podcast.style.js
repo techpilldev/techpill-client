@@ -181,7 +181,7 @@ export const useStyles = createUseStyles({
   smallImg: {
     borderRadius: '10px 10px 0px 0px',
     objectFit: 'cover',
-    height: '200px',
+    height: '300px',
     width: '100%',
   },
 
@@ -192,9 +192,9 @@ export const useStyles = createUseStyles({
 
   smallHeading: {
     fontSize: '1.5em',
-    padding: '2% 0% 2% 0%',
+    padding: '0% 0% 0% 0%',
     color: '#495057',
-    marginTop: '3%',
+    marginTop: '0%',
   },
 
   smallDate: {
@@ -208,7 +208,7 @@ export const useStyles = createUseStyles({
 
   markdown: {
     color: '#495057',
-    padding: '2% 0% 2% 0%',
+    padding: '0% 0% 2% 0%',
   },
 
   referenceHeading: {
@@ -368,6 +368,21 @@ export const useStyles = createUseStyles({
   },
 
   //------------------------------------------- DESKTOP -------------------------------------------------
+
+  '@media(min-width: 500px)': {
+    detailLink: {
+      textAlign: 'start',
+      width: '120px',
+      color: '#2DC4EE',
+      border: '1px solid #2DC4EE',
+      padding: '0.5%',
+
+      '&:hover': {
+        color: 'white',
+        backgroundColor: '#2DC4EE',
+      }
+    },
+  },
 
   '@media (min-width: 1240px)': {
     root: {
@@ -641,7 +656,7 @@ export const useStyles = createUseStyles({
 
     markdown: {
       color: '#495057',
-      padding: '2% 0% 2% 0%',
+      padding: '0% 0% 2% 0%',
     },
   },
 })

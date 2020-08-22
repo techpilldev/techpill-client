@@ -88,7 +88,7 @@ export const useStyles = createUseStyles({
       // textAlign: 'censter',
       lineHeight: '2em',
       color: '#858585',
-      padding: '7%',
+      padding: '5%',
 
       //Debug
       // border: '1px solid red'
@@ -119,7 +119,7 @@ export const useStyles = createUseStyles({
     desktopImageContainer: {
       overflow: 'hidden',
       display: 'flex',
-      width: 'auto',
+      width: '30%',
       height: 'auto'
       //Debug
       // border: '1px solid red'
