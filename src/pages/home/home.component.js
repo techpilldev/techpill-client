@@ -86,11 +86,23 @@ const Home = () => {
             {data && (
               data.map((post, index) =>
                 <div key={index} className={classes.smallCard} >
-                  <img
-                    className={classes.smallImg}
-                    src={`http://api.stressfreegut.com${post.cover_image.url}`}
-                  />
-                  <div style={{ padding: '2%' }} >
+                  {post.body ? (
+                    <Link to={`/blog-posts/${post.id}/`}>
+                      <img
+                        className={classes.smallImg}
+                        src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                      />
+                    </Link>
+                  ) : (
+                      <Link to={`/podcast-post/${post.id}/`}>
+                        <img
+                          className={classes.smallImg}
+                          src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                        />
+                      </Link>
+                    )
+                  }
+                  <div style={{ height: 'auto', padding: '2%' }} >
                     <h3 className={classes.smallHeading} >{post.title}</h3>
                     <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
                     <ReactMarkdown

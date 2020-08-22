@@ -528,20 +528,22 @@ export const useStyles = createUseStyles({
     },
 
     smallCard: {
-      width: '100%',
+      width: 'auto',
       height: 'auto',
       marginBottom: '3%',
+      overflow: 'hidden'
 
       // border: '1px solid red'
     },
 
     smallImg: {
       // width: '100%',
-      height: 400,
-      // borderRadius: '10px 10px 0px 0px',
-      // objectFit: 'cover',
-      // height: '30%',
-      // width: '100%',
+      height: 300,
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.1)',
+        transition: 'transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)',
+      }
     },
 
     smallHeading: {

@@ -113,7 +113,7 @@ export const useStyles = createUseStyles({
   blogHr: {
     color: '#e5e5e5',
     width: '80%',
-    marginBottom: '7%'
+    // marginBottom: '7%'
   },
 
   blogBody: {
@@ -231,16 +231,16 @@ export const useStyles = createUseStyles({
     blogHr: {
       color: '#e5e5e5',
       width: '85%',
-      marginBottom: '3%',
+      // marginBottom: '3%',
       // border: '1px solid red',
 
     },
 
     tagsHeading: {
       alignSelf: 'flex-start',
-      fontSize: '1.7em',
+      fontSize: '1.5em',
       fontWeight: 'bolder',
-      margin: '0% 0% 0% 7%',
+      margin: '0% 0% 0% 6%',
 
       // border: '1px solid red'
     },

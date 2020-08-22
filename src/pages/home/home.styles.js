@@ -174,7 +174,7 @@ export const useStyles = createUseStyles({
   smallImg: {
     borderRadius: '10px 10px 0px 0px',
     objectFit: 'cover',
-    height: '200px',
+    height: '50%',
     width: '100%',
   },
 
@@ -591,20 +591,21 @@ export const useStyles = createUseStyles({
     },
 
     smallCard: {
-      width: '100%',
-      height: '500px',
+      width: 'auto',
+      height: 'auto',
       marginBottom: '3%',
+      overflow: 'hidden'
 
       // border: '1px solid red'
     },
 
     smallImg: {
-      // width: '100%',
-      height: '50%',
-      // borderRadius: '10px 10px 0px 0px',
-      // objectFit: 'cover',
-      // height: '30%',
-      // width: '100%',
+      height: '300px',
+      '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale(1.1)',
+        transition: 'transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)',
+      }
     },
 
     smallHeading: {

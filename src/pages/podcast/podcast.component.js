@@ -157,11 +157,13 @@ const Podcasts = () => {
               filteredPosts.map((post, index) =>
                 !post.featured === true && (
                   <div key={index} className={classes.smallCard} >
-                    <img
-                      className={classes.smallImg}
-                      src={`http://api.stressfreegut.com${post.cover_image.url}`}
-                    />
-                    <div style={{ padding: '2%' }} >
+                    <Link to={`/podcast-post/${post.id}/`} >
+                      <img
+                        className={classes.smallImg}
+                        src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                      />
+                    </Link>
+                    <div style={{ height: 'auto', padding: '2%' }} >
                       <h3 className={classes.smallHeading} >{post.title}</h3>
                       <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
                       <ReactMarkdown className={classes.markdown} source={truncateStr(post.notes_and_links, 300)} />

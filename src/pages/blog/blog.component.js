@@ -99,7 +99,8 @@ const Blog = () => {
                 <div className={classes.blogCardContainer} key={index} >
                   <img
                     className={classes.blogImage}
-                    src={`http://api.stressfreegut.com${post.cover_image.url}`} />
+                    src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                  />
                   <div className={classes.blogCard} >
                     <p className={classes.blogDate} >{formatDate(post.created_at)}</p>
                     <h3 className={classes.blogHeading} >{post.title}</h3>
@@ -138,11 +139,13 @@ const Blog = () => {
               filteredPosts.map((post, index) =>
                 !post.featured === true && (
                   <div key={index} className={classes.smallCard} >
-                    <img
-                      className={classes.smallImg}
-                      src={`http://api.stressfreegut.com${post.cover_image.url}`}
-                    />
-                    <div style={{ padding: '2%' }} >
+                    <Link to={`/blog-posts/${post.id}/`} >
+                      <img
+                        className={classes.smallImg}
+                        src={`http://api.stressfreegut.com${post.cover_image.url}`}
+                      />
+                    </Link>
+                    <div style={{ height: 'auto', padding: '2%' }} >
                       <h3 className={classes.smallHeading} >{post.title}</h3>
                       <p className={classes.smallDate} >{formatDate(post.created_at)}</p>
                       <ReactMarkdown

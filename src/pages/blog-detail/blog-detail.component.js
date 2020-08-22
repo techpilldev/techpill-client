@@ -53,10 +53,10 @@ const BlogDetail = () => {
                 />
               </div>
               <div className={classes.blogAuthor} > - {data.author}</div>
+              <hr className={classes.blogHr} />
               <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '6%', alignItems: 'center' }} >
                 <span style={{ fontSize: '1.5em' }} >Share</span><ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
               </div>
-              <hr className={classes.blogHr} />
               <h3 className={classes.tagsHeading} >Tags</h3>
               <div className={classes.linksContainer} >
                 {data.tags.map((item, index) =>
