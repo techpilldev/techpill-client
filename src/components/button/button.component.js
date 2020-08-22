@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useStyles } from './button.styles.js'
 
-const Button = ( props ) => {
-  const { image, action } = props
+const Button = (props) => {
+  const { image, action, imgLink } = props
   const classes = useStyles()
   const [isPressed, setIsPressed] = useState()
 
@@ -15,8 +15,12 @@ const Button = ( props ) => {
     }
   }
 
+  useEffect(() => {
+    console.log("imgLink >>> ", imgLink)
+  }, [])
+
   const handleClick = () => {
-   action()
+    action()
   }
 
   return (
@@ -30,7 +34,13 @@ const Button = ( props ) => {
       ) : (
           classes.released
         )}
-    >{image}
+    >
+      {imgLink ? (
+        <img style={{ width: 30, height: 30 }} src={`http://api.stressfreegut.com${imgLink}`} />
+      ) : (
+          image
+        )}
+
     </div>
   )
 }

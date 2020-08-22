@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss'
 export const useStyles = createUseStyles({
 
   released: {
+    marginLeft: 10,
     animationName: '$released',
     animationFillMode: 'forwards',
     animationDuration: '0.1s',
