@@ -15,7 +15,6 @@ const PodcastDetails = (props) => {
   const getData = async (postID) => {
     const result = await fetch(`${process.env.API}/podcasts/${postID}`)
     const data = await result.json()
-    console.log("author", data)
 
     setData(data)
     let res = await fetch(`${process.env.API}/recommended-reads`)
