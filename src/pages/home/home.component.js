@@ -13,6 +13,7 @@ const Home = () => {
   const [data, setData] = useState(null)
   const [tags, setTags] = useState(null)
   const [latest, setLatest] = useState(null)
+  const [about, setAbout] = useState(null)
   const [homeTitle, setHomeTitle] = useState(null)
 
   const getData = async () => {
@@ -40,6 +41,9 @@ const Home = () => {
     let latRes = await fetch(`${process.env.API}/recommended-reads`)
     let letData = await latRes.json()
     setLatest(letData)
+    let abtRes = await fetch(`${process.env.API}/about-page`)
+    let abtData = await abtRes.json()
+    setAbout(abtData)
   }
 
   const formatDate = (date) => {
@@ -127,23 +131,25 @@ const Home = () => {
           <div className={classes.sidebar} >
             <div className={classes.sidebarContainer0} >
               <div className={classes.aboutRoot}>
-                <div style={{ fontSize: '1.5em' }} >About Niels Pederson</div>
-                <Link className={classes.container} to='/about' >
-                  <div className={classes.imageCnt} >
-                    <img
-                      src="https://media-exp1.licdn.com/dms/image/C5603AQEk1DPCbPv6yQ/profile-displayphoto-shrink_400_400/0?e=1600905600&v=beta&t=z2ENDBsAhjeW87LAYkrOa1B-V4MomNifW2_K9z5B7L4"
-                      className={classes.image}
-                    />
-                  </div>
-                  <div>
-                    <div className={classes.name} >
-                      Niels Pederson
+
+                {about && (
+                  <Link className={classes.container} to='/about' >
+                    <div className={classes.imageCnt} >
+                      <img
+                        src={`${process.env.API}${about.image.url}`}
+                        className={classes.image}
+                      />
                     </div>
-                    <p className={classes.bio} >
-                      Business-to-consumer value proposition innovator partnership technology client beta.
-                    </p>
-                  </div>
-                </Link>
+                    <div>
+                      <div className={classes.name} >
+                        {about.title}
+                      </div>
+                      <p className={classes.bio} >
+                        {truncateStr(about.body, 50)}
+                      </p>
+                    </div>
+                  </Link>
+                )}
               </div>
             </div>
             <div className={classes.sidebarContainer1} >
@@ -189,7 +195,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

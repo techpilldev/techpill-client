@@ -343,6 +343,7 @@ export const useStyles = createUseStyles({
   },
 
   name: {
+    fontSize: '1.5em',
     padding: '1%',
     // border: '1px solid red'
   },
