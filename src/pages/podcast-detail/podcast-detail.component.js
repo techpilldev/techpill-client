@@ -42,7 +42,7 @@ const PodcastDetails = (props) => {
               className={classes.blogImage}
               src={`${process.env.API}${data.cover_image.url}`} />
             <div className={classes.blogCard} >
-              <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
+              <ShareButtons pageUrl={`${process.env.API}/podcasts/${postID}`} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <div style={{ display: 'flex', justifyContent: 'center' }} >
@@ -64,7 +64,7 @@ const PodcastDetails = (props) => {
                   source={data.notes_and_links}
                 />
                 <div style={{ display: 'flex', flexDirection: 'row', margin: '0% 2% 0% 0%', alignItems: 'center' }} >
-                  <span style={{ fontSize: '1.5em' }} >Share</span><ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
+                  <span style={{ fontSize: '1.5em' }} >Share</span><ShareButtons pageUrl={`${process.env.API}/podcasts/${postID}`} />
                 </div>
               </div>
               <h3 className={classes.recommendedHeading} >Recommended Reads</h3>

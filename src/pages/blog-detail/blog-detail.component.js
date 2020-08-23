@@ -42,7 +42,7 @@ const BlogDetail = () => {
               className={classes.blogImage}
               src={`${process.env.API}${data.cover_image.url}`} />
             <div className={classes.blogCard} >
-              <ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
+              <ShareButtons pageUrl={`${process.env.API}/blog-posts/${postID}`} />
               <p className={classes.blogDate} >{formatDate(data.created_at)}</p>
               <h3 className={classes.blogHeading} >{data.title}</h3>
               <hr className={classes.blogHr} />
@@ -55,7 +55,7 @@ const BlogDetail = () => {
               <div className={classes.blogAuthor} > - {data.author}</div>
               <hr className={classes.blogHr} />
               <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '6%', alignItems: 'center' }} >
-                <span style={{ fontSize: '1.5em' }} >Share</span><ShareButtons pageUrl={'https://www.hellobruce.co.uk/'} />
+                <span style={{ fontSize: '1.5em' }} >Share</span><ShareButtons pageUrl={`${process.env.API}/blog-posts/${postID}`} />
               </div>
               <h3 className={classes.tagsHeading} >Tags</h3>
               <div className={classes.linksContainer} >
