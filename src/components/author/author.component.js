@@ -27,27 +27,31 @@ const AuthorCard = (props) => {
     getData()
   }, [])
 
+  const truncateStr = (str, num) => {
+    return str.slice(0, num) + '...'
+  }
+
   return (
     <div className={root}>
       <div className={author} >{title}</div>
-      <Link className={container} to='/about' >
-        <div className={imageCnt} >
-          {data && (
+      {data && (
+        <Link className={container} to='/about' >
+          <div className={imageCnt} >
             <img
               src={`${process.env.API}${data.image.url}`}
               className={image}
             />
-          )}
-        </div>
-        <div>
-          <div className={name} >
-            Niels Pederson
           </div>
-          <p className={bio} >
-            Business-to-consumer value proposition innovator partnership technology client beta.
-          </p>
-        </div>
-      </Link>
+          <div>
+            <div className={name} >
+              {data.title}
+            </div>
+            <p className={bio}>
+              {truncateStr(data.body, 150)}
+            </p>
+          </div>
+        </Link>
+      )}
     </div>
   )
 }
