@@ -24,7 +24,7 @@
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "marked": "^1.1.1",
+    "marked": "^4.0.10",
     "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4",
     "react": "15||16",
